@@ -1,6 +1,16 @@
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Crown Creatives — HEAD INCLUDE (Production Ready) -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>{{ page.title }} | {{ site.title }}</title>
+  <title>{{ page.title | default: site.title }}</title>
 
-<link rel="stylesheet" href="/assets/css/style.css">
+  <!-- Favicon (correct for GitHub Pages project site) -->
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+  <!-- SEO tag (if using jekyll-seo-tag) -->
+  {% seo %}
+</head>
