@@ -19,13 +19,9 @@ Crown Creatives blends creativity with wellbeing, offering a calm, inspiring dig
 - Editable pages, cards, and content
 - Fully responsive layout (PC, tablet, mobile)
 
-## Project Plan
-See the full build plan here: [PLAN.md](PLAN.md)
-
 ## Status
 Actively in development — building the magical background engine, header, and hero system.
 
 www.facebook.com/people/Crown-Creatives/61556386467490  https://www.instagram.com/crown_creatives_uk/  
 
 Live site:  https://pmr76.github.io/crown-creatives-v2/
-
