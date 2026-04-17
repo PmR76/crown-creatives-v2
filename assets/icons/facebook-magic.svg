@@ -1,0 +1,19 @@
+<svg width="72" height="72" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="orb" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.9)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.15)"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#8ab8ff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#b388ff" stop-opacity="0.4"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Magical orb -->
+  <circle cx="36" cy="36" r="30" fill="url(#orb)" stroke="url(#glow)" stroke-width="3"/>
+
+  <!-- Facebook glyph -->
+  <path d="M40 22h-4c-3 0-5 2-5 5v4h-4v6h4v13h6V37h4l1-6h-5v-3c0-1 1-2 2-2h3v-6z"
+        fill="#3b5998" opacity="0.9"/>
+</svg>
