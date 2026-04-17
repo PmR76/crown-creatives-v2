@@ -12,5 +12,105 @@ magical images slowly appear and disapear within pre-determined gallery lanes.
 below. Second card Artistic Inspiration (ideas from other artists that have inspired us to create).Third card: ..........................Magical horizontal inspirational ticker just above the footer space
 (on every page). Footer (transparent magical background - same size as the header) will be the same on every page. It will have the crown creatives copyright and social media links to
 Facebook:   www.facebook.com/people/Crown-Creatives/61556386467490/ Instigram: https://www.instagram.com/crown_creatives_uk/ and email: crowncreatives@outlook.com and copilot.
-Then in the right hand corner a toggle for back to top of the page. The toogles for social media, day/night toggle, back to top should look similar, magical and be seen in dark mode. Can this chat/plan be pinned
-somewhere so we can refer back to at anytime?
+Then in the right hand corner a toggle for back to top of the page. The toogles for social media, day/night toggle, back to top should look similar, magical and be seen in dark mode.
+Can this chat/plan be pinned somewhere so we can refer back to at anytime?
+# 🌟 Welcome to Crown Creatives  
+*A magical space for artistry, resilience, and imagination.*
+
+<p align="center">
+  <img src="assets/img/head-crown.svg" width="140" alt="Crown Creatives Logo">
+</p>
+
+Crown Creatives is a digital sanctuary built to inspire creativity, support emotional wellbeing, and celebrate the power of imagination.  
+Whether you're exploring art, seeking inspiration, or beginning your own creative recovery journey — this space is for you.
+
+---
+
+## ✨ Highlights
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Live-00c853?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Magic-Enabled-ff69b4?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Day%2FNight-8s%20Transition-ffd600?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Responsive-Yes-blue?style=for-the-badge">
+</p>
+
+---
+
+## 🎨 What Crown Creatives Offers
+
+### 🪄 A Magical Interface  
+- Transparent glass header and footer  
+- Shimmering day/night toggle  
+- Cinematic 8‑second transitions  
+- A living background engine with aurora, nebula, sparkles, and soft vignette  
+
+### 🖼 Intelligent Gallery  
+- Randomised image selection  
+- Smooth fade‑in/out animations  
+- No naming rules — just upload and enjoy  
+
+### 🪟 Creative Tools & Inspiration  
+- Artistic inspiration cards  
+- Creative recovery tools  
+- Contact card for connecting with the community  
+
+### 📱 Fully Responsive  
+Designed for:
+- PC  
+- Tablet  
+- Mobile  
+
+---
+
+## 🏠 Homepage Preview
+
+<p align="center">
+  <img src="https://via.placeholder.com/1000x450/222/ffffff?text=Homepage+Preview+Coming+Soon" alt="Homepage Preview">
+</p>
+
+The homepage features:
+- A magical day or night background  
+- A glowing hero crown  
+- Intelligent gallery lanes  
+- Glass‑style magical cards  
+- An inspirational ticker  
+
+---
+
+## 📄 Project Plan  
+Developers and collaborators can view the full build plan here:
+
+👉 **[PLAN.md](PLAN.md)**
+
+---
+
+## 🧱 Technology  
+Crown Creatives is built using:
+- **Jekyll** (GitHub Pages)  
+- **HTML / CSS / JavaScript**  
+- **SVG‑based magical assets**  
+- **Responsive layout engine**  
+
+---
+
+## 🤝 Contributing  
+Crown Creatives is a growing project.  
+Contribution guidelines will be added as the platform expands.
+
+If you have ideas, inspiration, or creative suggestions, feel free to reach out.
+
+---
+
+## 📬 Connect With Us  
+Stay connected and explore more:
+
+- **Instagram:** https://www.instagram.com/crown_creatives_uk/  
+- **Facebook:** https://www.facebook.com/people/Crown-Creatives/61556386467490/  
+- **Email:** crowncreatives@outlook.com  
+
+---
+
+<p align="center">
+  <em>“Artistry. Resilience. Imagination.”</em>
+</p>
