@@ -25,3 +25,6 @@ Actively in development — building the magical background engine, header, and 
 www.facebook.com/people/Crown-Creatives/61556386467490  https://www.instagram.com/crown_creatives_uk/  
 
 Live site:  https://pmr76.github.io/crown-creatives-v2/
+
+https://pmr76.github.io/crown-creatives-v2/assets/img/head-crown.svg
+
