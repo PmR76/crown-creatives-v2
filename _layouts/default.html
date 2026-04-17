@@ -1,11 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
-    {% include head.html %}
+    <meta charset="utf-8">
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {%- if site.description -%}
+    <meta name="description" content="{{ site.description }}">
+    {%- endif -%}
+
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   </head>
+
   <body>
-    <main>
+
+    <!-- ⭐ CROWN CREATIVES — FULL MAGICAL BACKGROUND ENGINE -->
+    <div class="cc-background">
+
+      <!-- Day / Night gradient layers -->
+      <div class="cc-background-layer cc-background-day"></div>
+      <div class="cc-background-layer cc-background-night"></div>
+
+      <!-- Magical enhancement layers -->
+      <div class="cc-shimmer"></div>
+      <div class="cc-sparkles"></div>
+      <div class="cc-aurora"></div>
+      <div class="cc-nebula"></div>
+      <div class="cc-vignette"></div>
+      <div class="cc-stars"></div>
+
+    </div>
+    <!-- ⭐ END BACKGROUND ENGINE -->
+
+    <!-- HEADER -->
+    {% include header.html %}
+
+    <!-- MAIN CONTENT -->
+    <main class="site-main">
       {{ content }}
     </main>
+
+    <!-- FOOTER -->
+    {% include footer.html %}
+
+    <!-- Theme Toggle Script -->
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        const current = html.getAttribute("data-theme");
+        html.setAttribute("data-theme", current === "light" ? "dark" : "light");
+      }
+    </script>
+
   </body>
 </html>
