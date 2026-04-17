@@ -6,11 +6,11 @@ layout: default
 <section class="hero-section" style="text-align:center; margin-top: 40px;">
 
   <div class="hero-crown-wrapper">
-    <img src="/assets/img/day-crown.svg"
+    <img src="{{ '/assets/img/day-crown.svg' | relative_url }}"
          class="hero-crown-img hero-crown-day"
          alt="Crown Creatives Day Crown">
 
-    <img src="/assets/img/night-crown.svg"
+    <img src="{{ '/assets/img/night-crown.svg' | relative_url }}"
          class="hero-crown-img hero-crown-night"
          alt="Crown Creatives Night Crown">
   </div>
@@ -25,7 +25,7 @@ layout: default
 
 </section>
 
-<!-- ⭐ GALLERY LANES (YOUR EXISTING CONTENT GOES HERE) -->
+<!-- ⭐ GALLERY LANES -->
 <section class="gallery-section">
   {{ content }}
 </section>
