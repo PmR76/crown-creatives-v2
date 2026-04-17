@@ -1,42 +1,62 @@
 /* ----------------------------------------------------
    Crown Creatives v2 — FULL PRODUCTION STYLESHEET
-   Includes:
-   - Existing header CSS (preserved)
-   - Background engine (day/night)
-   - Shimmer, sparkles, aurora, nebula, vignette, starfield
-   - Hero crown fade logic (day ↔ night)
-   - Header/footer glow
-   - Responsive rules
+   Magical Font • Header • Hero • Background Engine
+   Shimmer • Sparkles • Aurora • Nebula • Vignette
+   Starfield • Day/Night Fade • Footer Glow
 ---------------------------------------------------- */
 
 /* ----------------------------------------------------
-   BASE
+   GLOBAL MAGICAL FONT
 ---------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
 
+/* Base + Magical Font Combined */
 body {
   margin: 0;
   padding: 0;
-  font-family: system-ui, sans-serif;
+  font-family: 'Cinzel Decorative', serif;
+  letter-spacing: 0.4px;
+  font-weight: 400;
   color: #222;
   background: #ffffff;
   overflow-x: hidden;
 }
 
-main {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 1rem;
+/* Titles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cinzel Decorative', serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Tagline */
+.site-tagline {
+  font-family: 'Cinzel Decorative', serif;
+  font-weight: 400;
+  opacity: 0.9;
+  letter-spacing: 0.6px;
+}
+
+/* Navigation */
+.site-nav a {
+  font-family: 'Cinzel Decorative', serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Buttons, labels, footer text, ticker */
+button, .btn, .footer-text, .ticker-text {
+  font-family: 'Cinzel Decorative', serif;
 }
 
 /* ----------------------------------------------------
-   HEADER — Crown Creatives v2
+   HEADER — STACKED LAYOUT (Crown → Title → Tagline → Nav)
 ---------------------------------------------------- */
 
 .site-header {
   width: 100%;
-  padding: 12px 0;
-  display: flex;
-  justify-content: center;
+  padding: 24px 0 12px;
+  text-align: center;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -49,75 +69,57 @@ html[data-theme="dark"] .site-header {
   border-color: rgba(255,255,255,0.08);
 }
 
-.site-header-inner {
+/* Crown centered at top */
+.header-crown-wrapper {
   width: 100%;
-  max-width: 1200px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-/* Left crown */
-.header-left {
-  display: flex;
-  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
 .header-crown-img {
-  width: 48px;
+  width: 70px;
   height: auto;
   display: block;
 }
 
-/* Center title + tagline */
-.header-center {
-  text-align: center;
-  flex: 1;
+/* Title + Tagline */
+.header-title-block {
+  margin-bottom: 14px;
 }
 
 .site-title {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
 }
 
 .site-tagline {
   margin: 0;
   margin-top: -4px;
-  font-size: 0.9rem;
-  opacity: 0.75;
+  font-size: 1rem;
+  opacity: 0.8;
 }
 
-/* Right toggle placeholder */
-.header-right {
+/* Navigation Bar */
+.site-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 48px;
+  gap: 24px;
+  justify-content: center;
 }
 
-.theme-toggle {
-  font-size: 1.4rem;
-  cursor: pointer;
-  opacity: 0.7;
+.site-nav a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1rem;
   transition: opacity 0.2s ease;
 }
 
-.theme-toggle:hover {
-  opacity: 1;
-}
-
-/* Responsive header */
-@media (max-width: 600px) {
-  .site-title {
-    font-size: 1.4rem;
-  }
-  .header-crown-img {
-    width: 40px;
-  }
+.site-nav a:hover {
+  opacity: 0.7;
 }
 
 /* ----------------------------------------------------
@@ -132,7 +134,6 @@ html[data-theme="dark"] .site-header {
   pointer-events: none;
 }
 
-/* Shared layer styling */
 .cc-background-layer {
   position: absolute;
   inset: 0;
@@ -145,11 +146,12 @@ html[data-theme="light"] .cc-background-day {
   opacity: 1;
 }
 
+/* Night visible in dark mode */
 html[data-theme="dark"] .cc-background-night {
   opacity: 1;
 }
 
-/* Bright Creative Daylight */
+/* Day Gradient */
 .cc-background-day {
   background:
     radial-gradient(circle at 10% 0%, rgba(255, 255, 255, 0.7) 0, transparent 55%),
@@ -160,7 +162,7 @@ html[data-theme="dark"] .cc-background-night {
   filter: saturate(1.2) brightness(1.05);
 }
 
-/* Cosmic Night */
+/* Night Gradient */
 .cc-background-night {
   background:
     radial-gradient(circle at 10% 0%, rgba(255, 255, 255, 0.08) 0, transparent 55%),
@@ -172,7 +174,7 @@ html[data-theme="dark"] .cc-background-night {
 }
 
 /* ----------------------------------------------------
-   SHIMMER LAYER
+   SHIMMER
 ---------------------------------------------------- */
 
 .cc-shimmer {
@@ -188,7 +190,6 @@ html[data-theme="dark"] .cc-background-night {
   animation: shimmerMove 18s ease-in-out infinite;
   mix-blend-mode: soft-light;
   opacity: 0.25;
-  pointer-events: none;
 }
 
 @keyframes shimmerMove {
@@ -213,7 +214,6 @@ html[data-theme="dark"] .cc-background-night {
   background-size: 200px 200px;
   animation: sparkleFloat 12s linear infinite;
   opacity: 0.35;
-  pointer-events: none;
 }
 
 @keyframes sparkleFloat {
@@ -265,11 +265,10 @@ html[data-theme="dark"] .cc-background-night {
   position: absolute;
   inset: 0;
   background: radial-gradient(circle, transparent 60%, rgba(0,0,0,0.25) 100%);
-  pointer-events: none;
 }
 
 /* ----------------------------------------------------
-   STARFIELD (night only)
+   STARFIELD (Night Only)
 ---------------------------------------------------- */
 
 .cc-stars {
@@ -310,23 +309,11 @@ html[data-theme="dark"] .cc-stars {
   transition: opacity 8s ease;
 }
 
-/* Day crown visible by default */
-.hero-crown-day {
-  opacity: 1;
-}
+.hero-crown-day { opacity: 1; }
+.hero-crown-night { opacity: 0; }
 
-/* Night crown hidden until dark mode */
-.hero-crown-night {
-  opacity: 0;
-}
-
-html[data-theme="dark"] .hero-crown-day {
-  opacity: 0;
-}
-
-html[data-theme="dark"] .hero-crown-night {
-  opacity: 1;
-}
+html[data-theme="dark"] .hero-crown-day { opacity: 0; }
+html[data-theme="dark"] .hero-crown-night { opacity: 1; }
 
 /* ----------------------------------------------------
    FOOTER GLOW
@@ -344,7 +331,3 @@ html[data-theme="dark"] .site-footer {
   background: rgba(10,10,25,0.55);
   border-color: rgba(255,255,255,0.08);
 }
-
-/* ----------------------------------------------------
-   END OF FILE
----------------------------------------------------- */
