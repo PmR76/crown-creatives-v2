@@ -1,0 +1,19 @@
+<svg width="72" height="72" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="orb" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.9)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.15)"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#8ab8ff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#b388ff" stop-opacity="0.4"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Magical orb -->
+  <circle cx="36" cy="36" r="30" fill="url(#orb)" stroke="url(#glow)" stroke-width="3"/>
+
+  <!-- Up arrow glyph -->
+  <path d="M36 22l-12 14h8v14h8V36h8z"
+        fill="#8ab8ff" opacity="0.9"/>
+</svg>
