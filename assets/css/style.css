@@ -13,3 +13,89 @@ main {
   margin: 2rem auto;
   padding: 1rem;
 }
+/* ----------------------------------------------------
+   HEADER — Crown Creatives v2
+   Clean, conflict‑free, pixel‑perfect structure
+---------------------------------------------------- */
+
+.site-header {
+  width: 100%;
+  padding: 12px 0;
+  display: flex;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.site-header-inner {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Left crown */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-crown-img {
+  width: 48px;
+  height: auto;
+  display: block;
+}
+
+/* Center title + tagline */
+.header-center {
+  text-align: center;
+  flex: 1;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.site-tagline {
+  margin: 0;
+  margin-top: -4px;
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+/* Right toggle placeholder */
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 48px; /* matches crown width for perfect symmetry */
+}
+
+.theme-toggle {
+  font-size: 1.4rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.theme-toggle:hover {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .site-title {
+    font-size: 1.4rem;
+  }
+  .header-crown-img {
+    width: 40px;
+  }
+}
