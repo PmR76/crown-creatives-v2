@@ -1,11 +1,25 @@
-/* Crown Creatives v2 — clean starter CSS */
+/* ----------------------------------------------------
+   Crown Creatives v2 — FULL PRODUCTION STYLESHEET
+   Includes:
+   - Existing header CSS (preserved)
+   - Background engine (day/night)
+   - Shimmer, sparkles, aurora, nebula, vignette, starfield
+   - Hero crown fade logic (day ↔ night)
+   - Header/footer glow
+   - Responsive rules
+---------------------------------------------------- */
+
+/* ----------------------------------------------------
+   BASE
+---------------------------------------------------- */
 
 body {
   margin: 0;
   padding: 0;
   font-family: system-ui, sans-serif;
-  background: #ffffff;
   color: #222;
+  background: #ffffff;
+  overflow-x: hidden;
 }
 
 main {
@@ -13,9 +27,9 @@ main {
   margin: 2rem auto;
   padding: 1rem;
 }
+
 /* ----------------------------------------------------
    HEADER — Crown Creatives v2
-   Clean, conflict‑free, pixel‑perfect structure
 ---------------------------------------------------- */
 
 .site-header {
@@ -27,6 +41,12 @@ main {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(0,0,0,0.08);
+  transition: background 0.6s ease, border-color 0.6s ease;
+}
+
+html[data-theme="dark"] .site-header {
+  background: rgba(10, 10, 25, 0.55);
+  border-color: rgba(255,255,255,0.08);
 }
 
 .site-header-inner {
@@ -76,7 +96,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: 48px; /* matches crown width for perfect symmetry */
+  width: 48px;
 }
 
 .theme-toggle {
@@ -90,7 +110,7 @@ main {
   opacity: 1;
 }
 
-/* Responsive */
+/* Responsive header */
 @media (max-width: 600px) {
   .site-title {
     font-size: 1.4rem;
@@ -99,3 +119,232 @@ main {
     width: 40px;
   }
 }
+
+/* ----------------------------------------------------
+   BACKGROUND ENGINE — Day/Night + Magical Layers
+---------------------------------------------------- */
+
+.cc-background {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Shared layer styling */
+.cc-background-layer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 8s ease;
+}
+
+/* Day visible by default */
+html[data-theme="light"] .cc-background-day {
+  opacity: 1;
+}
+
+html[data-theme="dark"] .cc-background-night {
+  opacity: 1;
+}
+
+/* Bright Creative Daylight */
+.cc-background-day {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(255, 255, 255, 0.7) 0, transparent 55%),
+    radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.5) 0, transparent 55%),
+    radial-gradient(circle at 20% 80%, rgba(255, 200, 120, 0.6) 0, transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(140, 200, 255, 0.7) 0, transparent 60%),
+    linear-gradient(145deg, #ffe082 0%, #ffcc80 18%, #ffab91 35%, #f48fb1 52%, #ce93d8 68%, #90caf9 84%, #80deea 100%);
+  filter: saturate(1.2) brightness(1.05);
+}
+
+/* Cosmic Night */
+.cc-background-night {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(255, 255, 255, 0.08) 0, transparent 55%),
+    radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.05) 0, transparent 55%),
+    radial-gradient(circle at 20% 80%, rgba(120, 80, 200, 0.6) 0, transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(0, 180, 255, 0.5) 0, transparent 60%),
+    linear-gradient(145deg, #0b1020 0%, #141b3a 25%, #1b1740 45%, #2a174f 65%, #051726 100%);
+  filter: saturate(1.1) brightness(0.9);
+}
+
+/* ----------------------------------------------------
+   SHIMMER LAYER
+---------------------------------------------------- */
+
+.cc-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255,255,255,0.25) 50%,
+    transparent 100%
+  );
+  background-size: 200% 200%;
+  animation: shimmerMove 18s ease-in-out infinite;
+  mix-blend-mode: soft-light;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+@keyframes shimmerMove {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* ----------------------------------------------------
+   SPARKLES
+---------------------------------------------------- */
+
+.cc-sparkles {
+  position: absolute;
+  inset: 0;
+  background-image: url('data:image/svg+xml;utf8,\
+  <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">\
+    <circle cx="20" cy="20" r="2" fill="white" opacity="0.8"/>\
+    <circle cx="150" cy="80" r="1.5" fill="white" opacity="0.6"/>\
+    <circle cx="90" cy="160" r="1.8" fill="white" opacity="0.7"/>\
+  </svg>');
+  background-size: 200px 200px;
+  animation: sparkleFloat 12s linear infinite;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+@keyframes sparkleFloat {
+  from { transform: translateY(0); }
+  to { transform: translateY(-200px); }
+}
+
+/* ----------------------------------------------------
+   AURORA
+---------------------------------------------------- */
+
+.cc-aurora {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 120%, rgba(0,255,200,0.15), transparent 70%);
+  mix-blend-mode: screen;
+  animation: auroraPulse 14s ease-in-out infinite alternate;
+  opacity: 0.4;
+}
+
+@keyframes auroraPulse {
+  0% { transform: translateY(0) scale(1); opacity: 0.3; }
+  100% { transform: translateY(-20px) scale(1.1); opacity: 0.5; }
+}
+
+/* ----------------------------------------------------
+   NEBULA
+---------------------------------------------------- */
+
+.cc-nebula {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(255,0,150,0.15), transparent 70%);
+  mix-blend-mode: lighten;
+  animation: nebulaDrift 22s ease-in-out infinite alternate;
+  opacity: 0.35;
+}
+
+@keyframes nebulaDrift {
+  0% { transform: translateX(0) scale(1); }
+  100% { transform: translateX(30px) scale(1.05); }
+}
+
+/* ----------------------------------------------------
+   VIGNETTE
+---------------------------------------------------- */
+
+.cc-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, transparent 60%, rgba(0,0,0,0.25) 100%);
+  pointer-events: none;
+}
+
+/* ----------------------------------------------------
+   STARFIELD (night only)
+---------------------------------------------------- */
+
+.cc-stars {
+  position: absolute;
+  inset: 0;
+  background-image: url('data:image/svg+xml;utf8,\
+  <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300">\
+    <circle cx="50" cy="50" r="1.2" fill="white" opacity="0.8"/>\
+    <circle cx="200" cy="120" r="1.5" fill="white" opacity="0.7"/>\
+    <circle cx="120" cy="250" r="1" fill="white" opacity="0.6"/>\
+  </svg>');
+  background-size: 300px 300px;
+  opacity: 0;
+  transition: opacity 8s ease;
+}
+
+html[data-theme="dark"] .cc-stars {
+  opacity: 0.45;
+}
+
+/* ----------------------------------------------------
+   HERO CROWN — Day ↔ Night Fade
+---------------------------------------------------- */
+
+.hero-crown-wrapper {
+  width: 260px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+.hero-crown-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: absolute;
+  inset: 0;
+  transition: opacity 8s ease;
+}
+
+/* Day crown visible by default */
+.hero-crown-day {
+  opacity: 1;
+}
+
+/* Night crown hidden until dark mode */
+.hero-crown-night {
+  opacity: 0;
+}
+
+html[data-theme="dark"] .hero-crown-day {
+  opacity: 0;
+}
+
+html[data-theme="dark"] .hero-crown-night {
+  opacity: 1;
+}
+
+/* ----------------------------------------------------
+   FOOTER GLOW
+---------------------------------------------------- */
+
+.site-footer {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(0,0,0,0.08);
+  transition: background 0.6s ease, border-color 0.6s ease;
+}
+
+html[data-theme="dark"] .site-footer {
+  background: rgba(10,10,25,0.55);
+  border-color: rgba(255,255,255,0.08);
+}
+
+/* ----------------------------------------------------
+   END OF FILE
+---------------------------------------------------- */
