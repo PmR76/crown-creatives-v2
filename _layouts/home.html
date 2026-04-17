@@ -2,8 +2,11 @@
 layout: default
 ---
 
-<!-- ⭐ HERO SECTION WITH DAY ↔ NIGHT CROWN -->
-<section class="hero-section" style="text-align:center; margin-top: 40px;">
+<!-- ⭐ HERO SECTION -->
+<section class="hero-section">
+
+  <!-- Magical Background Engine (already in your default layout) -->
+  <!-- This layout only handles the hero crowns + title -->
 
   <div class="hero-crown-wrapper">
     <img src="{{ '/assets/img/day-crown.svg' | relative_url }}"
@@ -15,17 +18,13 @@ layout: default
          alt="Crown Creatives Night Crown">
   </div>
 
-  <h1 class="hero-title" style="margin-top: 260px;">
-    {{ site.title }}
-  </h1>
-
-  <p class="hero-tagline">
-    {{ site.tagline }}
-  </p>
+  <h1 class="hero-title">{{ site.title }}</h1>
+  <p class="hero-tagline">{{ site.tagline }}</p>
 
 </section>
 
-<!-- ⭐ GALLERY LANES -->
+
+<!-- ⭐ GALLERY LANES / PAGE CONTENT -->
 <section class="gallery-section">
   {{ content }}
 </section>
