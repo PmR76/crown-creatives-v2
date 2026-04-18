@@ -581,3 +581,104 @@ html[data-theme="dark"] .footer-icon img {
 
   .hero-title {
     font-size: 1.7rem
+     /* ----------------------------------------------------
+   DARK MODE — GLOBAL TEXT GLOW
+---------------------------------------------------- */
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6,
+html[data-theme="dark"] p,
+html[data-theme="dark"] a,
+html[data-theme="dark"] li,
+html[data-theme="dark"] .footer-text,
+html[data-theme="dark"] .cc-ticker-text {
+  color: #f3eaff;
+  text-shadow:
+    0 0 4px rgba(180,140,255,0.8),
+    0 0 8px rgba(0,180,255,0.5);
+}
+
+/* Navigation glow */
+html[data-theme="dark"] .site-nav a {
+  color: #e8d8ff;
+  text-shadow:
+    0 0 6px rgba(160,120,255,0.9),
+    0 0 10px rgba(0,180,255,0.6);
+}
+
+/* Ticker glow */
+html[data-theme="dark"] .cc-ticker-text {
+  color: #e8d8ff;
+  text-shadow:
+    0 0 6px rgba(200,140,255,0.9),
+    0 0 12px rgba(0,200,255,0.6);
+}
+
+
+
+/* ----------------------------------------------------
+   DARK MODE — ICON COLOUR IDENTIFIERS
+---------------------------------------------------- */
+
+/* Facebook — blue aura */
+html[data-theme="dark"] .footer-icon img[src*="facebook"] {
+  filter: drop-shadow(0 0 10px rgba(80,150,255,1));
+}
+
+/* Instagram — magenta aura */
+html[data-theme="dark"] .footer-icon img[src*="instagram"] {
+  filter: drop-shadow(0 0 10px rgba(255,120,200,1));
+}
+
+/* Email — cyan aura */
+html[data-theme="dark"] .footer-icon img[src*="email"] {
+  filter: drop-shadow(0 0 10px rgba(120,220,255,1));
+}
+
+/* Copilot — violet aura */
+html[data-theme="dark"] .footer-icon img[src*="copilot"] {
+  filter: drop-shadow(0 0 10px rgba(180,140,255,1));
+}
+
+/* Up Arrow — electric blue aura */
+html[data-theme="dark"] .footer-icon img[src*="up-arrow"] {
+  filter: drop-shadow(0 0 10px rgba(100,200,255,1));
+}
+
+
+
+/* ----------------------------------------------------
+   DARK MODE — TOGGLE GLOW BOOST
+---------------------------------------------------- */
+
+html[data-theme="dark"] .cc-toggle {
+  background: rgba(80,40,160,0.45);
+  box-shadow:
+    0 0 16px rgba(140,80,255,1),
+    0 0 28px rgba(0,180,255,0.9);
+}
+
+html[data-theme="dark"] .cc-toggle img,
+html[data-theme="dark"] .cc-toggle span {
+  filter: drop-shadow(0 0 12px rgba(180,140,255,1));
+  opacity: 1;
+}
+
+
+
+/* ----------------------------------------------------
+   DARK MODE — FOOTER GLOW BOOST
+---------------------------------------------------- */
+
+html[data-theme="dark"] .site-footer {
+  background: rgba(20,20,40,0.35);
+  box-shadow:
+    0 0 20px rgba(140,80,255,0.4),
+    inset 0 0 20px rgba(0,180,255,0.25);
+}
+
