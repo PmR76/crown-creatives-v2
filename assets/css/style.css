@@ -1,6 +1,9 @@
 /* ============================================================
    PART 1 — GLOBAL, HEADER, NAVIGATION, BACKGROUND ENGINE, HERO
    ============================================================ */
+* {
+  font-family: 'Cinzel Decorative', serif !important;
+}
 
 body {
   margin: 0;
