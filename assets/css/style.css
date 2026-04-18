@@ -1,129 +1,74 @@
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+/* -------------------------------------------------- */
+/*  GLOBAL FONT — CINZEL DECORATIVE                   */
+/* -------------------------------------------------- */
 
-/* Global font */
-* {
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
+
+body {
   font-family: 'Cinzel Decorative', serif;
-  box-sizing: border-box;
+  text-align: center;
+  color: #ffffff;
   margin: 0;
   padding: 0;
+  letter-spacing: 0.4px;
 }
 
-/* Page layout */
-body {
-  background: #f5f5f5;
-  color: #222;
-  padding-bottom: 60px;
+/* Titles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cinzel Decorative', serif;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
-/* ------------------------------ */
-/* FLOATING TRANSPARENT HEADER    */
-/* ------------------------------ */
-
-.site-header {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.header-inner {
-  width: 800px; /* H2 width */
-  padding: 20px;
-  text-align: center;
-  background: rgba(255,255,255,0.35);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  position: relative;
-  border: 1px solid rgba(255,255,255,0.5);
-}
-
-/* Toggle (non-functional for now) */
-.header-toggle {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-}
-
-.header-toggle img {
-  width: 36px;
-  height: 36px;
-}
-
-/* Crown in header */
-.header-crown-img {
-  width: 80px;
-  margin-bottom: 10px;
-}
-
-/* Title + Tagline */
-.site-title {
-  margin: 0;
-  font-size: 2rem;
-}
-
+/* Tagline */
 .site-tagline {
-  margin: 0;
-  opacity: 0.8;
-  margin-top: 4px;
+  font-family: 'Cinzel Decorative', serif;
+  font-weight: 400;
+  opacity: 0.9;
+  letter-spacing: 0.6px;
 }
 
 /* Navigation */
-.site-nav ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 15px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
 .site-nav a {
-  text-decoration: none;
-  color: inherit;
-  font-size: 1rem;
+  font-family: 'Cinzel Decorative', serif;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
-/* ------------------------------ */
-/* HOME PAGE HERO CROWN           */
-/* ------------------------------ */
+/* -------------------------------------------------- */
+/*  HOME PAGE CARDS                                   */
+/* -------------------------------------------------- */
 
-.home-hero {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.home-crown {
-  width: 189px;
-  height: 189px;
-}
-
-/* ------------------------------ */
-/* FLOATING TRANSPARENT FOOTER    */
-/* ------------------------------ */
-
-.site-footer {
-  width: 100%;
+.home-cards {
   display: flex;
   justify-content: center;
-  margin-top: 60px;
+  gap: 2rem;
+  margin: 4rem auto;
+  flex-wrap: wrap;
 }
 
-.footer-inner {
-  width: 800px; /* H2 width */
-  padding: 20px;
-  text-align: center;
-  background: rgba(255,255,255,0.35);
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 280px;
   backdrop-filter: blur(10px);
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.footer-icons img {
-  width: 32px;
-  margin: 0 8px;
-  vertical-align: middle;
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
 }
 
-.footer-icons a {
-  text-decoration: none;
+.card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.5;
 }
