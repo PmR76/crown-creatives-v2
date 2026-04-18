@@ -9,10 +9,9 @@ beautiful magical transition (8 seconds) will occur not just to magical night, b
 the home screen gallery (full images will be placed in the galllery by admin and will not require naming within code). The inteligent gallery will ramdomly sellect the gallery images and appear magically on the left and right of the day-crown.svg or night-crown.svg. Ensuring that these
 magical images slowly appear and disapear within pre-determined gallery lanes.
 5. Underneath the gallery lanes will be magical cards that are glass like so you can see the magical background. The first card needs to remind the viewer to get in contact using email or socialmedia on the links
-below. Second card Artistic Inspiration (ideas from other artists that have inspired us to create).Third card: ..........................Magical horizontal inspirational ticker just above the footer space
-(on every page). Footer (transparent magical background - same size as the header) will be the same on every page. It will have the crown creatives copyright and social media links to
+below. Second card Artistic Inspiration (ideas from other artists that have inspired us to create).Third card: ..........................Magical horizontal inspirational continuous ticker just above the footer space (on every page). Footer (transparent magical background - same size as the header) will be the same on every page. It will have the crown creatives copyright and social media links to
 Facebook:   www.facebook.com/people/Crown-Creatives/61556386467490/ Instigram: https://www.instagram.com/crown_creatives_uk/ and email: crowncreatives@outlook.com and copilot.
-Then in the right hand corner a toggle for back to top of the page. The toogles for social media, day/night toggle, back to top should look similar, magical and be seen in dark mode.
+Then in the right hand corner a toggle for back to top of the page. The toogles for social media, day/night toggle, back to top should look similar, magical and be seen in dark mode. In dark mode all text, toggles and navigation will clearly glow providing clarity of icon. 
 
 # 🌟 Welcome to Crown Creatives  
 *A magical space for artistry, resilience, and imagination.*
