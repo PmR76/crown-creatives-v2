@@ -681,4 +681,120 @@ html[data-theme="dark"] .site-footer {
     0 0 20px rgba(140,80,255,0.4),
     inset 0 0 20px rgba(0,180,255,0.25);
 }
+/* ----------------------------------------------------
+   DARK MODE — MAGICAL TEXT TRANSITION SYSTEM
+---------------------------------------------------- */
+
+/* Smooth colour transitions for all text */
+body, h1, h2, h3, h4, h5, h6, p, a, li, span,
+.footer-text, .cc-ticker-text, .site-nav a {
+  transition: color 0.6s ease, text-shadow 0.6s ease;
+}
+
+/* ⭐ Global text colour shift in dark mode */
+html[data-theme="dark"] body,
+html[data-theme="dark"] p,
+html[data-theme="dark"] li,
+html[data-theme="dark"] span {
+  color: #f4edff;
+  text-shadow:
+    0 0 4px rgba(180,140,255,0.7),
+    0 0 8px rgba(0,180,255,0.4);
+}
+
+/* Headings glow brighter */
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6 {
+  color: #ffffff;
+  text-shadow:
+    0 0 6px rgba(200,160,255,0.9),
+    0 0 14px rgba(0,200,255,0.6);
+}
+
+/* Navigation text glow */
+html[data-theme="dark"] .site-nav a {
+  color: #f0eaff;
+  text-shadow:
+    0 0 6px rgba(180,140,255,0.9),
+    0 0 12px rgba(0,200,255,0.6);
+}
+
+/* Footer text glow */
+html[data-theme="dark"] .footer-text {
+  color: #f0eaff;
+  text-shadow:
+    0 0 6px rgba(180,140,255,0.8),
+    0 0 12px rgba(0,200,255,0.6);
+}
+
+/* ⭐ Inspirational ticker glow */
+html[data-theme="dark"] .cc-ticker-text {
+  color: #f7eaff;
+  text-shadow:
+    0 0 8px rgba(200,140,255,1),
+    0 0 16px rgba(0,200,255,0.9);
+}
+
+/* Hover shimmer for ticker */
+.cc-ticker-wrapper:hover .cc-ticker-text {
+  color: #ffffff;
+  text-shadow:
+    0 0 12px rgba(255,200,255,1),
+    0 0 24px rgba(0,200,255,1);
+}
+
+
+
+/* ----------------------------------------------------
+   DARK MODE — ICON COLOUR SHIFT + GLOW
+---------------------------------------------------- */
+
+/* Smooth transitions */
+.footer-icon img {
+  transition:
+    filter 0.6s ease,
+    box-shadow 0.6s ease,
+    background 0.6s ease;
+}
+
+/* Facebook — blue */
+html[data-theme="dark"] .footer-icon img[src*="facebook"] {
+  filter: drop-shadow(0 0 10px rgba(80,150,255,1));
+}
+
+/* Instagram — magenta */
+html[data-theme="dark"] .footer-icon img[src*="instagram"] {
+  filter: drop-shadow(0 0 10px rgba(255,120,200,1));
+}
+
+/* Email — cyan */
+html[data-theme="dark"] .footer-icon img[src*="email"] {
+  filter: drop-shadow(0 0 10px rgba(120,220,255,1));
+}
+
+/* Copilot — violet */
+html[data-theme="dark"] .footer-icon img[src*="copilot"] {
+  filter: drop-shadow(0 0 10px rgba(180,140,255,1));
+}
+
+/* Up Arrow — electric blue */
+html[data-theme="dark"] .footer-icon img[src*="up-arrow"] {
+  filter: drop-shadow(0 0 10px rgba(100,200,255,1));
+}
+
+
+
+/* ----------------------------------------------------
+   DARK MODE — TOGGLE TEXT + ICON GLOW
+---------------------------------------------------- */
+
+html[data-theme="dark"] .cc-toggle img,
+html[data-theme="dark"] .cc-toggle span {
+  filter: drop-shadow(0 0 12px rgba(180,140,255,1));
+  color: #ffffff;
+}
 
