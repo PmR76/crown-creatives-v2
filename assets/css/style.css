@@ -797,4 +797,121 @@ html[data-theme="dark"] .cc-toggle span {
   filter: drop-shadow(0 0 12px rgba(180,140,255,1));
   color: #ffffff;
 }
+/* ----------------------------------------------------
+   1. DARK MODE — MAGICAL TEXT TRANSFORMATION
+---------------------------------------------------- */
+
+/* Smooth transitions for all text */
+body, h1, h2, h3, h4, h5, h6, p, a, li, span,
+.site-title, .site-tagline, .footer-text,
+.cc-ticker-text, .site-nav a {
+  transition: color 0.6s ease, text-shadow 0.6s ease;
+}
+
+/* ⭐ All text becomes lighter + glows in dark mode */
+html[data-theme="dark"] body,
+html[data-theme="dark"] p,
+html[data-theme="dark"] li,
+html[data-theme="dark"] span,
+html[data-theme="dark"] .site-title,
+html[data-theme="dark"] .site-tagline,
+html[data-theme="dark"] .footer-text {
+  color: #f4edff;
+  text-shadow:
+    0 0 4px rgba(180,140,255,0.7),
+    0 0 8px rgba(0,180,255,0.4);
+}
+
+/* Headings glow brighter */
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6 {
+  color: #ffffff;
+  text-shadow:
+    0 0 6px rgba(200,160,255,0.9),
+    0 0 14px rgba(0,200,255,0.6);
+}
+
+/* Navigation glow */
+html[data-theme="dark"] .site-nav a {
+  color: #f0eaff;
+  text-shadow:
+    0 0 6px rgba(180,140,255,0.9),
+    0 0 12px rgba(0,200,255,0.6);
+}
+
+/* Ticker glow */
+html[data-theme="dark"] .cc-ticker-text {
+  color: #f7eaff;
+  text-shadow:
+    0 0 8px rgba(200,140,255,1),
+    0 0 16px rgba(0,200,255,0.9);
+}
+/* ----------------------------------------------------
+   MAGICAL TEXT FADE ANIMATION
+---------------------------------------------------- */
+
+@keyframes ccTextFade {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+    text-shadow: none;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply to key text elements */
+.site-title,
+.site-tagline,
+.hero-title,
+.hero-tagline,
+.footer-text,
+.cc-ticker-text,
+.site-nav a {
+  animation: ccTextFade 1.4s ease forwards;
+}
+/* ----------------------------------------------------
+   DARK MODE ENTRANCE ANIMATION
+---------------------------------------------------- */
+
+@keyframes ccDarkModeEntrance {
+  0% {
+    filter: brightness(0.4) saturate(0.6);
+    opacity: 0.4;
+  }
+  100% {
+    filter: brightness(1) saturate(1);
+    opacity: 1;
+  }
+}
+
+html[data-theme="dark"] body {
+  animation: ccDarkModeEntrance 1.2s ease-out;
+}
+/* ----------------------------------------------------
+   HERO CROWN — GLOW PULSE
+---------------------------------------------------- */
+
+@keyframes ccCrownPulse {
+  0% {
+    filter: drop-shadow(0 0 6px rgba(180,140,255,0.6))
+            drop-shadow(0 0 12px rgba(0,180,255,0.4));
+    transform: scale(1);
+  }
+  100% {
+    filter: drop-shadow(0 0 14px rgba(200,160,255,1))
+            drop-shadow(0 0 24px rgba(0,200,255,0.9));
+    transform: scale(1.02);
+  }
+}
+
+.hero-crown-img {
+  animation: ccCrownPulse 4s ease-in-out infinite alternate;
+}
 
