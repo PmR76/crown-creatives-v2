@@ -436,3 +436,21 @@ html[data-theme="dark"] span,
 html[data-theme="dark"] .site-title,
 html[data-theme="dark"] .site-tagline,
 html[data-theme="dark"] .footer-text {
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.site-main {
+  flex: 1 0 auto;
+}
+
+.cc-ticker-wrapper,
+.site-footer {
+  flex-shrink: 0;
+}
