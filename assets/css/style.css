@@ -36,6 +36,47 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* -------------------------------------------------- */
+/* FOOTER — BACK TO TOP BUTTON ALIGNED RIGHT          */
+/* -------------------------------------------------- */
+
+.site-footer {
+  position: relative;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* FLOATING BACK TO TOP — BOTTOM RIGHT */
+.footer-backtotop {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.footer-backtotop img {
+  width: 40px;
+  height: auto;
+  cursor: pointer;
+}
+
+/* SOCIAL ICONS */
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-icons img {
+  width: 32px;
+  height: auto;
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* -------------------------------------------------- */
 /*  HOME PAGE CARDS                                   */
 /* -------------------------------------------------- */
 
