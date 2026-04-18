@@ -7,11 +7,10 @@
 body {
   font-family: 'Cinzel Decorative', serif;
   text-align: center;
-  color: #000000;
   margin: 0;
   padding: 0;
   letter-spacing: 0.4px;
-  background: #ffffff;
+  transition: background 0.6s ease, color 0.6s ease;
 }
 
 /* Titles */
@@ -35,6 +34,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* -------------------------------------------------- */
+/* THEME ENGINE — DAY & NIGHT VARIABLES               */
+/* -------------------------------------------------- */
+
+:root {
+  --bg-day: radial-gradient(circle at top, #ffe9b8 0%, #f7c6ff 40%, #2b2c5f 100%);
+  --bg-night: radial-gradient(circle at top, #0b1024 0%, #2b2c5f 40%, #05030b 100%);
+
+  --text-day: #1b1230;
+  --text-night: #f5ecff;
+
+  --card-bg-day: rgba(255, 255, 255, 0.12);
+  --card-bg-night: rgba(10, 5, 30, 0.7);
+
+  --card-border-day: rgba(255, 255, 255, 0.5);
+  --card-border-night: rgba(150, 120, 255, 0.7);
+}
+
+/* DAY THEME */
+body[data-theme="day"] {
+  background: var(--bg-day);
+  color: var(--text-day);
+}
+
+/* NIGHT THEME */
+body[data-theme="night"] {
+  background: var(--bg-night);
+  color: var(--text-night);
+}
+
+/* -------------------------------------------------- */
 /* HEADER — STACKED WITH FLOATING TOGGLE              */
 /* -------------------------------------------------- */
 
@@ -42,6 +71,8 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   text-align: center;
   padding-top: 3rem;
+  background: transparent;
+  color: inherit;
 }
 
 /* FLOATING TOGGLE — TOP RIGHT */
@@ -98,9 +129,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .site-nav a {
   text-decoration: none;
-  color: #000000;
+  color: inherit;
   font-weight: 700;
   font-size: 1.1rem;
+  transition: opacity 0.3s ease;
+}
+
+.site-nav a:hover {
+  opacity: 0.7;
 }
 
 /* -------------------------------------------------- */
@@ -113,7 +149,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .home-crown {
-  width: 440px;   /* ← updated for 1800px SVG */
+  width: 440px;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -132,15 +168,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .card {
-  background: rgba(0, 0, 0, 0.08);
-  border: 2px solid rgba(0, 0, 0, 0.2);
+  background: var(--card-bg-day);
+  border: 2px solid var(--card-border-day);
   border-radius: 20px;
   padding: 2rem;
   width: 280px;
   backdrop-filter: blur(10px);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: #000000;
+  transition: 
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.4s ease,
+    border-color 0.4s ease;
+  color: inherit;
+}
+
+body[data-theme="night"] .card {
+  background: var(--card-bg-night);
+  border-color: var(--card-border-night);
 }
 
 .card:hover {
@@ -166,6 +211,8 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   padding: 2rem 0;
   text-align: center;
+  background: transparent;
+  color: inherit;
 }
 
 .footer-inner {
@@ -178,10 +225,8 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
   font-size: 0.9rem;
   opacity: 0.8;
-  color: #000000;
 }
 
-/* Social icons centred */
 .footer-icons {
   display: flex;
   justify-content: center;
@@ -194,7 +239,6 @@ h1, h2, h3, h4, h5, h6 {
   height: auto;
 }
 
-/* Back to top aligned with header toggle */
 .footer-backtotop {
   position: absolute;
   right: 1rem;
