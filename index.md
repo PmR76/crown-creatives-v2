@@ -8,10 +8,6 @@ title: Home
   <img src="assets/img/day-crown.svg" alt="Day Crown" class="home-crown">
 </div>
 
-<p class="home-welcome">
-  Welcome to Crown Creatives — a space where imagination becomes reality.
-</p>
-
 <!-- THREE MAGICAL CARDS -->
 <div class="home-cards">
   <div class="card">
