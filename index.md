@@ -5,7 +5,7 @@ title: Home
 
 <!-- HERO CROWN -->
 <div class="home-hero">
-  <img src="{{ '/assets/img/head-crown.svg' | relative_url }}" alt="Header Crown" class="home-crown">
+  <img src="{{ '/assets/img/day-crown.svg' | relative_url }}" alt="Day Crown" class="home-crown">
 </div>
 
 <!-- THREE MAGICAL CARDS -->
