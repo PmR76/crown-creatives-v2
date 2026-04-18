@@ -19,11 +19,11 @@ title: Home
 <section class="hero-section">
 
   <div class="hero-crown-wrapper">
-    <img src="/assets/icons/header-crown.svg"
+    <img src="/assets/img/head-crown.svg"
          class="hero-crown-img hero-crown-day"
          alt="Crown Creatives Crown Day">
 
-    <img src="/assets/icons/header-crown.svg"
+    <img src="/assets/img/head-crown.svg"
          class="hero-crown-img hero-crown-night"
          alt="Crown Creatives Crown Night">
   </div>
@@ -32,18 +32,6 @@ title: Home
   <p class="hero-tagline">Artistry Resilience Imagination</p>
 
 </section>
-
-<!-- MAGICAL TICKER -->
-<div class="cc-ticker-wrapper">
-  <div class="cc-ticker-track">
-    <span class="cc-ticker-text">
-      ✨ Creativity is courage in motion ✨ Artistry is resilience ✨ Imagination shapes worlds ✨
-    </span>
-    <span class="cc-ticker-text">
-      ✨ Creativity is courage in motion ✨ Artistry is resilience ✨ Imagination shapes worlds ✨
-    </span>
-  </div>
-</div>
 
 <!-- MAIN CONTENT AREA -->
 <section class="site-main-content">
