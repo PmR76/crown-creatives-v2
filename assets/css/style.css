@@ -72,3 +72,37 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1rem;
   line-height: 1.5;
 }
+/* -------------------------------------------------- */
+/*  HEADER CROWN — SMALL, FIXED SIZE                  */
+/* -------------------------------------------------- */
+
+.header-crown-img {
+  width: 120px;        /* Adjust this number to taste */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+
+/* Keep header compact */
+.header-crown-wrapper {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* -------------------------------------------------- */
+/*  HERO CROWN — LARGE, MAIN PAGE ELEMENT             */
+/* -------------------------------------------------- */
+
+.home-hero {
+  margin-top: 3rem;    /* Pushes hero crown down below header */
+  margin-bottom: 2rem;
+}
+
+.home-crown {
+  width: 260px;        /* Adjust this number to taste */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
