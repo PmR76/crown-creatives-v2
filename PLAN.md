@@ -1,7 +1,7 @@
 PLAN: Keep this as the main objectives whilst building the site (Aim: A creative website where we can encourage creativity and recovery. 
 I have CPTSD, Function Neurological Disorder and depression diagnosed in 2024. This will be admin access site where admin can fully edit the site including pages such as headers,
 pages (add and subtract) and footers. This website can viwed on PC, tablet and mobile phone screens. These pages will have scrolling capability in order to retain the page content as admin desires.   
-1. Font: 'Cinzel Decorative', serif;Header (transparent, magical background - like the footer): head-crown.svg to of header center CROWN CREATIVES and underneath (centre) tagline Artistry Resilience Imagination.
+1. Font: 'Cinzel Decorative', serif; Header (transparent, magical background - like the footer): head-crown.svg to of header center CROWN CREATIVES and underneath (centre) tagline Artistry Resilience Imagination.
 2. Toggle to day and Night (top right of header) medium sized icon with a glowing shimering affect.
 3.  Navigation bar: Magical horizontal nav  sit snuggly under the header. This header will appear on every page. The nav bar has Home, About, Gallery, Projects, Videos, Prodcasts, Blog, Contact.
 4.  Main home page:  Beautiful summer daytime magical background (go all out) day-crown.svg 189px X 189px wil be in the centre of screen, snugly underneath the nav bar. When toogled by the day/night button
