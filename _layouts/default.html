@@ -1,63 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  {% include head.html %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | Crown Creatives</title>
+
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" href="/assets/icons/header-crown.svg" type="image/svg+xml">
 </head>
 
-<body>
+<body id="top">
 
-  <!-- ⭐ MAGICAL BACKGROUND ENGINE -->
-  <div class="cc-background">
-
-    <!-- Day Gradient -->
-    <div class="cc-background-layer cc-background-day"></div>
-
-    <!-- Night Gradient -->
-    <div class="cc-background-layer cc-background-night"></div>
-
-    <!-- Shimmer -->
-    <div class="cc-shimmer"></div>
-
-    <!-- Sparkles -->
-    <div class="cc-sparkles"></div>
-
-    <!-- Aurora -->
-    <div class="cc-aurora"></div>
-
-    <!-- Nebula -->
-    <div class="cc-nebula"></div>
-
-    <!-- Starfield (night only) -->
-    <div class="cc-stars"></div>
-
-    <!-- Vignette -->
-    <div class="cc-vignette"></div>
-
-  </div>
-
-
-  <!-- ⭐ HEADER -->
   {% include header.html %}
 
-
-  <!-- ⭐ MAIN CONTENT -->
   <main class="site-main">
     {{ content }}
   </main>
 
-
-  <!-- ⭐ FOOTER -->
   {% include footer.html %}
 
-
-  <!-- ⭐ THEME TOGGLE SCRIPT -->
-  <script>
-    function toggleTheme() {
-      const html = document.documentElement;
-      const current = html.getAttribute("data-theme");
-      html.setAttribute("data-theme", current === "dark" ? "light" : "dark");
-    }
-  </script>
+  <script src="/assets/js/theme-toggle.js"></script>
 
 </body>
 </html>
