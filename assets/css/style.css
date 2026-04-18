@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .toggle-icon {
-  width: 40px;
+  width: 48px;   /* ← updated (was 40px) */
   height: auto;
   cursor: pointer;
 }
@@ -63,7 +63,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header-crown-img {
-  width: 126px; /* 10% smaller than 140px */
+  width: 126px; /* unchanged */
   height: auto;
 }
 
@@ -113,7 +113,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .home-crown {
-  width: 340px;   /* ← enlarged by 30% from 260px */
+  width: 340px;   /* enlarged earlier */
   height: auto;
   display: block;
   margin: 0 auto;
@@ -190,7 +190,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-icons img {
-  width: 40px; /* Same size as toggle */
+  width: 48px;   /* ← updated (was 40px) */
   height: auto;
 }
 
@@ -202,7 +202,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-backtotop img {
-  width: 40px;
+  width: 48px;   /* ← updated (was 40px) */
   height: auto;
   cursor: pointer;
 }
