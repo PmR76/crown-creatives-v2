@@ -120,3 +120,367 @@ Stay connected and explore more:
 <p align="center">
   <em>“Artistry. Resilience. Imagination.”</em>
 </p>
+
+Icon set rune set:
+sun-moon-magic.svg:
+<svg width="72" height="72" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="stoneBase" cx="50%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#f5f7ff"/>
+      <stop offset="45%" stop-color="#c7cfdd"/>
+      <stop offset="100%" stop-color="#8b93a3"/>
+    </radialGradient>
+
+    <radialGradient id="crystalVeins" cx="20%" cy="80%" r="70%">
+      <stop offset="0%" stop-color="#7be9ff" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#7b9dff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#2b3250" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="rimLight" cx="50%" cy="0%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Dual sun/moon rune glow -->
+    <radialGradient id="runeGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#ffe9a6"/>
+      <stop offset="40%" stop-color="#9f8cff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="sunMoonInnerGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.2" result="blur"/>
+      <feColorMatrix in="blur" type="matrix"
+        values="0 0 0 0 1
+                0 0 0 0 0.93
+                0 0 0 0 0.75
+                0 0 0 0.9 0" result="glow"/>
+      <feBlend in="SourceGraphic" in2="glow" mode="screen"/>
+    </filter>
+  </defs>
+
+  <circle cx="36" cy="36" r="32" fill="url(#stoneBase)"/>
+  <circle cx="36" cy="36" r="30" fill="url(#crystalVeins)" style="mix-blend-mode:screen;"/>
+  <circle cx="36" cy="36" r="32" fill="url(#rimLight)" style="mix-blend-mode:screen;"/>
+  <circle cx="36" cy="36" r="22" fill="url(#runeGlow)" opacity="0.9"/>
+
+  <!-- Sun / Moon hybrid glyph -->
+  <g transform="translate(36 36)" filter="url(#sunMoonInnerGlow)">
+    <!-- Sun circle (left) -->
+    <circle cx="-3" cy="0" r="6.5"
+      fill="none" stroke="#fff7d9" stroke-width="2.2"/>
+
+    <!-- Sun rays -->
+    <g stroke="#fff7d9" stroke-width="2" stroke-linecap="round">
+      <line x1="-3" y1="-11" x2="-3" y2="-8"/>
+      <line x1="-3" y1="11"  x2="-3" y2="8"/>
+      <line x1="-11" y1="0"  x2="-8" y2="0"/>
+      <line x1="5"  y1="0"   x2="2"  y2="0"/>
+      <line x1="-9.5" y1="-9.5" x2="-7.2" y2="-7.2"/>
+      <line x1="-9.5" y1="9.5"  x2="-7.2" y2="7.2"/>
+    </g>
+
+    <!-- Crescent moon (right) -->
+    <path
+      d="M 4 -7
+         A 7 7 0 1 0 4 7
+         A 5 5 0 1 1 4 -7 Z"
+      fill="none"
+      stroke="#f3ecff"
+      stroke-width="2.2"
+      stroke-linejoin="round"/>
+  </g>
+</svg>
+<svg width="72" height="72" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="stoneBase" cx="50%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#f5f7ff"/>
+      <stop offset="45%" stop-color="#c7cfdd"/>
+      <stop offset="100%" stop-color="#8b93a3"/>
+    </radialGradient>
+
+    <radialGradient id="crystalVeins" cx="20%" cy="80%" r="70%">
+      <stop offset="0%" stop-color="#7be9ff" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#7b9dff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#2b3250" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="rimLight" cx="50%" cy="0%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Facebook blue rune glow -->
+    <radialGradient id="runeGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#7fd0ff"/>
+      <stop offset="40%" stop-color="#3b82ff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="fbInnerGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.2" result="blur"/>
+      <feColorMatrix in="blur" type="matrix"
+        values="0 0 0 0 0.85
+                0 0 0 0 0.94
+                0 0 0 0 1
+                0 0 0 0.9 0" result="glow"/>
+      <feBlend in="SourceGraphic" in2="glow" mode="screen"/>
+    </filter>
+  </defs>
+
+  <circle cx="36" cy="36" r="32" fill="url(#stoneBase)"/>
+  <circle cx="36" cy="36" r="30" fill="url(#crystalVeins)" style="mix-blend-mode:screen;"/>
+  <circle cx="36" cy="36" r="32" fill="url(#rimLight)" style="mix-blend-mode:screen;"/>
+  <circle cx="36" cy="36" r="22" fill="url(#runeGlow)" opacity="0.9"/>
+
+  <!-- Engraved Facebook "f" -->
+  <g transform="translate(36 36)">
+    <path
+      d="M 3 -16 h -4 c -5.5 0 -9 3.6 -9 9.2 v 4.3 h -5 v 6.5 h 5 v 12 h 7 v -12 h 5.2 l 1.8 -6.5 h -7 v -3.7 c 0 -2.1 0.9 -3.3 3.4 -3.3 h 3.6 z"
+      fill="none"
+      stroke="#e9f4ff"
+      stroke-width="2.6"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      filter="url(#fbInnerGlow)"
+    />
+  </g>
+</svg>
+<svg width="72" height="72" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="stoneBase" cx="50%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#f5f7ff"/>
+      <stop offset="45%" stop-color="#c7cfdd"/>
+      <stop offset="100%" stop-color="#8b93a3"/>
+    </radialGradient>
+
+    <radialGradient id="crystalVeins" cx="20%" cy="80%" r="70%">
+      <stop offset="0%" stop-color="#7be9ff" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#7b9dff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#2b3250" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="rimLight" cx="50%" cy="0%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Instagram magenta rune glow -->
+    <radialGradient id="runeGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#ff9ad9"/>
+      <stop offset="40%" stop-color="#ff5fa9" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="igInnerGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.2" result="blur"/>
+      <feColorMatrix in="blur" type="matrix"
+        values="0 0 0 0 1
+                0 0 0 0 0.85
+                0 0 0 0 0.95
+                0 0 0 0.9 0" result="glow"/>
+      <feBlend in="SourceGraphic" in2="glow" mode="screen"/>
+    </filter>
+  </defs>
+
+  <circle cx="36" cy="36" r="32" fill="url(#stoneBase)"/>
+  <circle cx="36" cy="36" r="30" fill="url(#crystalVeins)" style="mix-blend-mode:screen;"/>
+  <circle cx="36" cy="36" r="32" fill="url(#rimLight)" style="mix-blend-mode:screen;"/>
+  <circle cx="36" cy="36" r="22" fill="url(#runeGlow)" opacity="0.9"/>
+
+  <!-- Engraved Instagram glyph -->
+  <g transform="translate(36 36)">
+    <!-- Outer rounded square -->
+    <rect x="-11" y="-11" width="22" height="22" rx="6"
+      fill="none" stroke="#ffe9ff" stroke-width="2.4"
+      filter="url(#igInnerGlow)"/>
+    <!-- Inner circle -->
+    <circle cx="0" cy="0" r="5.2"
+      fill="none" stroke="#ffe9ff" stroke-width="2.2"
+      filter="url(#igInnerGlow)"/>
+    <!-- Small top-right dot -->
+    <circle cx="6.5" cy="-6.5" r="1.6"
+      fill="#ffe9ff" filter="url(#igInnerGlow)"/>
+  </g>
+</svg>
+<svg width="72" height="72" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="stoneBase" cx="50%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#f5f7ff"/>
+      <stop offset="45%" stop-color="#c7cfdd"/>
+      <stop offset="100%" stop-color="#8b93a3"/>
+    </radialGradient>
+
+    <radialGradient id="crystalVeins" cx="20%" cy="80%" r="70%">
+      <stop offset="0%" stop-color="#7be9ff" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#7b9dff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#2b3250" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="rimLight" cx="50%" cy="0%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Email cyan rune glow -->
+    <radialGradient id="runeGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#9ff6ff"/>
+      <stop offset="40%" stop-color="#3bd4ff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="mailInnerGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.2" result="blur"/>
+      <feColorMatrix in="blur" type="matrix"
+        values="0 0 0 0 0.85
+                0 0 0 0 0.98
+                0 0 0 0 1
+                0 0 0 0.9 0" result="glow"/>
+      <feBlend in="SourceGraphic" in2="glow" mode="screen"/>
+    </filter>
+  </defs>
+
+  <circle cx="36" cy="36" r="32" fill="url(#stoneBase)"/>
+  <circle cx="36" cy="36" r="30" fill="url(#crystalVeins)" style="mix-blend-mode:screen;"/>
+  <circle cx="36" cy="36" r="32" fill="url(#rimLight)" style="mix-blend-mode:screen;"/>
+  <circle cx="36" cy="36" r="22" fill="url(#runeGlow)" opacity="0.9"/>
+
+  <!-- Engraved envelope -->
+  <g transform="translate(36 36)">
+    <rect x="-11" y="-7" width="22" height="14" rx="2.5"
+      fill="none" stroke="#e9faff" stroke-width="2.2"
+      filter="url(#mailInnerGlow)"/>
+    <path d="M -11 -7 L 0 1.5 L 11 -7"
+      fill="none" stroke="#e9faff" stroke-width="2.2"
+      stroke-linecap="round" stroke-linejoin="round"
+      filter="url(#mailInnerGlow)"/>
+  </g>
+</svg>
+<svg width="72" height="72" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="stoneBase" cx="50%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#f5f7ff"/>
+      <stop offset="45%" stop-color="#c7cfdd"/>
+      <stop offset="100%" stop-color="#8b93a3"/>
+    </radialGradient>
+
+    <radialGradient id="crystalVeins" cx="20%" cy="80%" r="70%">
+      <stop offset="0%" stop-color="#7be9ff" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#7b9dff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#2b3250" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="rimLight" cx="50%" cy="0%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Copilot violet rune glow -->
+    <radialGradient id="runeGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#d2b4ff"/>
+      <stop offset="40%" stop-color="#8b5dff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="cpInnerGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.2" result="blur"/>
+      <feColorMatrix in="blur" type="matrix"
+        values="0 0 0 0 0.92
+                0 0 0 0 0.86
+                0 0 0 0 1
+                0 0 0 0.9 0" result="glow"/>
+      <feBlend in="SourceGraphic" in2="glow" mode="screen"/>
+    </filter>
+  </defs>
+
+  <circle cx="36" cy="36" r="32" fill="url(#stoneBase)"/>
+  <circle cx="36" cy="36" r="30" fill="url(#crystalVeins)" style="mix-blend-mode:screen;"/>
+  <circle cx="36" cy="36" r="32" fill="url(#rimLight)" style="mix-blend-mode:screen;"/>
+  <circle cx="36" cy="36" r="22" fill="url(#runeGlow)" opacity="0.9"/>
+
+  <!-- Engraved intertwined loop (Copilot-like) -->
+  <g transform="translate(36 36)">
+    <path
+      d="M -7 0
+         C -7 -5, -3 -8.5, 0 -8.5
+           3 -8.5, 7 -5, 7 0
+           7 5, 3 8.5, 0 8.5
+           -3 8.5, -7 5, -7 0 Z
+         M -3 0
+         C -3 2.2, -1.5 3.8, 0 3.8
+           1.5 3.8, 3 2.2, 3 0
+           3 -2.2, 1.5 -3.8, 0 -3.8
+           -1.5 -3.8, -3 -2.2, -3 0 Z"
+      fill="none"
+      stroke="#f3ecff"
+      stroke-width="2.2"
+      stroke-linejoin="round"
+      filter="url(#cpInnerGlow)"
+    />
+  </g>
+</svg>
+<svg width="72" height="72" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="stoneBase" cx="50%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#f5f7ff"/>
+      <stop offset="45%" stop-color="#c7cfdd"/>
+      <stop offset="100%" stop-color="#8b93a3"/>
+    </radialGradient>
+
+    <radialGradient id="crystalVeins" cx="20%" cy="80%" r="70%">
+      <stop offset="0%" stop-color="#7be9ff" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#7b9dff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#2b3250" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="rimLight" cx="50%" cy="0%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Up-arrow electric blue rune glow -->
+    <radialGradient id="runeGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#a9f4ff"/>
+      <stop offset="40%" stop-color="#4bc3ff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="upInnerGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.2" result="blur"/>
+      <feColorMatrix in="blur" type="matrix"
+        values="0 0 0 0 0.85
+                0 0 0 0 0.96
+                0 0 0 0 1
+                0 0 0 0.9 0" result="glow"/>
+      <feBlend in="SourceGraphic" in2="glow" mode="screen"/>
+    </filter>
+  </defs>
+
+  <circle cx="36" cy="36" r="32" fill="url(#stoneBase)"/>
+  <circle cx="36" cy="36" r="30" fill="url(#crystalVeins)" style="mix-blend-mode:screen;"/>
+  <circle cx="36" cy="36" r="32" fill="url(#rimLight)" style="mix-blend-mode:screen;"/>
+  <circle cx="36" cy="36" r="22" fill="url(#runeGlow)" opacity="0.9"/>
+
+  <!-- Engraved up arrow -->
+  <g transform="translate(36 36)">
+    <path
+      d="M 0 -10 L -7  -3.2
+         M 0 -10 L  7  -3.2
+         M 0 -10 L  0  10"
+      fill="none"
+      stroke="#e9f9ff"
+      stroke-width="2.6"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      filter="url(#upInnerGlow)"
+    />
+  </g>
+</svg>
+
