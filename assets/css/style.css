@@ -11,6 +11,7 @@ body {
   margin: 0;
   padding: 0;
   letter-spacing: 0.4px;
+  background: #ffffff; /* adjust when magical background added */
 }
 
 /* Titles */
@@ -22,131 +23,17 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Tagline */
 .site-tagline {
-  font-family: 'Cinzel Decorative', serif;
   font-weight: 400;
   opacity: 0.9;
   letter-spacing: 0.6px;
 }
 
-/* Navigation */
+/* Navigation text */
 .site-nav a {
-  font-family: 'Cinzel Decorative', serif;
   font-weight: 700;
   letter-spacing: 1px;
 }
 
-/* -------------------------------------------------- */
-/* FOOTER — BACK TO TOP BUTTON ALIGNED RIGHT          */
-/* -------------------------------------------------- */
-
-.site-footer {
-  position: relative;
-  text-align: center;
-  padding: 2rem 0;
-}
-
-/* FLOATING BACK TO TOP — BOTTOM RIGHT */
-.footer-backtotop {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-}
-
-.footer-backtotop img {
-  width: 40px;
-  height: auto;
-  cursor: pointer;
-}
-
-/* SOCIAL ICONS */
-.footer-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.footer-icons img {
-  width: 32px;
-  height: auto;
-}
-
-.footer-text {
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-/* -------------------------------------------------- */
-/*  HOME PAGE CARDS                                   */
-/* -------------------------------------------------- */
-
-.home-cards {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin: 4rem auto;
-  flex-wrap: wrap;
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.08);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  padding: 2rem;
-  width: 280px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-}
-
-.card h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-.card p {
-  font-size: 1rem;
-  line-height: 1.5;
-}
-/* -------------------------------------------------- */
-/*  HEADER CROWN — SMALL, FIXED SIZE                  */
-/* -------------------------------------------------- */
-
-.header-crown-img {
-  width: 120px;        /* Adjust this number to taste */
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  padding-top: 0.5rem;
-}
-
-/* Keep header compact */
-.header-crown-wrapper {
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-/* -------------------------------------------------- */
-/*  HERO CROWN — LARGE, MAIN PAGE ELEMENT             */
-/* -------------------------------------------------- */
-
-.home-hero {
-  margin-top: 3rem;    /* Pushes hero crown down below header */
-  margin-bottom: 2rem;
-}
-
-.home-crown {
-  width: 260px;        /* Adjust this number to taste */
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
 /* -------------------------------------------------- */
 /* HEADER — STACKED WITH FLOATING TOGGLE              */
 /* -------------------------------------------------- */
@@ -211,7 +98,111 @@ h1, h2, h3, h4, h5, h6 {
 
 .site-nav a {
   text-decoration: none;
-  color: #000; /* change to #fff if dark background */
+  color: #000; /* change to #fff when dark mode background added */
   font-weight: 700;
   font-size: 1.1rem;
+}
+
+/* -------------------------------------------------- */
+/* HERO CROWN — LARGE, MAIN PAGE ELEMENT              */
+/* -------------------------------------------------- */
+
+.home-hero {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.home-crown {
+  width: 260px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* -------------------------------------------------- */
+/* HOME PAGE CARDS                                    */
+/* -------------------------------------------------- */
+
+.home-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 4rem auto;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.08);
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 280px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #000; /* readable on white background */
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* -------------------------------------------------- */
+/* FOOTER                                             */
+/* -------------------------------------------------- */
+
+.site-footer {
+  position: relative;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.footer-text {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  color: #000;
+}
+
+/* Social icons centred */
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-icons img {
+  width: 32px;
+  height: auto;
+}
+
+/* Back to top aligned with header toggle */
+.footer-backtotop {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.5rem;
+}
+
+.footer-backtotop img {
+  width: 40px;
+  height: auto;
+  cursor: pointer;
 }
