@@ -1,9 +1,22 @@
 /* Global font */
 * {
   font-family: 'Cinzel Decorative', serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Floating transparent header */
+/* Page layout */
+body {
+  background: #f5f5f5;
+  color: #222;
+  padding-bottom: 60px;
+}
+
+/* ------------------------------ */
+/* FLOATING TRANSPARENT HEADER    */
+/* ------------------------------ */
+
 .site-header {
   width: 100%;
   display: flex;
@@ -15,13 +28,14 @@
   width: 800px; /* H2 width */
   padding: 20px;
   text-align: center;
-  background: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.35);
   backdrop-filter: blur(10px);
   border-radius: 12px;
   position: relative;
+  border: 1px solid rgba(255,255,255,0.5);
 }
 
-/* Toggle */
+/* Toggle (non-functional for now) */
 .header-toggle {
   position: absolute;
   top: 15px;
@@ -33,7 +47,7 @@
   height: 36px;
 }
 
-/* Crown */
+/* Crown in header */
 .header-crown-img {
   width: 80px;
   margin-bottom: 10px;
@@ -48,13 +62,14 @@
 .site-tagline {
   margin: 0;
   opacity: 0.8;
+  margin-top: 4px;
 }
 
 /* Navigation */
 .site-nav ul {
   list-style: none;
   padding: 0;
-  margin: 15px 0 0;
+  margin-top: 15px;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -63,9 +78,13 @@
 .site-nav a {
   text-decoration: none;
   color: inherit;
+  font-size: 1rem;
 }
 
-/* Home hero crown */
+/* ------------------------------ */
+/* HOME PAGE HERO CROWN           */
+/* ------------------------------ */
+
 .home-hero {
   text-align: center;
   margin-top: 40px;
@@ -76,24 +95,33 @@
   height: 189px;
 }
 
-/* Footer */
+/* ------------------------------ */
+/* FLOATING TRANSPARENT FOOTER    */
+/* ------------------------------ */
+
 .site-footer {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 40px 0;
+  margin-top: 60px;
 }
 
 .footer-inner {
   width: 800px; /* H2 width */
   padding: 20px;
   text-align: center;
-  background: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.35);
   backdrop-filter: blur(10px);
   border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.5);
 }
 
 .footer-icons img {
   width: 32px;
   margin: 0 8px;
+  vertical-align: middle;
+}
+
+.footer-icons a {
+  text-decoration: none;
 }
