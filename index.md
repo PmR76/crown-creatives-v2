@@ -5,11 +5,12 @@ title: Home
 
 <!-- HERO CROWN -->
 <div class="home-hero">
-  <img src="assets/img/day-crown.svg" alt="Day Crown" class="home-crown">
+  <img src="/assets/img/head-crown.svg" alt="Header Crown" class="home-crown">
 </div>
 
 <!-- THREE MAGICAL CARDS -->
 <div class="home-cards">
+
   <div class="card">
     <h2>Artistry</h2>
     <p>Celebrating creative expression through design, craft, and storytelling.</p>
@@ -24,4 +25,5 @@ title: Home
     <h2>Imagination</h2>
     <p>Igniting wonder and innovation — where ideas transform into magical realities.</p>
   </div>
+
 </div>
