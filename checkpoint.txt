@@ -1,1 +1,3 @@
 Stable build checkpoint — April 2026
+Checkpoint created: 18 April 2026
+Status: Stable build with working icons, crowns, navigation, and relative_url paths.
