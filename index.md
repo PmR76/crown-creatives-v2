@@ -9,7 +9,7 @@ title: Home
 </div>
 
 <p class="home-welcome">
-  Welcome to the rebirth of Crown Creatives — a space where imagination becomes reality.
+  Welcome to Crown Creatives — a space where imagination becomes reality.
 </p>
 
 <!-- THREE MAGICAL CARDS -->
