@@ -316,21 +316,81 @@ html[data-theme="dark"] .hero-crown-day { opacity: 0; }
 html[data-theme="dark"] .hero-crown-night { opacity: 1; }
 
 /* ----------------------------------------------------
-   FOOTER GLOW
+   HEADER NAV ROW + MAGICAL NAVIGATION
 ---------------------------------------------------- */
 
-.site-footer {
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(0,0,0,0.08);
-  transition: background 0.6s ease, border-color 0.6s ease;
+.header-nav-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  margin-top: 12px;
 }
 
-html[data-theme="dark"] .site-footer {
-  background: rgba(10,10,25,0.55);
-  border-color: rgba(255,255,255,0.08);
+.site-nav ul {
+  display: flex;
+  gap: 26px;
 }
+
+.site-nav a {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+/* Magical underline */
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #ffd27f, #ff8ad4, #8ab8ff);
+  transition: width 0.4s ease;
+}
+
+.site-nav a:hover::after {
+  width: 100%;
+}
+
+/* ----------------------------------------------------
+   HERO SECTION — TITLE + TAGLINE
+---------------------------------------------------- */
+
+.hero-section {
+  text-align: center;
+  padding: 40px 0 20px;
+  position: relative;
+  z-index: 5;
+}
+
+.hero-title {
+  margin: 0;
+  margin-top: 200px;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.hero-tagline {
+  margin: 0;
+  margin-top: 6px;
+  font-size: 1.2rem;
+  opacity: 0.85;
+}
+
+/* ----------------------------------------------------
+   PAGE CONTENT AREA
+---------------------------------------------------- */
+
+.site-main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 5;
+}
+
 /* ----------------------------------------------------
    UNIFIED MAGICAL TOGGLE SYSTEM (Header + Footer)
 ---------------------------------------------------- */
@@ -344,12 +404,10 @@ html[data-theme="dark"] .site-footer {
   align-items: center;
   cursor: pointer;
 
-  /* Magical glass orb */
   background: rgba(255,255,255,0.25);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 
-  /* Soft day glow */
   box-shadow: 0 0 10px rgba(255,255,255,0.45);
 
   transition:
@@ -363,17 +421,15 @@ html[data-theme="dark"] .site-footer {
   box-shadow: 0 0 16px rgba(255,255,255,0.75);
 }
 
-/* Icon inside the toggle */
 .cc-toggle img,
 .cc-toggle span {
   width: 22px;
   height: 22px;
-  display: block;
   opacity: 0.9;
   transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
-/* ⭐ DARK MODE — Magical neon glow */
+/* Dark mode neon glow */
 html[data-theme="dark"] .cc-toggle {
   background: rgba(80,40,160,0.35);
   box-shadow:
@@ -386,4 +442,142 @@ html[data-theme="dark"] .cc-toggle span {
   filter: drop-shadow(0 0 6px rgba(180,140,255,0.9));
   opacity: 1;
 }
- 
+
+/* ----------------------------------------------------
+   MAGICAL INSPIRATIONAL TICKER
+---------------------------------------------------- */
+
+.cc-ticker-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding: 8px 0;
+  margin-top: 40px;
+}
+
+html[data-theme="dark"] .cc-ticker-wrapper {
+  background: rgba(20,20,40,0.25);
+  border-color: rgba(255,255,255,0.1);
+}
+
+.cc-ticker-track {
+  white-space: nowrap;
+  animation: tickerMove 28s linear infinite;
+}
+
+@keyframes tickerMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.cc-ticker-text {
+  font-size: 1rem;
+  opacity: 0.9;
+  padding-left: 100%;
+  font-family: 'Cinzel Decorative', serif;
+}
+
+/* ----------------------------------------------------
+   TRANSPARENT MAGICAL FOOTER (Matches Header)
+---------------------------------------------------- */
+
+.site-footer {
+  padding: 20px 0;
+  text-align: center;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid rgba(255,255,255,0.2);
+  margin-top: 0;
+}
+
+html[data-theme="dark"] .site-footer {
+  background: rgba(20,20,40,0.25);
+  border-color: rgba(255,255,255,0.1);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-text {
+  margin: 0;
+  opacity: 0.85;
+  font-family: 'Cinzel Decorative', serif;
+}
+
+/* ----------------------------------------------------
+   MAGICAL CIRCULAR SOCIAL ICONS
+---------------------------------------------------- */
+
+.footer-icons {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.footer-icon img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  padding: 6px;
+
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  box-shadow: 0 0 10px rgba(255,255,255,0.45);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.footer-icon img:hover {
+  transform: scale(1.12);
+  box-shadow: 0 0 16px rgba(255,255,255,0.75);
+}
+
+/* Dark mode neon aura */
+html[data-theme="dark"] .footer-icon img {
+  background: rgba(80,40,160,0.35);
+  box-shadow:
+    0 0 14px rgba(140,80,255,0.85),
+    0 0 24px rgba(0,180,255,0.65);
+}
+
+/* ----------------------------------------------------
+   RESPONSIVE RULES
+---------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .site-nav ul {
+    gap: 18px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-crown-wrapper {
+    width: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-nav ul {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .hero-title {
+    font-size: 1.7rem
