@@ -107,6 +107,28 @@ Contribution guidelines will be added as the platform expands.
 If you have ideas, inspiration, or creative suggestions, feel free to reach out.
 
 ---
+1. Your actual GitHub folder structure (confirmed)
+/assets/icons/
+facebook-magic.svg
+
+instagram-magic.svg
+
+email-magic.svg
+
+copilot-magic.svg
+
+sun-moon-magic.svg
+
+up-arrow-magic.svg
+
+/assets/img/
+head-crown.svg
+
+day-crown.svg
+
+night-crown.svg
+
+This is correct and exactly what we want.
 
 ## 📬 Connect With Us  
 Stay connected and explore more:
