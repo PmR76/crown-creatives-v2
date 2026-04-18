@@ -1,5 +1,3 @@
-/* /assets/js/theme-toggle.js — Production Ready */
-
 (function () {
   const STORAGE_KEY = 'cc-theme';
   const root = document.documentElement;
