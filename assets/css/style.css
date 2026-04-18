@@ -106,3 +106,71 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   margin: 0 auto;
 }
+/* -------------------------------------------------- */
+/* HEADER — STACKED WITH FLOATING TOGGLE              */
+/* -------------------------------------------------- */
+
+.site-header {
+  position: relative;
+  text-align: center;
+  padding-top: 3rem;
+}
+
+/* FLOATING TOGGLE — TOP RIGHT */
+.header-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.toggle-icon {
+  width: 40px;
+  height: auto;
+  cursor: pointer;
+}
+
+/* CROWN */
+.header-crown-wrapper {
+  margin-top: 0.5rem;
+}
+
+.header-crown-img {
+  width: 140px;
+  height: auto;
+}
+
+/* TITLE + TAGLINE */
+.header-title-block {
+  margin-top: 0.5rem;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 2.4rem;
+}
+
+.site-tagline {
+  margin: 0.3rem 0 1rem 0;
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+
+/* -------------------------------------------------- */
+/* HORIZONTAL NAVIGATION BAR                          */
+/* -------------------------------------------------- */
+
+.site-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: #000; /* change to #fff if dark background */
+  font-weight: 700;
+  font-size: 1.1rem;
+}
