@@ -5,24 +5,23 @@ layout: default
 <!-- ⭐ HERO SECTION -->
 <section class="hero-section">
 
-  <!-- Magical Background Engine (already in your default layout) -->
-  <!-- This layout only handles the hero crowns + title -->
+  <!-- Magical Background Engine lives in default.html -->
+  <!-- This layout handles the crowns + title only -->
 
-  <div class="hero-crown-wrapper">
+  <div class="home-crown-wrapper magic-glow">
     <img src="{{ '/assets/img/day-crown.svg' | relative_url }}"
-         class="hero-crown-img hero-crown-day"
+         class="home-crown-day"
          alt="Crown Creatives Day Crown">
 
     <img src="{{ '/assets/img/night-crown.svg' | relative_url }}"
-         class="hero-crown-img hero-crown-night"
+         class="home-crown-night"
          alt="Crown Creatives Night Crown">
   </div>
 
-  <h1 class="hero-title">{{ site.title }}</h1>
-  <p class="hero-tagline">{{ site.tagline }}</p>
+  <h1 class="hero-title magic-glow">{{ site.title }}</h1>
+  <p class="hero-tagline magic-glow">{{ site.tagline }}</p>
 
 </section>
-
 
 <!-- ⭐ GALLERY LANES / PAGE CONTENT -->
 <section class="gallery-section">
