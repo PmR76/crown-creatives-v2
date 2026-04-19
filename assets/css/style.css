@@ -88,7 +88,7 @@ body[data-theme="night"] {
   cursor: pointer;
 }
 
-/* Header crown (fixed, no magic) */
+/* Header crown (fixed, no hero magic) */
 .header-crown-wrapper {
   margin-top: 0.5rem;
   display: flex;
@@ -103,7 +103,7 @@ body[data-theme="night"] {
   z-index: 10;
 }
 
-/* Prevent magic from affecting navigation */
+/* Prevent hero magic from affecting navigation */
 .site-nav,
 .site-nav * {
   filter: none !important;
@@ -139,15 +139,22 @@ body[data-theme="night"] {
 /* HERO CROWN — MAGICALLY ISOLATED                    */
 /* -------------------------------------------------- */
 
+.hero-section {
+  position: relative;
+  padding-top: 2rem;
+}
+
+/* Crown container */
 .hero-section .home-crown-wrapper {
   position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: -75px; /* 20mm upward lift */
+  margin-top: -75px; /* ~20mm upward lift */
   pointer-events: none;
 }
 
+/* Day & Night crowns (overlapped, 8s fade, parallax float) */
 .hero-section .home-crown-day,
 .hero-section .home-crown-night {
   position: absolute;
@@ -158,9 +165,10 @@ body[data-theme="night"] {
   height: auto;
   opacity: 1;
   transition: opacity 8s ease-in-out;
+  animation: crownFloat 14s ease-in-out infinite;
 }
 
-/* Fade logic */
+/* Fade logic: day vs night */
 body[data-theme="day"] .home-crown-night {
   opacity: 0;
 }
@@ -169,26 +177,46 @@ body[data-theme="night"] .home-crown-day {
   opacity: 0;
 }
 
+/* Subtle parallax float */
+@keyframes crownFloat {
+  0%   { transform: translateX(-50%) translateY(0); }
+  50%  { transform: translateX(-50%) translateY(-12px); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
+
 /* -------------------------------------------------- */
 /* HERO MAGIC — GLOW, SHIMMER, AURA                   */
 /* -------------------------------------------------- */
 
 .hero-section .magic-glow {
   position: relative;
-  filter:
-    drop-shadow(0 0 6px rgba(255, 255, 255, 0.6))
-    drop-shadow(0 0 12px rgba(255, 200, 255, 0.4))
-    drop-shadow(0 0 24px rgba(120, 180, 255, 0.3));
   animation: shimmerPulse 6s ease-in-out infinite;
 }
 
+/* Base shimmer pulse (shape of glow) */
 @keyframes shimmerPulse {
   0%   { filter: drop-shadow(0 0 6px rgba(255,255,255,0.6)); }
   50%  { filter: drop-shadow(0 0 18px rgba(255,220,255,0.8)); }
   100% { filter: drop-shadow(0 0 6px rgba(255,255,255,0.6)); }
 }
 
-/* Magical mist behind crown */
+/* Day glow — warm gold + rose aura */
+body[data-theme="day"] .hero-section .magic-glow {
+  filter:
+    drop-shadow(0 0 10px rgba(255, 220, 150, 0.7))
+    drop-shadow(0 0 22px rgba(255, 180, 120, 0.5))
+    drop-shadow(0 0 40px rgba(255, 160, 200, 0.35));
+}
+
+/* Night glow — icy blue + violet arcane energy */
+body[data-theme="night"] .hero-section .magic-glow {
+  filter:
+    drop-shadow(0 0 14px rgba(120, 200, 255, 0.9))
+    drop-shadow(0 0 28px rgba(160, 120, 255, 0.8))
+    drop-shadow(0 0 48px rgba(100, 80, 255, 0.6));
+}
+
+/* Soft magical mist behind crown — masks white edges */
 .hero-section .home-crown-wrapper::before {
   content: "";
   position: absolute;
@@ -199,12 +227,80 @@ body[data-theme="night"] .home-crown-day {
   transform: translate(-50%, -50%);
   background: radial-gradient(
     circle,
-    rgba(255,255,255,0.15) 0%,
-    rgba(255,255,255,0.05) 40%,
+    rgba(255,255,255,0.18) 0%,
+    rgba(255,255,255,0.08) 35%,
     rgba(255,255,255,0) 70%
   );
   filter: blur(40px);
   pointer-events: none;
+  z-index: 0;
+}
+
+/* -------------------------------------------------- */
+/* HERO BLOOM — SOFT CROWN AURA                       */
+/* -------------------------------------------------- */
+
+.hero-section .crown-bloom {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 900px;
+  height: 900px;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.25) 0%,
+    rgba(255,255,255,0.12) 30%,
+    rgba(255,255,255,0.05) 55%,
+    rgba(255,255,255,0) 80%
+  );
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* -------------------------------------------------- */
+/* HERO PARTICLES — DRIFTING MAGIC                    */
+/* -------------------------------------------------- */
+
+.hero-section .magic-particles {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 900px;
+  height: 900px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  overflow: visible;
+  z-index: 1;
+}
+
+.hero-section .magic-particles span {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, rgba(255,255,255,0.9), rgba(255,255,255,0));
+  border-radius: 50%;
+  animation: particleFloat 12s linear infinite;
+  opacity: 0.7;
+}
+
+/* Random-ish positions for particles */
+.hero-section .magic-particles span:nth-child(1)  { top: 70%; left: 20%; animation-delay: 0s; }
+.hero-section .magic-particles span:nth-child(2)  { top: 60%; left: 40%; animation-delay: 2s; }
+.hero-section .magic-particles span:nth-child(3)  { top: 65%; left: 60%; animation-delay: 4s; }
+.hero-section .magic-particles span:nth-child(4)  { top: 75%; left: 80%; animation-delay: 1s; }
+.hero-section .magic-particles span:nth-child(5)  { top: 80%; left: 30%; animation-delay: 3s; }
+.hero-section .magic-particles span:nth-child(6)  { top: 55%; left: 10%; animation-delay: 5s; }
+.hero-section .magic-particles span:nth-child(7)  { top: 50%; left: 50%; animation-delay: 6s; }
+hero-section .magic-particles span:nth-child(8)  { top: 68%; left: 70%; animation-delay: 7s; }
+.hero-section .magic-particles span:nth-child(9)  { top: 72%; left: 90%; animation-delay: 8s; }
+.hero-section .magic-particles span:nth-child(10) { top: 78%; left: 55%; animation-delay: 9s; }
+
+@keyframes particleFloat {
+  0%   { transform: translateY(0) translateX(0) scale(1);   opacity: 0.8; }
+  50%  { transform: translateY(-120px) translateX(20px) scale(1.2); opacity: 1; }
+  100% { transform: translateY(-240px) translateX(-20px) scale(0.8); opacity: 0; }
 }
 
 /* -------------------------------------------------- */
