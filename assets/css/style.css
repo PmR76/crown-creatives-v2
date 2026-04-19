@@ -64,7 +64,7 @@ body[data-theme="night"] {
 }
 
 /* -------------------------------------------------- */
-/* HEADER — STACKED WITH FLOATING TOGGLE              */
+/* HEADER — RESTORED + PROTECTED FROM HERO MAGIC      */
 /* -------------------------------------------------- */
 
 .site-header {
@@ -75,7 +75,7 @@ body[data-theme="night"] {
   color: inherit;
 }
 
-/* FLOATING TOGGLE — TOP RIGHT */
+/* Toggle */
 .header-toggle {
   position: absolute;
   top: 1rem;
@@ -88,11 +88,58 @@ body[data-theme="night"] {
   cursor: pointer;
 }
 
+/* Header crown (fixed, no magic) */
+.header-crown-wrapper {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.header-crown-img {
+  width: 126px;
+  height: auto;
+  filter: none !important;
+  position: relative;
+  z-index: 10;
+}
+
+/* Prevent magic from affecting navigation */
+.site-nav,
+.site-nav * {
+  filter: none !important;
+  animation: none !important;
+}
+
 /* -------------------------------------------------- */
-/* HERO CROWN — MAGICAL DAY/NIGHT TRANSITION          */
+/* HORIZONTAL NAVIGATION BAR                          */
 /* -------------------------------------------------- */
 
-.home-crown-wrapper {
+.site-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: opacity 0.3s ease;
+}
+
+.site-nav a:hover {
+  opacity: 0.7;
+}
+
+/* -------------------------------------------------- */
+/* HERO CROWN — MAGICALLY ISOLATED                    */
+/* -------------------------------------------------- */
+
+.hero-section .home-crown-wrapper {
   position: relative;
   width: 100%;
   display: flex;
@@ -101,8 +148,8 @@ body[data-theme="night"] {
   pointer-events: none;
 }
 
-.home-crown-day,
-.home-crown-night {
+.hero-section .home-crown-day,
+.hero-section .home-crown-night {
   position: absolute;
   top: 0;
   left: 50%;
@@ -111,24 +158,22 @@ body[data-theme="night"] {
   height: auto;
   opacity: 1;
   transition: opacity 8s ease-in-out;
-  filter: drop-shadow(0 0 12px rgba(255,255,255,0.4));
 }
 
-/* NIGHT crown hidden by default */
+/* Fade logic */
 body[data-theme="day"] .home-crown-night {
   opacity: 0;
 }
 
-/* DAY crown hidden in night mode */
 body[data-theme="night"] .home-crown-day {
   opacity: 0;
 }
 
 /* -------------------------------------------------- */
-/* MAGICAL GLOW + SHIMMER                             */
+/* HERO MAGIC — GLOW, SHIMMER, AURA                   */
 /* -------------------------------------------------- */
 
-.magic-glow {
+.hero-section .magic-glow {
   position: relative;
   filter:
     drop-shadow(0 0 6px rgba(255, 255, 255, 0.6))
@@ -143,8 +188,8 @@ body[data-theme="night"] .home-crown-day {
   100% { filter: drop-shadow(0 0 6px rgba(255,255,255,0.6)); }
 }
 
-/* Soft magical mist behind the crown */
-.home-crown-wrapper::before {
+/* Magical mist behind crown */
+.hero-section .home-crown-wrapper::before {
   content: "";
   position: absolute;
   top: 50%;
