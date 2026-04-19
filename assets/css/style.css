@@ -136,7 +136,7 @@ body[data-theme="night"] {
 }
 
 /* -------------------------------------------------- */
-/* HERO CROWN — MAGICALLY ISOLATED                    */
+/* HERO SECTION                                       */
 /* -------------------------------------------------- */
 
 .hero-section {
@@ -293,7 +293,7 @@ body[data-theme="night"] .hero-section .magic-glow {
 .hero-section .magic-particles span:nth-child(5)  { top: 80%; left: 30%; animation-delay: 3s; }
 .hero-section .magic-particles span:nth-child(6)  { top: 55%; left: 10%; animation-delay: 5s; }
 .hero-section .magic-particles span:nth-child(7)  { top: 50%; left: 50%; animation-delay: 6s; }
-hero-section .magic-particles span:nth-child(8)  { top: 68%; left: 70%; animation-delay: 7s; }
+.hero-section .magic-particles span:nth-child(8)  { top: 68%; left: 70%; animation-delay: 7s; }
 .hero-section .magic-particles span:nth-child(9)  { top: 72%; left: 90%; animation-delay: 8s; }
 .hero-section .magic-particles span:nth-child(10) { top: 78%; left: 55%; animation-delay: 9s; }
 
