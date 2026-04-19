@@ -88,108 +88,93 @@ body[data-theme="night"] {
   cursor: pointer;
 }
 
-/* CROWN */
-.header-crown-wrapper {
-  margin-top: 0.5rem;
-}
-
-.header-crown-img {
-  width: 126px;
-  height: auto;
-}
-
-/* TITLE + TAGLINE */
-.header-title-block {
-  margin-top: 0.5rem;
-}
-
-.site-title {
-  margin: 0;
-  font-size: 2.4rem;
-}
-
-.site-tagline {
-  margin: 0.3rem 0 1.2rem 0;
-  font-size: 1.1rem;
-  opacity: 0.85;
-}
-
 /* -------------------------------------------------- */
-/* HORIZONTAL NAVIGATION BAR                          */
+/* HERO CROWN — MAGICAL DAY/NIGHT TRANSITION          */
 /* -------------------------------------------------- */
 
-.site-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 1.5rem 0 0 0;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.site-nav a {
-  text-decoration: none;
-  color: inherit;
-  font-weight: 700;
-  font-size: 1.1rem;
-  transition: opacity 0.3s ease;
-}
-
-.site-nav a:hover {
-  opacity: 0.7;
-}
-
-/* -------------------------------------------------- */
-/* HERO CROWN — 2000px DAY/NIGHT TRANSITION           */
-/* -------------------------------------------------- */
-
-.home-hero {
-  margin-top: 3rem;
-  margin-bottom: 2rem;
-  position: relative;
-}
-
-/* Crown container */
 .home-crown-wrapper {
   position: relative;
   width: 100%;
-  max-width: 2000px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-top: -75px; /* 20mm upward lift */
+  pointer-events: none;
 }
 
-/* DAY crown */
-.home-crown-day {
-  width: 100%;
-  height: auto;
-  display: block;
+.home-crown-day,
+.home-crown-night {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+  width: 800px;
+  height: auto;
   opacity: 1;
   transition: opacity 8s ease-in-out;
+  filter: drop-shadow(0 0 12px rgba(255,255,255,0.4));
 }
 
-/* NIGHT crown */
-.home-crown-night {
-  width: 100%;
-  height: auto;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+/* NIGHT crown hidden by default */
+body[data-theme="day"] .home-crown-night {
   opacity: 0;
-  transition: opacity 8s ease-in-out;
 }
 
-/* When theme switches to night */
+/* DAY crown hidden in night mode */
 body[data-theme="night"] .home-crown-day {
   opacity: 0;
 }
 
-body[data-theme="night"] .home-crown-night {
-  opacity: 1;
+/* -------------------------------------------------- */
+/* MAGICAL GLOW + SHIMMER                             */
+/* -------------------------------------------------- */
+
+.magic-glow {
+  position: relative;
+  filter:
+    drop-shadow(0 0 6px rgba(255, 255, 255, 0.6))
+    drop-shadow(0 0 12px rgba(255, 200, 255, 0.4))
+    drop-shadow(0 0 24px rgba(120, 180, 255, 0.3));
+  animation: shimmerPulse 6s ease-in-out infinite;
+}
+
+@keyframes shimmerPulse {
+  0%   { filter: drop-shadow(0 0 6px rgba(255,255,255,0.6)); }
+  50%  { filter: drop-shadow(0 0 18px rgba(255,220,255,0.8)); }
+  100% { filter: drop-shadow(0 0 6px rgba(255,255,255,0.6)); }
+}
+
+/* Soft magical mist behind the crown */
+.home-crown-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 900px;
+  height: 900px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.15) 0%,
+    rgba(255,255,255,0.05) 40%,
+    rgba(255,255,255,0) 70%
+  );
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+/* -------------------------------------------------- */
+/* HERO TITLES                                        */
+/* -------------------------------------------------- */
+
+.hero-title {
+  font-size: 3rem;
+  margin-top: 1rem;
+}
+
+.hero-tagline {
+  font-size: 1.3rem;
+  opacity: 0.85;
+  margin-bottom: 2rem;
 }
 
 /* -------------------------------------------------- */
@@ -287,102 +272,3 @@ body[data-theme="night"] .card {
   height: auto;
   cursor: pointer;
 }
-
-/* -------------------------------------------------- */
-/* CROWN GLOW + SHIMMER — DAY/NIGHT REACTIVE          */
-/* -------------------------------------------------- */
-
-.header-crown-img,
-.home-crown-day,
-.home-crown-night {
-  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.4));
-  transition: filter 0.6s ease, opacity 0.6s ease;
-}
-
-/* DAY glow */
-body[data-theme="day"] .header-crown-img,
-body[data-theme="day"] .home-crown-day {
-  filter:
-    drop-shadow(0 0 10px rgba(255, 220, 150, 0.6))
-    drop-shadow(0 0 20px rgba(255, 200, 120, 0.4));
-  animation: dayShimmer 6s ease-in-out infinite;
-}
-
-@keyframes dayShimmer {
-  0% { opacity: 1; }
-  50% { opacity: 0.92; }
-  100% { opacity: 1; }
-}
-
-/* NIGHT glow */
-body[data-theme="night"] .header-crown-img,
-body[data-theme="night"] .home-crown-night {
-  filter:
-    drop-shadow(0 0 12px rgba(120, 200, 255, 0.9))
-    drop-shadow(0 0 28px rgba(160, 120, 255, 0.8))
-    drop-shadow(0 0 40px rgba(120, 80, 255, 0.6));
-  animation: nightPulse 4s ease-in-out infinite;
-}
-
-@keyframes nightPulse {
-  0% { opacity: 0.85; }
-  50% { opacity: 1; }
-  100% { opacity: 0.85; }
-}
-.home-crown-wrapper {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: -75px; /* ~20mm upward lift */
-    pointer-events: none;
-}
-.home-crown-day,
-.home-crown-night {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 800px;
-    height: auto;
-    opacity: 1;
-    transition: opacity 8s ease-in-out;
-    filter: drop-shadow(0 0 12px rgba(255,255,255,0.4));
-}
-body:not(.dark-mode) .home-crown-night {
-    opacity: 0;
-}
-body.dark-mode .home-crown-day {
-    opacity: 0;
-}
-.magic-glow {
-    position: relative;
-    filter:
-        drop-shadow(0 0 6px rgba(255, 255, 255, 0.6))
-        drop-shadow(0 0 12px rgba(255, 200, 255, 0.4))
-        drop-shadow(0 0 24px rgba(120, 180, 255, 0.3));
-    animation: shimmerPulse 6s ease-in-out infinite;
-}
-@keyframes shimmerPulse {
-    0%   { filter: drop-shadow(0 0 6px rgba(255,255,255,0.6)); }
-    50%  { filter: drop-shadow(0 0 18px rgba(255,220,255,0.8)); }
-    100% { filter: drop-shadow(0 0 6px rgba(255,255,255,0.6)); }
-}
-.home-crown-wrapper::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 900px;
-    height: 900px;
-    transform: translate(-50%, -50%);
-    background: radial-gradient(
-        circle,
-        rgba(255,255,255,0.15) 0%,
-        rgba(255,255,255,0.05) 40%,
-        rgba(255,255,255,0) 70%
-    );
-    filter: blur(40px);
-    pointer-events: none;
-}
-
