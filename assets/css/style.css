@@ -329,13 +329,60 @@ body[data-theme="night"] .home-crown-night {
   50% { opacity: 1; }
   100% { opacity: 0.85; }
 }
-<svg version="1.1" id="Layer_1"
-     xmlns="http://www.w3.org/2000/svg"
-     xmlns:xlink="http://www.w3.org/1999/xlink"
-     x="0px" y="0px"
-     width="900px"
-     height="900px"
-     viewBox="0 0 2000 2000"
-     xml:space="preserve">
-<path fill="#XXXXXX" opacity="1.000000" stroke="none"
-    d="
+.home-crown-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -75px; /* ~20mm upward lift */
+    pointer-events: none;
+}
+.home-crown-day,
+.home-crown-night {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: auto;
+    opacity: 1;
+    transition: opacity 8s ease-in-out;
+    filter: drop-shadow(0 0 12px rgba(255,255,255,0.4));
+}
+body:not(.dark-mode) .home-crown-night {
+    opacity: 0;
+}
+body.dark-mode .home-crown-day {
+    opacity: 0;
+}
+.magic-glow {
+    position: relative;
+    filter:
+        drop-shadow(0 0 6px rgba(255, 255, 255, 0.6))
+        drop-shadow(0 0 12px rgba(255, 200, 255, 0.4))
+        drop-shadow(0 0 24px rgba(120, 180, 255, 0.3));
+    animation: shimmerPulse 6s ease-in-out infinite;
+}
+@keyframes shimmerPulse {
+    0%   { filter: drop-shadow(0 0 6px rgba(255,255,255,0.6)); }
+    50%  { filter: drop-shadow(0 0 18px rgba(255,220,255,0.8)); }
+    100% { filter: drop-shadow(0 0 6px rgba(255,255,255,0.6)); }
+}
+.home-crown-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 900px;
+    height: 900px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+        circle,
+        rgba(255,255,255,0.15) 0%,
+        rgba(255,255,255,0.05) 40%,
+        rgba(255,255,255,0) 70%
+    );
+    filter: blur(40px);
+    pointer-events: none;
+}
+
