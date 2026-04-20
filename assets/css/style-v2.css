@@ -275,3 +275,34 @@ body[data-theme="night"] .card {
   position: relative;
   z-index: 10;
 }
+.hero-section {
+  position: relative;
+  padding-top: 2rem;
+}
+
+/* Hero crown container */
+.home-crown-wrapper {
+  position: relative;
+  width: 260px;
+  margin: 0 auto;
+}
+
+/* Day & night hero crowns */
+.home-crown {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 8s ease-in-out;
+  pointer-events: none;
+}
+
+body[data-theme="day"] .home-crown-day {
+  opacity: 1;
+}
+
+body[data-theme="night"] .home-crown-night {
+  opacity: 1;
+}
