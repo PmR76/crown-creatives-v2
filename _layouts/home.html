@@ -8,12 +8,21 @@
   <!-- HEADER -->
   {% include header.html %}
 
-  <!-- MAIN CONTENT -->
+  <!-- HERO CROWN (centre, protected space) -->
+  <section class="home-hero">
+    <img 
+      src="{{ '/assets/img/day-crown.svg' | relative_url }}" 
+      alt="Day Crown" 
+      class="home-crown" 
+      id="crown-img">
+  </section>
+
+  <!-- MAIN CONTENT (CARDS) -->
   <main class="site-content">
     {{ content }}
   </main>
 
-  <!-- HERO GALLERY LANES (HOME PAGE ONLY) -->
+  <!-- HERO GALLERY LANES (LEFT + RIGHT ONLY) -->
   <div class="hero-gallery">
     <div class="gallery-lane gallery-left"></div>
     <div class="gallery-lane gallery-right"></div>
