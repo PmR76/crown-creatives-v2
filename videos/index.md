@@ -3,10 +3,16 @@ layout: default
 title: Videos
 ---
 
-<h1>Videos</h1>
+<section class="page-section">
 
-<p>
-A growing archive of video content, behind‑the‑scenes moments, creative breakdowns, and visual storytelling.
-</p>
+  <h1>Videos</h1>
 
-<p>Video gallery coming soon.</p>
+  <p>
+    A growing archive of video content, behind‑the‑scenes moments, creative breakdowns, and visual storytelling.
+  </p>
+
+  <p>
+    Video gallery coming soon.
+  </p>
+
+</section>
