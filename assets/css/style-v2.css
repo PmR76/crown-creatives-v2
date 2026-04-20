@@ -326,3 +326,54 @@ body[data-theme="night"] .card {
     crownShimmer 8s ease-in-out infinite;
   filter: drop-shadow(0 0 8px rgba(180, 140, 255, 0.8));
 }
+/* -------------------------------------------------- */
+/* CROWN GLOW + SHIMMER ANIMATIONS                    */
+/* -------------------------------------------------- */
+
+/* Soft pulsing glow */
+@keyframes crownGlowPulse {
+  0%   { filter: drop-shadow(0 0 4px rgba(255, 220, 150, 0.4)); }
+  50%  { filter: drop-shadow(0 0 12px rgba(255, 220, 150, 0.9)); }
+  100% { filter: drop-shadow(0 0 4px rgba(255, 220, 150, 0.4)); }
+}
+
+/* Gentle shimmer flicker */
+@keyframes crownShimmer {
+  0%   { opacity: 0.85; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.85; }
+}
+
+/* -------------------------------------------------- */
+/* HEADER CROWN — ALWAYS GOLD SHIMMER                 */
+/* -------------------------------------------------- */
+
+.header-crown-img {
+  animation:
+    crownGlowPulse 6s ease-in-out infinite,
+    crownShimmer 8s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px rgba(255, 220, 150, 0.6));
+  pointer-events: none;
+}
+
+/* -------------------------------------------------- */
+/* HOMEPAGE CROWNS — THEME-AWARE MAGIC                */
+/* -------------------------------------------------- */
+
+/* DAY CROWN — warm golden glow */
+.home-crown-day {
+  animation:
+    crownGlowPulse 6s ease-in-out infinite,
+    crownShimmer 8s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px rgba(255, 220, 150, 0.6));
+  pointer-events: none;
+}
+
+/* NIGHT CROWN — cool violet glow */
+.home-crown-night {
+  animation:
+    crownGlowPulse 6s ease-in-out infinite,
+    crownShimmer 8s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(180, 140, 255, 0.8));
+  pointer-events: none;
+}
