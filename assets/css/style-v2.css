@@ -11,6 +11,7 @@ body {
   padding: 0;
   letter-spacing: 0.4px;
   transition: background 0.6s ease, color 0.6s ease;
+  position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -36,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
 
 :root {
   --bg-day: radial-gradient(circle at top, #ffe9b8 0%, #f7c6ff 40%, #2b2c5f 100%);
-  --bg-night: radial-gradient(circle at top, #0b1024 0%, #2b2c5f 40%, #05030b 100%);
+  --bg-night: radial-gradient(circle at top, #05030b 0%, #151533 35%, #020008 100%);
 
   --text-day: #1b1230;
   --text-night: #f5ecff;
@@ -168,7 +169,29 @@ body[data-theme="night"] .crown-night { opacity: 1; }
   padding-top: 3rem;
   padding-bottom: 3rem;
   min-height: 640px;
+  overflow: visible;
 }
+
+/* Night sky — full fantasy sky behind hero (night only) */
+body[data-theme="night"] .hero-section::before {
+  content: "";
+  position: absolute;
+  inset: -10%;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.35) 0, transparent 45%),
+    radial-gradient(circle at 80% 25%, rgba(190, 160, 255, 0.4) 0, transparent 50%),
+    radial-gradient(circle at 30% 80%, rgba(255, 200, 220, 0.25) 0, transparent 55%),
+    radial-gradient(circle at 70% 75%, rgba(120, 180, 255, 0.3) 0, transparent 55%),
+    radial-gradient(circle at 10% 60%, rgba(255, 255, 255, 0.18) 0, transparent 50%);
+  opacity: 0.55;
+  mix-blend-mode: screen;
+}
+
+/* -------------------------------------------------- */
+/* HERO CROWNS WRAPPER                                */
+/* -------------------------------------------------- */
 
 .home-crown-wrapper {
   position: relative;
@@ -178,6 +201,7 @@ body[data-theme="night"] .crown-night { opacity: 1; }
   margin-top: -20px;
 }
 
+/* base crown image */
 .home-crown {
   position: absolute;
   top: 0;
@@ -287,96 +311,50 @@ body[data-theme="night"] .card {
   height: auto;
   cursor: pointer;
 }
+
 /* -------------------------------------------------- */
-/* CROWN GLOW + SHIMMER ANIMATIONS                    */
+/* CROWN GLOW + SHIMMER BASE                          */
 /* -------------------------------------------------- */
 
 @keyframes crownGlowPulse {
   0%   { filter: drop-shadow(0 0 4px rgba(255, 220, 150, 0.4)); }
-  50%  { filter: drop-shadow(0 0 12px rgba(255, 220, 150, 0.9)); }
+  50%  { filter: drop-shadow(0 0 14px rgba(255, 220, 150, 1)); }
   100% { filter: drop-shadow(0 0 4px rgba(255, 220, 150, 0.4)); }
 }
 
 @keyframes crownShimmer {
-  0%   { opacity: 0.85; }
+  0%   { opacity: 0.8; }
   50%  { opacity: 1; }
-  100% { opacity: 0.85; }
+  100% { opacity: 0.8; }
 }
 
 /* HEADER CROWN — ALWAYS GOLD SHIMMER */
 .header-crown-img {
   animation:
     crownGlowPulse 6s ease-in-out infinite,
-    crownShimmer 8s ease-in-out infinite;
-  filter: drop-shadow(0 0 6px rgba(255, 220, 150, 0.6));
+    crownShimmer 7s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px rgba(255, 220, 150, 0.7));
+  pointer-events: none;
 }
 
 /* DAY CROWN — WARM GOLD */
 .home-crown-day {
   animation:
     crownGlowPulse 6s ease-in-out infinite,
-    crownShimmer 8s ease-in-out infinite;
-  filter: drop-shadow(0 0 6px rgba(255, 220, 150, 0.6));
+    crownShimmer 7s ease-in-out infinite;
+  filter: drop-shadow(0 0 7px rgba(255, 220, 150, 0.8));
+  pointer-events: none;
 }
 
 /* NIGHT CROWN — COOL VIOLET */
 .home-crown-night {
   animation:
     crownGlowPulse 6s ease-in-out infinite,
-    crownShimmer 8s ease-in-out infinite;
-  filter: drop-shadow(0 0 8px rgba(180, 140, 255, 0.8));
-}
-/* -------------------------------------------------- */
-/* CROWN GLOW + SHIMMER ANIMATIONS                    */
-/* -------------------------------------------------- */
-
-/* Soft pulsing glow */
-@keyframes crownGlowPulse {
-  0%   { filter: drop-shadow(0 0 4px rgba(255, 220, 150, 0.4)); }
-  50%  { filter: drop-shadow(0 0 12px rgba(255, 220, 150, 0.9)); }
-  100% { filter: drop-shadow(0 0 4px rgba(255, 220, 150, 0.4)); }
-}
-
-/* Gentle shimmer flicker */
-@keyframes crownShimmer {
-  0%   { opacity: 0.85; }
-  50%  { opacity: 1; }
-  100% { opacity: 0.85; }
-}
-
-/* -------------------------------------------------- */
-/* HEADER CROWN — ALWAYS GOLD SHIMMER                 */
-/* -------------------------------------------------- */
-
-.header-crown-img {
-  animation:
-    crownGlowPulse 6s ease-in-out infinite,
-    crownShimmer 8s ease-in-out infinite;
-  filter: drop-shadow(0 0 6px rgba(255, 220, 150, 0.6));
+    crownShimmer 7s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(180, 140, 255, 0.95));
   pointer-events: none;
 }
 
-/* -------------------------------------------------- */
-/* HOMEPAGE CROWNS — THEME-AWARE MAGIC                */
-/* -------------------------------------------------- */
-
-/* DAY CROWN — warm golden glow */
-.home-crown-day {
-  animation:
-    crownGlowPulse 6s ease-in-out infinite,
-    crownShimmer 8s ease-in-out infinite;
-  filter: drop-shadow(0 0 6px rgba(255, 220, 150, 0.6));
-  pointer-events: none;
-}
-
-/* NIGHT CROWN — cool violet glow */
-.home-crown-night {
-  animation:
-    crownGlowPulse 6s ease-in-out infinite,
-    crownShimmer 8s ease-in-out infinite;
-  filter: drop-shadow(0 0 8px rgba(180, 140, 255, 0.8));
-  pointer-events: none;
-}
 /* -------------------------------------------------- */
 /* MAGICAL MOTION SYSTEM — ELEGANT & SUBTLE           */
 /* -------------------------------------------------- */
@@ -388,30 +366,23 @@ body[data-theme="night"] .card {
   100% { transform: scale(1); }
 }
 
-/* 2) Shimmer sweep (soft light pass) */
+/* 2) Shimmer sweep (soft light pass, slightly stronger) */
 @keyframes crownShimmerSweep {
   0%   { opacity: 0; transform: translateX(-30%) skewX(-10deg); }
-  40%  { opacity: 0.7; }
-  60%  { opacity: 0.7; }
+  35%  { opacity: 0.9; }
+  65%  { opacity: 0.9; }
   100% { opacity: 0; transform: translateX(130%) skewX(-10deg); }
 }
 
-/* 3) Particle drift (subtle stardust) */
-@keyframes crownParticlesDrift {
-  0%   { transform: translate3d(0, 0, 0); opacity: 0.4; }
-  50%  { transform: translate3d(10px, -12px, 0); opacity: 0.7; }
-  100% { transform: translate3d(-6px, -20px, 0); opacity: 0.4; }
-}
-
-/* 4) Aura pulse (soft atmospheric glow) */
+/* 3) Aura pulse (soft atmospheric glow) */
 @keyframes crownAuraPulse {
   0%   { box-shadow: 0 0 18px rgba(255, 230, 190, 0.25); }
-  50%  { box-shadow: 0 0 32px rgba(255, 230, 190, 0.45); }
+  50%  { box-shadow: 0 0 34px rgba(255, 230, 190, 0.5); }
   100% { box-shadow: 0 0 18px rgba(255, 230, 190, 0.25); }
 }
 
 /* -------------------------------------------------- */
-/* HEADER CROWN — BREATH + AURA + PARTICLES + SWEEP   */
+/* HEADER CROWN — BREATH + AURA + SWEEP               */
 /* -------------------------------------------------- */
 
 .header-crown-wrapper {
@@ -428,13 +399,13 @@ body[data-theme="night"] .card {
 .header-crown-img {
   animation:
     crownGlowPulse 6s ease-in-out infinite,
-    crownShimmer 8s ease-in-out infinite,
+    crownShimmer 7s ease-in-out infinite,
     crownBreath 18s ease-in-out infinite;
-  filter: drop-shadow(0 0 6px rgba(255, 220, 150, 0.6));
+  filter: drop-shadow(0 0 7px rgba(255, 220, 150, 0.85));
   transform-origin: center center;
 }
 
-/* shimmer sweep overlay */
+/* shimmer sweep overlay (no particles) */
 .header-crown-wrapper::after {
   content: "";
   position: absolute;
@@ -445,27 +416,12 @@ body[data-theme="night"] .card {
   background: linear-gradient(
     120deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.7) 50%,
+    rgba(255, 255, 255, 0.9) 50%,
     rgba(255, 255, 255, 0) 100%
   );
   opacity: 0;
   pointer-events: none;
-  animation: crownShimmerSweep 14s ease-in-out infinite;
-}
-
-/* particle layer */
-.header-crown-wrapper::before {
-  content: "";
-  position: absolute;
-  inset: -10px;
-  background-image:
-    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.35) 0, transparent 40%),
-    radial-gradient(circle at 70% 80%, rgba(255, 220, 180, 0.25) 0, transparent 45%),
-    radial-gradient(circle at 40% 70%, rgba(255, 255, 255, 0.18) 0, transparent 50%);
-  opacity: 0.45;
-  mix-blend-mode: screen;
-  pointer-events: none;
-  animation: crownParticlesDrift 26s ease-in-out infinite;
+  animation: crownShimmerSweep 13s ease-in-out infinite;
 }
 
 /* -------------------------------------------------- */
@@ -482,17 +438,17 @@ body[data-theme="night"] .card {
   animation: crownAuraPulse 18s ease-in-out infinite;
 }
 
-/* base crown styles already exist; we just add breathing */
+/* breathing + glow on crowns */
 .home-crown-day,
 .home-crown-night {
   animation:
     crownGlowPulse 6s ease-in-out infinite,
-    crownShimmer 8s ease-in-out infinite,
+    crownShimmer 7s ease-in-out infinite,
     crownBreath 22s ease-in-out infinite;
   transform-origin: center center;
 }
 
-/* shimmer sweep across homepage crowns */
+/* shimmer sweep across homepage crowns (no particles) */
 .home-crown-wrapper::after {
   content: "";
   position: absolute;
@@ -503,27 +459,12 @@ body[data-theme="night"] .card {
   background: linear-gradient(
     120deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.65) 50%,
+    rgba(255, 255, 255, 0.9) 50%,
     rgba(255, 255, 255, 0) 100%
   );
   opacity: 0;
   pointer-events: none;
-  animation: crownShimmerSweep 18s ease-in-out infinite;
-}
-
-/* particle drift around homepage crowns */
-.home-crown-wrapper::before {
-  content: "";
-  position: absolute;
-  inset: -20px;
-  background-image:
-    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.35) 0, transparent 45%),
-    radial-gradient(circle at 80% 75%, rgba(190, 160, 255, 0.3) 0, transparent 50%),
-    radial-gradient(circle at 40% 85%, rgba(255, 230, 200, 0.22) 0, transparent 55%);
-  opacity: 0.4;
-  mix-blend-mode: screen;
-  pointer-events: none;
-  animation: crownParticlesDrift 32s ease-in-out infinite;
+  animation: crownShimmerSweep 16s ease-in-out infinite;
 }
 
 /* -------------------------------------------------- */
