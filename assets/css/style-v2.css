@@ -1,0 +1,194 @@
+/* -------------------------------------------------- */
+/* GLOBAL FONT — CINZEL DECORATIVE                    */
+/* -------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
+
+body {
+  font-family: 'Cinzel Decorative', serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.4px;
+  transition: background 0.6s ease, color 0.6s ease;
+  position: relative;
+}
+
+/* -------------------------------------------------- */
+/* THEME ENGINE — DAY & NIGHT                         */
+/* -------------------------------------------------- */
+
+:root {
+  --bg-day: radial-gradient(circle at top, #ffe9b8 0%, #f7c6ff 40%, #2b2c5f 100%);
+  --bg-night: radial-gradient(circle at top, #05030b 0%, #151533 35%, #020008 100%);
+
+  --text-day: #1b1230;
+  --text-night: #f5ecff;
+}
+
+body[data-theme="day"] {
+  background: var(--bg-day);
+  color: var(--text-day);
+}
+
+body[data-theme="night"] {
+  background: var(--bg-night);
+  color: var(--text-night);
+}
+
+/* -------------------------------------------------- */
+/* HEADER                                              */
+/* -------------------------------------------------- */
+
+.site-header {
+  position: relative;
+  text-align: center;
+  padding-top: 3rem;
+  background: transparent;
+}
+
+.header-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.toggle-icon {
+  width: 48px;
+  height: auto;
+  cursor: pointer;
+}
+
+.header-crown-wrapper {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  max-height: 120px;
+}
+
+.header-crown {
+  position: relative;
+  width: 160px;
+  height: auto;
+}
+
+.crown {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 8s ease-in-out;
+  pointer-events: none;
+}
+
+body[data-theme="day"] .crown-day { opacity: 1; }
+body[data-theme="night"] .crown-night { opacity: 1; }
+
+/* -------------------------------------------------- */
+/* NAVIGATION                                          */
+/* -------------------------------------------------- */
+
+.site-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: opacity 0.3s ease;
+}
+
+.site-nav a:hover {
+  opacity: 0.7;
+}
+
+/* -------------------------------------------------- */
+/* HERO SECTION                                        */
+/* -------------------------------------------------- */
+
+.hero-section {
+  position: relative;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  min-height: 640px;
+}
+
+/* -------------------------------------------------- */
+/* HOME CROWNS                                         */
+/* -------------------------------------------------- */
+
+.home-crown-wrapper {
+  position: relative;
+  width: 800px;
+  height: 360px;
+  margin: 0 auto;
+  margin-top: -20px;
+}
+
+.home-crown {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 8s ease-in-out;
+  pointer-events: none;
+}
+
+body[data-theme="day"] .home-crown-day { opacity: 1; }
+body[data-theme="night"] .home-crown-night { opacity: 1; }
+
+/* -------------------------------------------------- */
+/* CARDS                                               */
+/* -------------------------------------------------- */
+
+.home-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 4rem auto 1.5rem auto;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 280px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+/* -------------------------------------------------- */
+/* FOOTER                                              */
+/* -------------------------------------------------- */
+
+.site-footer {
+  padding: 2rem 0 2.5rem 0;
+  text-align: center;
+  background: transparent;
+}
+
+.footer-icons img {
+  width: 48px;
+  height: auto;
+}
+
+.footer-backtotop img {
+  width: 48px;
+  cursor: pointer;
+}
