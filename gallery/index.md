@@ -3,8 +3,16 @@ layout: default
 title: Gallery
 ---
 
-<h1>Gallery</h1>
+<section class="page-section">
 
-<p>A curated collection of visual works, creative experiments, and artistic explorations.</p>
+  <h1>Gallery</h1>
 
-<p>Gallery layout coming soon.</p>
+  <p>
+    A curated collection of visual works, creative experiments, and artistic explorations.
+  </p>
+
+  <p>
+    Gallery layout coming soon.
+  </p>
+
+</section>
