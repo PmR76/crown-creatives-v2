@@ -3,10 +3,16 @@ layout: default
 title: Blog
 ---
 
-<h1>Blog</h1>
+<section class="page-section">
 
-<p>
-Thoughts, stories, updates, and creative insights from the Crown Creatives journey.
-</p>
+  <h1>Blog</h1>
 
-<p>Blog posts coming soon.</p>
+  <p>
+    Thoughts, stories, updates, and creative insights from the Crown Creatives journey.
+  </p>
+
+  <p>
+    Blog posts coming soon.
+  </p>
+
+</section>
