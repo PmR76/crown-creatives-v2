@@ -306,3 +306,36 @@ body[data-theme="day"] .home-crown-day {
 body[data-theme="night"] .home-crown-night {
   opacity: 1;
 }
+/* HERO SECTION */
+.hero-section {
+  position: relative;
+  padding-top: 2rem;
+}
+
+/* Hero crown container */
+.home-crown-wrapper {
+  position: relative;
+  width: 800px;        /* ← your required size */
+  margin: 0 auto;
+  margin-top: -40px;   /* ← lifts crown under navigation */
+}
+
+/* Day & night hero crowns */
+.home-crown {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;         /* ← ensures 800px crown displays correctly */
+  height: auto;
+  opacity: 0;
+  transition: opacity 8s ease-in-out;
+  pointer-events: none;
+}
+
+body[data-theme="day"] .home-crown-day {
+  opacity: 1;
+}
+
+body[data-theme="night"] .home-crown-night {
+  opacity: 1;
+}
