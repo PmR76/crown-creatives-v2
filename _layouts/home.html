@@ -2,36 +2,27 @@
 layout: default
 ---
 
-<div class="home-hero">
+<section class="hero-section">
 
-  <header class="site-header">
-    {% include header.html %}
-  </header>
-
-  <div class="hero-inner">
-
-    <!-- HERO CROWN (DAY + NIGHT STACKED FOR TRANSITION) -->
-    <div class="hero-crown">
-      <img src="{{ '/assets/img/day-crown.svg' | relative_url }}" class="crown crown-day" alt="Crown Creatives Day Crown">
-      <img src="{{ '/assets/img/night-crown.svg' | relative_url }}" class="crown crown-night" alt="Crown Creatives Night Crown">
-    </div>
-
-    <!-- HERO TAGLINE -->
-    <h1 class="hero-title">CROWN CREATIVES</h1>
-    <p class="hero-subtitle">ARTISTRY • RESILIENCE • IMAGINATION</p>
-
-    <!-- OPTIONAL HERO CTA OR CONTENT -->
-    <div class="hero-content">
-      {{ content }}
-    </div>
-
+  <!-- HERO CROWN (DAY/NIGHT FADE) -->
+  <div class="home-crown-wrapper">
+    <img src="{{ '/assets/img/day-crown.svg' | relative_url }}" 
+         class="home-crown home-crown-day" 
+         alt="Day Crown">
+    <img src="{{ '/assets/img/night-crown.svg' | relative_url }}" 
+         class="home-crown home-crown-night" 
+         alt="Night Crown">
   </div>
 
-</div>
+  <!-- HERO TITLE + TAGLINE -->
+  <h1 class="hero-title">CROWN CREATIVES</h1>
+  <p class="hero-tagline">IMAGINATION BECOMES REALITY</p>
 
-<!-- MAIN SECTIONS BELOW HERO -->
-<section class="home-sections">
-  {% include home-sections.html %}
+  <!-- HERO CONTENT (CARDS, ETC.) -->
+  <div class="home-cards">
+    {{ content }}
+  </div>
+
 </section>
 
 <footer class="site-footer">
