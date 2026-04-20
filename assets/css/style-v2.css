@@ -207,3 +207,40 @@ body[data-theme="night"] .home-crown-night { opacity: 1; }
   height: auto;
   cursor: pointer;
 }
+/* -------------------------------------------------- */
+/* FINAL FIX — FORCE TICKER TO SCROLL                 */
+/* -------------------------------------------------- */
+
+.inspiration-ticker {
+  width: 100%;
+  overflow: hidden;
+  margin: 2.5rem 0 1.5rem 0;
+  padding: 0.7rem 0;
+  position: relative;
+  background: rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+  white-space: nowrap;
+}
+
+.ticker-track {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+  animation: tickerScroll 35s linear infinite;
+  padding-left: 100%; /* ensures it starts off-screen */
+}
+
+.ticker-track span {
+  display: inline-block;
+  padding-right: 4rem;
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+}
+
+@keyframes tickerScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
