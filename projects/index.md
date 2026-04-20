@@ -3,10 +3,16 @@ layout: default
 title: Projects
 ---
 
-<h1>Projects</h1>
+<section class="page-section">
 
-<p>
-A showcase of ongoing and completed creative projects — from digital builds to artistic concepts.
-</p>
+  <h1>Projects</h1>
 
-<p>Project grid coming soon.</p>
+  <p>
+    A showcase of ongoing and completed creative projects — from digital builds to artistic concepts.
+  </p>
+
+  <p>
+    Project grid coming soon.
+  </p>
+
+</section>
