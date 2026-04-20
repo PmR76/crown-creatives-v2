@@ -437,3 +437,27 @@ body[data-theme="night"] .card {
 [data-theme="night"] .crown-night {
   opacity: 1;
 }
+.header-crown {
+  position: relative;
+  width: 160px; /* adjust if needed */
+  margin: 0 auto;
+}
+
+.crown {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 8s ease-in-out;
+  pointer-events: none;
+}
+
+[data-theme="day"] .crown-day {
+  opacity: 1;
+}
+
+[data-theme="night"] .crown-night {
+  opacity: 1;
+}
