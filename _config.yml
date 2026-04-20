@@ -16,6 +16,6 @@ include:
   - _pages
 
 # GitHub Pages–approved plugins only
-plugins:
+plugins: 
   - jekyll-feed
   - jekyll-seo-tag
