@@ -3,10 +3,16 @@ layout: default
 title: Podcasts
 ---
 
-<h1>Podcasts</h1>
+<section class="page-section">
 
-<p>
-Conversations, insights, and creative reflections — exploring imagination, resilience, and artistry.
-</p>
+  <h1>Podcasts</h1>
 
-<p>Podcast list coming soon.</p>
+  <p>
+    Conversations, insights, and creative reflections — exploring imagination, resilience, and artistry.
+  </p>
+
+  <p>
+    Podcast list coming soon.
+  </p>
+
+</section>
