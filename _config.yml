@@ -2,3 +2,7 @@ title: "Crown Creatives v2"
 description: "Clean rebuild of the Crown Creatives website."
 markdown: kramdown
 theme: minima
+version: 2
+git commit --allow-empty -m "Force rebuild layouts"
+git push
+
