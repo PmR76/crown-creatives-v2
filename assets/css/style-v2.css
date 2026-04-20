@@ -355,3 +355,19 @@ body[data-theme="night"] .home-crown-night {
   margin: 0 auto;
   margin-top: -20px;  /* adjust to sit under nav */
 }
+/* HERO SECTION — add vertical space so cards sit below crown */
+.hero-section {
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  min-height: 560px; /* ← this pushes cards down ~20mm */
+}
+
+/* CROWN WRAPPER — give it height so it occupies space */
+.home-crown-wrapper {
+  position: relative;
+  width: 800px;
+  height: 320px;      /* ← this creates the space under the nav */
+  margin: 0 auto;
+  margin-top: -20px;  /* adjust crown position under nav */
+}
