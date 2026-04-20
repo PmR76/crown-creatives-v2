@@ -8,6 +8,17 @@
   <!-- HEADER -->
   {% include header.html %}
 
+  <!-- OPTIONAL HERO CROWN (injected by home layout) -->
+  {% if page.show_hero_crown %}
+    <section class="home-hero">
+      <img 
+        src="{{ '/assets/img/day-crown.svg' | relative_url }}" 
+        alt="Day Crown" 
+        class="home-crown"
+        id="crown-img">
+    </section>
+  {% endif %}
+
   <!-- MAIN CONTENT -->
   <main class="site-content">
     {{ content }}
