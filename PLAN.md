@@ -12,7 +12,7 @@ magical images slowly appear and disapear within pre-determined gallery lanes.
 below. Second card Artistic Inspiration (ideas from other artists that have inspired us to create).Third card: ..........................Magical horizontal inspirational continuous ticker just above the footer space (on every page). Footer (transparent magical background - same size as the header) will be the same on every page. It will have the crown creatives copyright and social media links to
 Facebook:   www.facebook.com/people/Crown-Creatives/61556386467490/ Instigram: https://www.instagram.com/crown_creatives_uk/ and email: crowncreatives@outlook.com and copilot.
 Then in the right hand corner a toggle for back to top of the page. The toogles for social media, day/night toggle, back to top should look similar, magical and be seen in dark mode. In dark mode all text, toggles, navigation and ticker message will clearly glow providing clarity of message/icon.
-
+Always use inscape for a clean png/jpeg background removal and colour/black and white file conversion to svg. 
 copilot-magic.svg
 email-magic.svg
 facebook-magic.svg
