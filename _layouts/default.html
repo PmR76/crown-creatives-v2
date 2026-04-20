@@ -5,13 +5,7 @@
 
 <body id="top" data-theme="day">
 
-  <!-- ⭐ MAGICAL BACKGROUND ENGINE (particles removed) -->
-  <div class="cc-bg-magic-layer">
-    <div class="cc-bg-nebula"></div>
-    <div class="cc-bg-stars"></div>
-  </div>
-
-  <!-- HEADER INCLUDE -->
+  <!-- HEADER -->
   {% include header.html %}
 
   <!-- MAIN CONTENT -->
@@ -19,10 +13,10 @@
     {{ content }}
   </main>
 
-  <!-- FOOTER INCLUDE -->
+  <!-- FOOTER -->
   {% include footer.html %}
 
-  <!-- BACKGROUND + THEME ENGINE JS -->
+  <!-- THEME ENGINE -->
   <script src="{{ '/assets/js/magic.js' | relative_url }}"></script>
 
 </body>
