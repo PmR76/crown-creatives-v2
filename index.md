@@ -6,7 +6,7 @@ title: Home
 <!-- HERO CROWN -->
 <section class="home-hero">
   <img 
-    src="{{ '/assets/images/day-crown.svg' | relative_url }}" 
+    src="{{ '/assets/img/day-crown.svg' | relative_url }}" 
     alt="Day Crown" 
     class="home-crown" 
     id="crown-img">
