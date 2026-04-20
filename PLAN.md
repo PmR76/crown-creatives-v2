@@ -505,5 +505,5 @@ sun-moon-magic.svg:
     />
   </g>
 </svg>
-
-
+IMAGE GALLER HOME PAGE ONLY
+Next is we are going to create the hero gallery of images that appear either side of day/night-crown.svg in lanes that prevent drifting (same place) they can magicaly appear by random selection left and right of the day/night-crown.svg. This gallery can be accessed by admin and the gallery loaded without having to name indiuvidual images. Sanning engine will randomly pick up new images found in the gallery which has not been created yet. Home page only. 
