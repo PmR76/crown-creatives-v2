@@ -111,40 +111,22 @@ body[data-theme="night"] .crown-night { opacity: 1; }
 }
 
 /* -------------------------------------------------- */
-/* HERO SECTION                                        */
+/* HERO CROWN — FINAL PRODUCTION VERSION              */
 /* -------------------------------------------------- */
 
-.hero-section {
-  position: relative;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  min-height: 640px;
-}
-
-/* -------------------------------------------------- */
-/* HOME CROWNS                                         */
-/* -------------------------------------------------- */
-
-.home-crown-wrapper {
-  position: relative;
-  width: 800px;
-  height: 360px;
-  margin: 0 auto;
-  margin-top: -20px;
+.home-hero {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .home-crown {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  opacity: 0;
-  transition: opacity 8s ease-in-out;
+  width: 800px;
+  max-width: 90%;
+  height: auto;
+  opacity: 1;
   pointer-events: none;
 }
-
-body[data-theme="day"] .home-crown-day { opacity: 1; }
-body[data-theme="night"] .home-crown-night { opacity: 1; }
 
 /* -------------------------------------------------- */
 /* CARDS                                               */
@@ -192,23 +174,16 @@ body[data-theme="night"] .home-crown-night { opacity: 1; }
   width: 48px;
   cursor: pointer;
 }
-/* -------------------------------------------------- */
-/* FIX: BACK TO TOP BUTTON POSITION (BOTTOM RIGHT)     */
-/* -------------------------------------------------- */
 
+/* FIX: BACK TO TOP BUTTON POSITION */
 .footer-backtotop {
   position: absolute;
   right: 1rem;
   bottom: 0.5rem;
 }
 
-.footer-backtotop img {
-  width: 48px;
-  height: auto;
-  cursor: pointer;
-}
 /* -------------------------------------------------- */
-/* FINAL FIX — FORCE TICKER TO SCROLL                 */
+/* TICKER                                              */
 /* -------------------------------------------------- */
 
 .inspiration-ticker {
@@ -229,7 +204,7 @@ body[data-theme="night"] .home-crown-night { opacity: 1; }
   white-space: nowrap;
   will-change: transform;
   animation: tickerScroll 35s linear infinite;
-  padding-left: 100%; /* ensures it starts off-screen */
+  padding-left: 100%;
 }
 
 .ticker-track span {
@@ -244,15 +219,17 @@ body[data-theme="night"] .home-crown-night { opacity: 1; }
   0%   { transform: translateX(0); }
   100% { transform: translateX(-100%); }
 }
+
 /* -------------------------------------------------- */
-/* HERO GALLERY LANES (HOME PAGE ONLY)                */
+/* HERO GALLERY LANES — FINAL PRODUCTION VERSION      */
 /* -------------------------------------------------- */
 
 .hero-gallery {
   position: relative;
   width: 100%;
-  height: 360px; /* matches crown height */
-  margin-top: 1rem;
+  height: 360px;
+  margin: 2rem 0;
+  pointer-events: none;
 }
 
 .gallery-lane {
@@ -267,57 +244,13 @@ body[data-theme="night"] .home-crown-night { opacity: 1; }
 }
 
 .gallery-left {
-  left: calc(50% - 600px); /* left of crown */
-}
-
-.gallery-right {
-  right: calc(50% - 600px); /* right of crown */
-}
-
-.gallery-lane img {
-  max-width: 100%;
-  max-height: 100%;
-  opacity: 0;
-  transition: opacity 3s ease-in-out;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.25);
-}
-/* -------------------------------------------------- */
-/* HERO GALLERY LANES — FINAL PRODUCTION VERSION      */
-/* -------------------------------------------------- */
-
-/* The gallery container sits below the cards and above the ticker */
-.hero-gallery {
-  position: relative;
-  width: 100%;
-  height: 360px; /* matches crown visual height */
-  margin: 2rem 0;
-  pointer-events: none; /* ensures gallery never blocks crown or UI */
-}
-
-/* Each lane is a fixed vertical channel */
-.gallery-lane {
-  position: absolute;
-  top: 0;
-  width: 260px;       /* fixed lane width */
-  height: 100%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* LEFT lane — fixed distance from crown centre */
-.gallery-left {
   left: calc(50% - 600px);
 }
 
-/* RIGHT lane — fixed distance from crown centre */
 .gallery-right {
   right: calc(50% - 600px);
 }
 
-/* Images inside lanes */
 .gallery-lane img {
   max-width: 100%;
   max-height: 100%;
@@ -326,10 +259,43 @@ body[data-theme="night"] .home-crown-night { opacity: 1; }
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(255,255,255,0.25);
   object-fit: contain;
-  pointer-events: none; /* prevents accidental interaction */
+  pointer-events: none;
 }
 
-/* Optional: subtle glow for night mode */
+/* NIGHT MODE GLOW */
 body[data-theme="night"] .gallery-lane img {
   box-shadow: 0 0 25px rgba(180,150,255,0.35);
+}
+
+/* -------------------------------------------------- */
+/* SHIMMER EFFECT                                      */
+/* -------------------------------------------------- */
+
+.gallery-lane img {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-lane img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.35) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: skewX(-20deg);
+  animation: shimmer 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0%   { left: -150%; }
+  50%  { left: 150%; }
+  100% { left: 150%; }
 }
