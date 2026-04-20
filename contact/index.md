@@ -3,10 +3,20 @@ layout: default
 title: Contact
 ---
 
-<h1>Contact</h1>
+<section class="page-section">
 
-<p>For enquiries, collaborations, or creative discussions, feel free to reach out.</p>
+  <h1>Contact</h1>
 
-<p>Email: <a href="mailto:crowncreatives@outlook.com">crowncreatives@outlook.com</a></p>
+  <p>
+    For enquiries, collaborations, or creative discussions, feel free to reach out.
+  </p>
 
-<p>More contact options coming soon.</p>
+  <p>
+    Email: <a href="mailto:crowncreatives@outlook.com">crowncreatives@outlook.com</a>
+  </p>
+
+  <p>
+    More contact options coming soon.
+  </p>
+
+</section>
