@@ -371,3 +371,19 @@ body[data-theme="night"] .home-crown-night {
   margin: 0 auto;
   margin-top: -20px;  /* adjust crown position under nav */
 }
+/* HERO SECTION — increase vertical space */
+.hero-section {
+  position: relative;
+  padding-top: 3rem;
+  padding-bottom: 6rem;
+  min-height: 680px; /* ← increased from 560px */
+}
+
+/* CROWN WRAPPER — increase reserved height */
+.home-crown-wrapper {
+  position: relative;
+  width: 800px;
+  height: 380px;      /* ← increased from 320px */
+  margin: 0 auto;
+  margin-top: -10px;  /* adjust crown position under nav */
+}
