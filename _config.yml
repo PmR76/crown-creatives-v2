@@ -9,7 +9,7 @@ markdown: kramdown
 theme: minima
 
 # Force rebuild (increment this when GitHub Pages caches layouts)
-version: 4
+version: 5
 
 # Allow Jekyll to process custom folders
 include:
