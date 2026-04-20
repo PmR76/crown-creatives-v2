@@ -1,22 +1,36 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
 
-<section class="hero-section">
+  {% include head.html %}
 
-  <!-- HERO CROWN (DAY/NIGHT FADE) -->
-  <div class="home-crown-wrapper">
-    <img src="{{ '/assets/img/day-crown.svg' | relative_url }}" 
-         class="home-crown home-crown-day" 
-         alt="Day Crown">
-    <img src="{{ '/assets/img/night-crown.svg' | relative_url }}" 
-         class="home-crown home-crown-night" 
-         alt="Night Crown">
-  </div>
+<body class="home" id="top" data-theme="day">
 
-  <!-- HERO CONTENT (CARDS, ETC.) -->
-  <div class="home-cards">
+  <!-- HEADER -->
+  {% include header.html %}
+
+  <!-- MAIN CONTENT -->
+  <main class="site-content">
     {{ content }}
+  </main>
+
+  <!-- HERO GALLERY LANES (HOME PAGE ONLY) -->
+  <div class="hero-gallery">
+    <div class="gallery-lane gallery-left"></div>
+    <div class="gallery-lane gallery-right"></div>
   </div>
 
-</section>
+  <!-- MAGICAL INSPIRATIONAL TICKER -->
+  <div class="inspiration-ticker">
+    <div class="ticker-track">
+      <span>✨ Imagination becomes reality ✨ Creativity is your superpower ✨ Every idea is a spark of magic ✨ Artistry transforms the ordinary ✨ Believe boldly — create fearlessly ✨</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  {% include footer.html %}
+
+  <!-- THEME ENGINE + HERO GALLERY ENGINE -->
+  <script src="{{ '/assets/js/magic.js' | relative_url }}"></script>
+
+</body>
+</html>
