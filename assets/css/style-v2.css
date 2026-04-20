@@ -1,5 +1,5 @@
 /* -------------------------------------------------- */
-/*  GLOBAL FONT — CINZEL DECORATIVE                   */
+/* GLOBAL FONT — CINZEL DECORATIVE                    */
 /* -------------------------------------------------- */
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
@@ -13,26 +13,22 @@ body {
   transition: background 0.6s ease, color 0.6s ease;
 }
 
-/* Titles */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Cinzel Decorative', serif;
   font-weight: 700;
   letter-spacing: 1px;
 }
 
-/* Tagline */
 .site-tagline {
   font-weight: 400;
   opacity: 0.9;
   letter-spacing: 0.6px;
 }
 
-/* Navigation text */
 .site-nav a {
   font-weight: 700;
   letter-spacing: 1px;
 }
-
 /* -------------------------------------------------- */
 /* THEME ENGINE — DAY & NIGHT VARIABLES               */
 /* -------------------------------------------------- */
@@ -51,18 +47,15 @@ h1, h2, h3, h4, h5, h6 {
   --card-border-night: rgba(150, 120, 255, 0.7);
 }
 
-/* DAY THEME */
 body[data-theme="day"] {
   background: var(--bg-day);
   color: var(--text-day);
 }
 
-/* NIGHT THEME */
 body[data-theme="night"] {
   background: var(--bg-night);
   color: var(--text-night);
 }
-
 /* -------------------------------------------------- */
 /* HEADER — RESTORED + PROTECTED                      */
 /* -------------------------------------------------- */
@@ -75,7 +68,6 @@ body[data-theme="night"] {
   color: inherit;
 }
 
-/* Toggle */
 .header-toggle {
   position: absolute;
   top: 1rem;
@@ -88,7 +80,6 @@ body[data-theme="night"] {
   cursor: pointer;
 }
 
-/* HEADER CROWN — DAY/NIGHT FADE */
 .header-crown-wrapper {
   margin-top: 0.5rem;
   display: flex;
@@ -112,21 +103,14 @@ body[data-theme="night"] {
   pointer-events: none;
 }
 
-body[data-theme="day"] .crown-day {
-  opacity: 1;
-}
+body[data-theme="day"] .crown-day { opacity: 1; }
+body[data-theme="night"] .crown-night { opacity: 1; }
 
-body[data-theme="night"] .crown-night {
-  opacity: 1;
-}
-
-/* Prevent hero magic from affecting navigation */
 .site-nav,
 .site-nav * {
   filter: none !important;
   animation: none !important;
 }
-
 /* -------------------------------------------------- */
 /* HORIZONTAL NAVIGATION BAR                          */
 /* -------------------------------------------------- */
@@ -151,22 +135,40 @@ body[data-theme="night"] .crown-night {
 .site-nav a:hover {
   opacity: 0.7;
 }
-
 /* -------------------------------------------------- */
-/* HERO TITLES                                        */
+/* HERO SECTION — FINAL                               */
 /* -------------------------------------------------- */
 
-.hero-title {
-  font-size: 3rem;
-  margin-top: 1rem;
+.hero-section {
+  position: relative;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  min-height: 640px; /* Enough for 800px crown + cards */
 }
 
-.hero-tagline {
-  font-size: 1.3rem;
-  opacity: 0.85;
-  margin-bottom: 2rem;
+/* HERO CROWN WRAPPER — FINAL */
+.home-crown-wrapper {
+  position: relative;
+  width: 800px;
+  height: 360px; /* Crown space */
+  margin: 0 auto;
+  margin-top: -20px; /* Tucks crown under nav */
 }
 
+/* HERO CROWN IMAGES */
+.home-crown {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 8s ease-in-out;
+  pointer-events: none;
+}
+
+body[data-theme="day"] .home-crown-day { opacity: 1; }
+body[data-theme="night"] .home-crown-night { opacity: 1; }
 /* -------------------------------------------------- */
 /* HOME PAGE CARDS                                    */
 /* -------------------------------------------------- */
@@ -175,7 +177,7 @@ body[data-theme="night"] .crown-night {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin: 4rem auto;
+  margin: 3rem auto 1.5rem auto; /* Tightened bottom gap */
   flex-wrap: wrap;
 }
 
@@ -214,14 +216,13 @@ body[data-theme="night"] .card {
   font-size: 1rem;
   line-height: 1.5;
 }
-
 /* -------------------------------------------------- */
 /* FOOTER                                             */
 /* -------------------------------------------------- */
 
 .site-footer {
   position: relative;
-  padding: 2rem 0;
+  padding: 2rem 0 2.5rem 0;
   text-align: center;
   background: transparent;
   color: inherit;
@@ -261,129 +262,4 @@ body[data-theme="night"] .card {
   width: 48px;
   height: auto;
   cursor: pointer;
-}
-.header-crown-wrapper {
-  margin-top: 0.5rem;
-  display: flex;
-  justify-content: center;
-}
-
-.header-crown-img {
-  width: 126px;
-  height: auto;
-  filter: none;
-  position: relative;
-  z-index: 10;
-}
-.hero-section {
-  position: relative;
-  padding-top: 2rem;
-}
-
-/* Hero crown container */
-.home-crown-wrapper {
-  position: relative;
-  width: 260px;
-  margin: 0 auto;
-}
-
-/* Day & night hero crowns */
-.home-crown {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  opacity: 0;
-  transition: opacity 8s ease-in-out;
-  pointer-events: none;
-}
-
-body[data-theme="day"] .home-crown-day {
-  opacity: 1;
-}
-
-body[data-theme="night"] .home-crown-night {
-  opacity: 1;
-}
-/* HERO SECTION */
-.hero-section {
-  position: relative;
-  padding-top: 2rem;
-}
-
-/* Hero crown container */
-.home-crown-wrapper {
-  position: relative;
-  width: 800px;        /* ← your required size */
-  margin: 0 auto;
-  margin-top: -40px;   /* ← lifts crown under navigation */
-}
-
-/* Day & night hero crowns */
-.home-crown {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;         /* ← ensures 800px crown displays correctly */
-  height: auto;
-  opacity: 0;
-  transition: opacity 8s ease-in-out;
-  pointer-events: none;
-}
-
-body[data-theme="day"] .home-crown-day {
-  opacity: 1;
-}
-
-body[data-theme="night"] .home-crown-night {
-  opacity: 1;
-}
-/* HERO SECTION MUST HAVE SPACE FOR THE 800px CROWN */
-.hero-section {
-  position: relative;
-  padding-top: 2rem;
-  padding-bottom: 4rem;
-  min-height: 520px; /* ← this is the key */
-}
-
-/* CROWN WRAPPER MUST HAVE HEIGHT TOO */
-.home-crown-wrapper {
-  position: relative;
-  width: 800px;
-  height: 300px;      /* ← this creates the space */
-  margin: 0 auto;
-  margin-top: -20px;  /* adjust to sit under nav */
-}
-/* HERO SECTION — add vertical space so cards sit below crown */
-.hero-section {
-  position: relative;
-  padding-top: 2rem;
-  padding-bottom: 4rem;
-  min-height: 560px; /* ← this pushes cards down ~20mm */
-}
-
-/* CROWN WRAPPER — give it height so it occupies space */
-.home-crown-wrapper {
-  position: relative;
-  width: 800px;
-  height: 320px;      /* ← this creates the space under the nav */
-  margin: 0 auto;
-  margin-top: -20px;  /* adjust crown position under nav */
-}
-/* HERO SECTION — increase vertical space */
-.hero-section {
-  position: relative;
-  padding-top: 3rem;
-  padding-bottom: 6rem;
-  min-height: 680px; /* ← increased from 560px */
-}
-
-/* CROWN WRAPPER — increase reserved height */
-.home-crown-wrapper {
-  position: relative;
-  width: 800px;
-  height: 380px;      /* ← increased from 320px */
-  margin: 0 auto;
-  margin-top: -10px;  /* adjust crown position under nav */
 }
