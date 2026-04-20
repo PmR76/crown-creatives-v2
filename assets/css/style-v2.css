@@ -59,6 +59,23 @@ body[data-theme="night"] {
 }
 
 /* -------------------------------------------------- */
+/* FIX FOR MYSTERIOUS LINE (SITE CONTENT WRAPPER)     */
+/* -------------------------------------------------- */
+
+.site-content {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.site-content::before,
+.site-content::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* -------------------------------------------------- */
 /* HEADER — RESTORED + PROTECTED                      */
 /* -------------------------------------------------- */
 
@@ -86,13 +103,13 @@ body[data-theme="night"] {
   margin-top: 0.5rem;
   display: flex;
   justify-content: center;
-  max-height: 120px; /* NEW — prevents glow from enlarging header */
+  max-height: 120px;
 }
 
 .header-crown {
   position: relative;
   width: 160px;
-  max-width: 160px; /* NEW — locks header crown size */
+  max-width: 160px;
   height: auto;
   overflow: visible;
 }
@@ -150,19 +167,17 @@ body[data-theme="night"] .crown-night { opacity: 1; }
   position: relative;
   padding-top: 3rem;
   padding-bottom: 3rem;
-  min-height: 640px; /* Enough for 800px crown + cards */
+  min-height: 640px;
 }
 
-/* HERO CROWN WRAPPER — FINAL */
 .home-crown-wrapper {
   position: relative;
   width: 800px;
-  height: 360px; /* Crown space */
+  height: 360px;
   margin: 0 auto;
-  margin-top: -20px; /* Tucks crown under nav */
+  margin-top: -20px;
 }
 
-/* HERO CROWN IMAGES */
 .home-crown {
   position: absolute;
   top: 0;
@@ -185,7 +200,7 @@ body[data-theme="night"] .home-crown-night { opacity: 1; }
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin: 4rem auto 1.5rem auto; /* NEW — moved cards down slightly */
+  margin: 4rem auto 1.5rem auto;
   flex-wrap: wrap;
 }
 
