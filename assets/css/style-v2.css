@@ -192,3 +192,18 @@ body[data-theme="night"] .home-crown-night { opacity: 1; }
   width: 48px;
   cursor: pointer;
 }
+/* -------------------------------------------------- */
+/* FIX: BACK TO TOP BUTTON POSITION (BOTTOM RIGHT)     */
+/* -------------------------------------------------- */
+
+.footer-backtotop {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.5rem;
+}
+
+.footer-backtotop img {
+  width: 48px;
+  height: auto;
+  cursor: pointer;
+}
