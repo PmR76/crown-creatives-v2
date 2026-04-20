@@ -3,16 +3,6 @@ layout: home
 title: Home
 ---
 
-<!-- HERO CROWN -->
-<section class="home-hero">
-  <img 
-    src="{{ '/assets/img/day-crown.svg' | relative_url }}" 
-    alt="Day Crown" 
-    class="home-crown" 
-    id="crown-img">
-</section>
-
-<!-- THREE MAGICAL CARDS -->
 <section class="home-cards">
 
   <div class="card">
