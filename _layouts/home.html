@@ -2,42 +2,38 @@
 layout: default
 ---
 
-<!-- ⭐ HOMEPAGE WRAPPER -->
-<div class="home-wrapper">
+<div class="home-hero">
 
-  <!-- ⭐ HERO SECTION -->
-  <section class="hero-section">
+  <header class="site-header">
+    {% include header.html %}
+  </header>
 
-    <div class="home-crown-wrapper magic-glow">
+  <div class="hero-inner">
 
-      <div class="crown-bloom"></div>
-
-      <div class="magic-particles">
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-      </div>
-
-      <img src="{{ '/assets/img/day-crown.svg' | relative_url }}"
-           class="home-crown-day"
-           alt="Crown Creatives Day Crown">
-
-      <img src="{{ '/assets/img/night-crown.svg' | relative_url }}"
-           class="home-crown-night"
-           alt="Crown Creatives Night Crown">
-
+    <!-- HERO CROWN (DAY + NIGHT STACKED FOR TRANSITION) -->
+    <div class="hero-crown">
+      <img src="{{ '/assets/img/day-crown.svg' | relative_url }}" class="crown crown-day" alt="Crown Creatives Day Crown">
+      <img src="{{ '/assets/img/night-crown.svg' | relative_url }}" class="crown crown-night" alt="Crown Creatives Night Crown">
     </div>
 
-    <h1 class="hero-title magic-glow">{{ site.title }}</h1>
+    <!-- HERO TAGLINE -->
+    <h1 class="hero-title">CROWN CREATIVES</h1>
+    <p class="hero-subtitle">ARTISTRY • RESILIENCE • IMAGINATION</p>
 
-    {% if site.tagline %}
-      <p class="hero-tagline magic-glow">{{ site.tagline }}</p>
-    {% endif %}
+    <!-- OPTIONAL HERO CTA OR CONTENT -->
+    <div class="hero-content">
+      {{ content }}
+    </div>
 
-  </section>
-
-  <!-- ⭐ GALLERY / PAGE CONTENT -->
-  <section class="page-section gallery-section">
-    {{ content }}
-  </section>
+  </div>
 
 </div>
+
+<!-- MAIN SECTIONS BELOW HERO -->
+<section class="home-sections">
+  {% include home-sections.html %}
+</section>
+
+<footer class="site-footer">
+  {% include footer.html %}
+</footer>
