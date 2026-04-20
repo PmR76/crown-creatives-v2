@@ -1,5 +1,5 @@
 // ============================================================
-//  Crown Creatives — Theme Toggle Engine (Production Ready)
+//  Crown Creatives — Theme Toggle Engine (DAY / NIGHT VERSION)
 // ============================================================
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -13,14 +13,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ------------------------------------------------------------
-  // Load saved theme
+  // Load saved theme (day / night)
   // ------------------------------------------------------------
   const saved = localStorage.getItem("cc-theme");
 
-  if (saved === "dark" || saved === "light") {
+  if (saved === "day" || saved === "night") {
     root.setAttribute("data-theme", saved);
   } else {
-    root.setAttribute("data-theme", "light");
+    root.setAttribute("data-theme", "day");
   }
 
   // ------------------------------------------------------------
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Update icon
   // ------------------------------------------------------------
   function updateIcon(theme) {
-    icon.src = theme === "dark"
+    icon.src = theme === "night"
       ? "/assets/icons/moon.svg"
       : "/assets/icons/sun.svg";
   }
@@ -45,11 +45,11 @@ document.addEventListener("DOMContentLoaded", () => {
   updateIcon(root.getAttribute("data-theme"));
 
   // ------------------------------------------------------------
-  // Toggle theme
+  // Toggle theme (day <-> night)
   // ------------------------------------------------------------
   toggle.addEventListener("click", () => {
     const current = root.getAttribute("data-theme");
-    const next = current === "light" ? "dark" : "light";
+    const next = current === "day" ? "night" : "day";
 
     root.setAttribute("data-theme", next);
     localStorage.setItem("cc-theme", next);
