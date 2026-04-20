@@ -2,39 +2,42 @@
 layout: default
 ---
 
-<!-- ⭐ HERO SECTION -->
-<section class="hero-section">
+<!-- ⭐ HOMEPAGE WRAPPER -->
+<div class="home-wrapper">
 
-  <!-- HERO CROWN + MAGIC LAYERS -->
-  <div class="home-crown-wrapper magic-glow">
+  <!-- ⭐ HERO SECTION -->
+  <section class="hero-section">
 
-    <!-- Soft crown-shaped bloom behind the SVG -->
-    <div class="crown-bloom"></div>
+    <div class="home-crown-wrapper magic-glow">
 
-    <!-- Drifting magical particles -->
-    <div class="magic-particles">
-      <span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span>
+      <div class="crown-bloom"></div>
+
+      <div class="magic-particles">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <img src="{{ '/assets/img/day-crown.svg' | relative_url }}"
+           class="home-crown-day"
+           alt="Crown Creatives Day Crown">
+
+      <img src="{{ '/assets/img/night-crown.svg' | relative_url }}"
+           class="home-crown-night"
+           alt="Crown Creatives Night Crown">
+
     </div>
 
-    <!-- Day & Night crowns (perfectly overlapped) -->
-    <img src="{{ '/assets/img/day-crown.svg' | relative_url }}"
-         class="home-crown-day"
-         alt="Crown Creatives Day Crown">
+    <h1 class="hero-title magic-glow">{{ site.title }}</h1>
 
-    <img src="{{ '/assets/img/night-crown.svg' | relative_url }}"
-         class="home-crown-night"
-         alt="Crown Creatives Night Crown">
+    {% if site.tagline %}
+      <p class="hero-tagline magic-glow">{{ site.tagline }}</p>
+    {% endif %}
 
-  </div>
+  </section>
 
-  <!-- HERO TITLE + TAGLINE WITH MAGIC GLOW -->
-  <h1 class="hero-title magic-glow">{{ site.title }}</h1>
-  <p class="hero-tagline magic-glow">{{ site.tagline }}</p>
+  <!-- ⭐ GALLERY / PAGE CONTENT -->
+  <section class="page-section gallery-section">
+    {{ content }}
+  </section>
 
-</section>
-
-<!-- ⭐ GALLERY LANES / PAGE CONTENT -->
-<section class="gallery-section">
-  {{ content }}
-</section>
+</div>
