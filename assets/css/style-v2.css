@@ -262,3 +262,16 @@ body[data-theme="night"] .card {
   height: auto;
   cursor: pointer;
 }
+.header-crown-wrapper {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.header-crown-img {
+  width: 126px;
+  height: auto;
+  filter: none;
+  position: relative;
+  z-index: 10;
+}
