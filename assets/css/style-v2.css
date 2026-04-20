@@ -126,6 +126,8 @@ body[data-theme="night"] .crown-night { opacity: 1; }
   height: auto;
   opacity: 1;
   pointer-events: none;
+  z-index: 2;
+  position: relative;
 }
 
 /* -------------------------------------------------- */
@@ -175,7 +177,6 @@ body[data-theme="night"] .crown-night { opacity: 1; }
   cursor: pointer;
 }
 
-/* FIX: BACK TO TOP BUTTON POSITION */
 .footer-backtotop {
   position: absolute;
   right: 1rem;
@@ -221,7 +222,7 @@ body[data-theme="night"] .crown-night { opacity: 1; }
 }
 
 /* -------------------------------------------------- */
-/* HERO GALLERY LANES — FINAL PRODUCTION VERSION      */
+/* HERO GALLERY — CLEAN, NON-INTRUSIVE VERSION        */
 /* -------------------------------------------------- */
 
 .hero-gallery {
@@ -230,30 +231,32 @@ body[data-theme="night"] .crown-night { opacity: 1; }
   height: 360px;
   margin: 2rem 0;
   pointer-events: none;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
 }
 
 .gallery-lane {
-  position: absolute;
-  top: 0;
-  width: 260px;
+  width: 16vw;
+  max-width: 240px;
   height: 100%;
   overflow: hidden;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .gallery-left {
-  left: calc(50% - 600px);
+  margin-left: 2vw;
 }
 
 .gallery-right {
-  right: calc(50% - 600px);
+  margin-right: 2vw;
 }
 
 .gallery-lane img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: auto;
   opacity: 0;
   transition: opacity 3s ease-in-out;
   border-radius: 12px;
@@ -267,15 +270,7 @@ body[data-theme="night"] .gallery-lane img {
   box-shadow: 0 0 25px rgba(180,150,255,0.35);
 }
 
-/* -------------------------------------------------- */
-/* SHIMMER EFFECT                                      */
-/* -------------------------------------------------- */
-
-.gallery-lane img {
-  position: relative;
-  overflow: hidden;
-}
-
+/* SHIMMER EFFECT */
 .gallery-lane img::after {
   content: "";
   position: absolute;
