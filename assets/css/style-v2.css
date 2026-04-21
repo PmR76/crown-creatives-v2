@@ -84,13 +84,8 @@ body[data-theme="night"] {
   pointer-events: none;
 }
 
-body[data-theme="day"] .crown-day {
-  opacity: 1;
-}
-
-body[data-theme="night"] .crown-night {
-  opacity: 1;
-}
+body[data-theme="day"] .crown-day { opacity: 1; }
+body[data-theme="night"] .crown-night { opacity: 1; }
 
 /* -------------------------------------------------- */
 /* NAVIGATION                                         */
@@ -124,12 +119,12 @@ body[data-theme="night"] .crown-night {
 .home-hero {
   position: relative;
   width: 100%;
-  margin-top: 20px; /* crown sits comfortably under nav */
+  margin-top: 20px;
   text-align: center;
   z-index: 5;
 }
 
-/* HERO CROWN — STACKED DAY/NIGHT, 20% LARGER */
+/* HERO CROWN — STACKED DAY/NIGHT, 20% LARGER AGAIN */
 
 .hero-crown-wrapper {
   position: relative;
@@ -152,7 +147,6 @@ body[data-theme="night"] .crown-night {
   transition: opacity 8s ease-in-out;
 }
 
-/* DAY → NIGHT FADE */
 body[data-theme="day"] .crown-day { opacity: 1; }
 body[data-theme="night"] .crown-night { opacity: 1; }
 
@@ -162,15 +156,14 @@ body[data-theme="night"] .crown-night { opacity: 1; }
 
 .hero-gallery {
   position: absolute;
-  top: 70px;   /* lowered to clear larger crown */
+  top: 110px;   /* lowered to clear larger crown */
   left: 0;
   width: 100%;
-  height: 320px;
+  height: 340px;
   pointer-events: none;
   z-index: 1;
 }
 
-/* LEFT + RIGHT LANES */
 .gallery-left,
 .gallery-right {
   position: absolute;
@@ -187,8 +180,8 @@ body[data-theme="night"] .crown-night { opacity: 1; }
 
 .lane-img {
   position: absolute;
-  width: 40%;        /* 60% reduction */
-  left: 30%;         /* centers image in each lane */
+  width: 40%;
+  left: 30%;
   opacity: 0;
   transition: opacity 2s ease-in-out;
   pointer-events: none;
@@ -202,7 +195,7 @@ body[data-theme="night"] .crown-night { opacity: 1; }
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin: 11rem auto 1.5rem auto; /* pushed down to avoid overlap with hero */
+  margin: 11rem auto 1.5rem auto; /* pushed down to avoid gallery overlap */
   flex-wrap: wrap;
 }
 
@@ -229,9 +222,7 @@ body[data-theme="night"] .crown-night { opacity: 1; }
   padding: 2rem 0 2.5rem 0;
   text-align: center;
   background: transparent;
-}
-.site-footer {
-  margin-top: 3rem;
+  margin-top: 3rem; /* spacing below ticker */
 }
 
 .footer-icons img {
@@ -257,7 +248,7 @@ body[data-theme="night"] .crown-night { opacity: 1; }
 .inspiration-ticker {
   width: 100%;
   overflow: hidden;
-  margin: 4rem 0 1.5rem 0;
+  margin: 4rem 0 1.5rem 0; /* pushed down */
   padding: 0.7rem 0;
   position: relative;
   background: rgba(255, 255, 255, 0.08);
