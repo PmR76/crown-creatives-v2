@@ -37,7 +37,7 @@ body[data-theme="night"] {
 }
 
 /* -------------------------------------------------- */
-/* HEADER                                              */
+/* HEADER                                             */
 /* -------------------------------------------------- */
 
 .site-header {
@@ -58,6 +58,8 @@ body[data-theme="night"] {
   height: auto;
   cursor: pointer;
 }
+
+/* Header crown (stacked day/night crowns) */
 
 .header-crown-wrapper {
   margin-top: 0.5rem;
@@ -82,11 +84,16 @@ body[data-theme="night"] {
   pointer-events: none;
 }
 
-body[data-theme="day"] .crown-day { opacity: 1; }
-body[data-theme="night"] .crown-night { opacity: 1; }
+body[data-theme="day"] .crown-day {
+  opacity: 1;
+}
+
+body[data-theme="night"] .crown-night {
+  opacity: 1;
+}
 
 /* -------------------------------------------------- */
-/* NAVIGATION                                          */
+/* NAVIGATION                                         */
 /* -------------------------------------------------- */
 
 .site-nav ul {
@@ -111,7 +118,7 @@ body[data-theme="night"] .crown-night { opacity: 1; }
 }
 
 /* -------------------------------------------------- */
-/* HERO CROWN — FINAL PRODUCTION VERSION              */
+/* HERO CROWN — MAIN HERO IMAGE                       */
 /* -------------------------------------------------- */
 
 .home-hero {
@@ -120,7 +127,8 @@ body[data-theme="night"] .crown-night { opacity: 1; }
   margin-bottom: 1rem;
 }
 
-.home-crown {
+.home-crown,
+#hero-crown {
   width: 800px;
   max-width: 90%;
   height: auto;
@@ -128,10 +136,16 @@ body[data-theme="night"] .crown-night { opacity: 1; }
   pointer-events: none;
   z-index: 2;
   position: relative;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+body[data-theme="night"] #hero-crown {
+  transform: translateY(-4px);
+  opacity: 0.9;
 }
 
 /* -------------------------------------------------- */
-/* CARDS                                               */
+/* CARDS                                              */
 /* -------------------------------------------------- */
 
 .home-cards {
@@ -158,7 +172,7 @@ body[data-theme="night"] .crown-night { opacity: 1; }
 }
 
 /* -------------------------------------------------- */
-/* FOOTER                                              */
+/* FOOTER                                             */
 /* -------------------------------------------------- */
 
 .site-footer {
@@ -184,7 +198,7 @@ body[data-theme="night"] .crown-night { opacity: 1; }
 }
 
 /* -------------------------------------------------- */
-/* TICKER                                              */
+/* TICKER                                             */
 /* -------------------------------------------------- */
 
 .inspiration-ticker {
@@ -260,14 +274,14 @@ body[data-theme="night"] .crown-night { opacity: 1; }
   opacity: 0;
   transition: opacity 3s ease-in-out;
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.25);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
   object-fit: contain;
   pointer-events: none;
 }
 
 /* NIGHT MODE GLOW */
 body[data-theme="night"] .gallery-lane img {
-  box-shadow: 0 0 25px rgba(180,150,255,0.35);
+  box-shadow: 0 0 25px rgba(180, 150, 255, 0.35);
 }
 
 /* SHIMMER EFFECT */
@@ -280,9 +294,9 @@ body[data-theme="night"] .gallery-lane img {
   height: 100%;
   background: linear-gradient(
     120deg,
-    rgba(255,255,255,0) 0%,
-    rgba(255,255,255,0.35) 50%,
-    rgba(255,255,255,0) 100%
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0) 100%
   );
   transform: skewX(-20deg);
   animation: shimmer 6s ease-in-out infinite;
