@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const RIGHT_LANE = document.querySelector(".gallery-right");
   if (!LEFT_LANE || !RIGHT_LANE) return;
 
+  /* Your gallery page URL */
   const GALLERY_URL = "/crown-creatives-v2/gallery/";
 
   /* Utility: Shuffle array */
