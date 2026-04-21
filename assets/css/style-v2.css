@@ -188,14 +188,14 @@ body[data-theme="night"] .crown-night { opacity: 1; }
 }
 
 /* -------------------------------------------------- */
-/* CARDS                                              */
+/* CARDS — SHIFTED DOWN BY 40mm                       */
 /* -------------------------------------------------- */
 
 .home-cards {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin: 11rem auto 1.5rem auto; /* pushed down to avoid gallery overlap */
+  margin: calc(11rem + 40mm) auto 1.5rem auto;
   flex-wrap: wrap;
 }
 
@@ -215,14 +215,14 @@ body[data-theme="night"] .crown-night { opacity: 1; }
 }
 
 /* -------------------------------------------------- */
-/* FOOTER                                             */
+/* FOOTER — SHIFTED DOWN BY 40mm                      */
 /* -------------------------------------------------- */
 
 .site-footer {
   padding: 2rem 0 2.5rem 0;
   text-align: center;
   background: transparent;
-  margin-top: 3rem; /* spacing below ticker */
+  margin-top: calc(3rem + 40mm);
 }
 
 .footer-icons img {
@@ -242,13 +242,13 @@ body[data-theme="night"] .crown-night { opacity: 1; }
 }
 
 /* -------------------------------------------------- */
-/* TICKER                                             */
+/* TICKER — SHIFTED DOWN BY 40mm                      */
 /* -------------------------------------------------- */
 
 .inspiration-ticker {
   width: 100%;
   overflow: hidden;
-  margin: 4rem 0 1.5rem 0; /* pushed down */
+  margin: calc(4rem + 40mm) 0 1.5rem 0;
   padding: 0.7rem 0;
   position: relative;
   background: rgba(255, 255, 255, 0.08);
