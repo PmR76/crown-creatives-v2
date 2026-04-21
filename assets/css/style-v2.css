@@ -141,8 +141,8 @@ body[data-theme="night"] .crown-night {
 }
 
 .home-crown {
-  width: 312px; /* 20% larger than 260px */
-  max-width: 55%;
+  width: 374px; /* increased again by 20% */
+  max-width: 60%;
   position: absolute;
   top: 0;
   left: 50%;
@@ -202,7 +202,7 @@ body[data-theme="night"] .crown-night { opacity: 1; }
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin: 7rem auto 1.5rem auto; /* pushed down to avoid overlap with hero */
+  margin: 11rem auto 1.5rem auto; /* pushed down to avoid overlap with hero */
   flex-wrap: wrap;
 }
 
@@ -230,6 +230,9 @@ body[data-theme="night"] .crown-night { opacity: 1; }
   text-align: center;
   background: transparent;
 }
+.site-footer {
+  margin-top: 3rem;
+}
 
 .footer-icons img {
   width: 48px;
@@ -254,7 +257,7 @@ body[data-theme="night"] .crown-night { opacity: 1; }
 .inspiration-ticker {
   width: 100%;
   overflow: hidden;
-  margin: 2.5rem 0 1.5rem 0;
+  margin: 4rem 0 1.5rem 0;
   padding: 0.7rem 0;
   position: relative;
   background: rgba(255, 255, 255, 0.08);
