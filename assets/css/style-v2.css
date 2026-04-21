@@ -738,3 +738,106 @@ body[data-theme="night"] .about-visual img {
   margin-top: 3rem;
   text-shadow: 0 0 6px rgba(255,255,255,0.4);
 }
+/* -------------------------------------------------- */
+/* ABOUT PAGE — MAGICAL BACKGROUND + LAYOUT           */
+/* -------------------------------------------------- */
+
+.about-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 4rem 1.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Magical background (theme-aware) */
+body[data-theme="day"] .about-page {
+  background: radial-gradient(circle at top,
+    rgba(255, 233, 184, 0.35),
+    rgba(247, 198, 255, 0.25),
+    transparent 70%
+  );
+  border-radius: 24px;
+}
+
+body[data-theme="night"] .about-page {
+  background: radial-gradient(circle at top,
+    rgba(40, 30, 90, 0.7),
+    rgba(90, 40, 140, 0.5),
+    transparent 70%
+  );
+  border-radius: 24px;
+}
+
+/* Header */
+.about-header h1 {
+  font-size: 2.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-tagline {
+  font-size: 1.2rem;
+  opacity: 0.85;
+  margin-bottom: 2.5rem;
+}
+
+/* Intro text */
+.about-intro p {
+  max-width: 780px;
+  margin: 0 auto 1.5rem auto;
+  line-height: 1.6;
+}
+
+/* Two-column layout */
+.about-columns {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 3rem auto;
+  flex-wrap: wrap;
+}
+
+.about-column {
+  width: 45%;
+  min-width: 280px;
+  text-align: left;
+}
+
+.about-column h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.about-column p {
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+/* Symbolic images */
+.about-visual {
+  margin: 3rem auto 2rem auto;
+}
+
+.about-visual img {
+  width: 260px;
+  max-width: 80%;
+  border-radius: 18px;
+  box-shadow: 0 0 22px var(--glow-day);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+body[data-theme="night"] .about-visual img {
+  box-shadow: 0 0 28px var(--glow-night);
+}
+
+.about-visual img:hover {
+  transform: scale(1.04);
+}
+
+/* Closing mantra */
+.about-mantra {
+  font-size: 1.2rem;
+  margin-top: 3rem;
+  text-shadow: 0 0 6px rgba(255,255,255,0.4);
+}
