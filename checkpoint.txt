@@ -3,3 +3,16 @@ Checkpoint created: 18 April 2026
 Status: Stable build with working icons, crowns, navigation, and relative_url paths - 19th April 26
 Stable Build Checkpoint – 20 April 2026
 Stable build. Nice col,our gradients (no magic yet) with inspirational ticker on each page - looks nice 20 April 26 at 20:20
+/crown-creatives-v2/): 
+# CHECKPOINT — 21 April 2026 (Evening)
+Stable build after mobile fixes + slow fade gallery.
+
+Included in this save point:
+- Full merged CSS with mobile centering + overflow fixes
+- Full magic.js with slow magical fade timings
+- Hero crown alignment tuned
+- Gallery lanes tuned for mobile
+- Cards/ticker/footer spacing corrected
+- Desktop + tablet + mobile responsive layout stable
+
+This is a production‑ready restore point.
