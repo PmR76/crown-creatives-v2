@@ -5,6 +5,7 @@ title: About
 
 <section class="about-page">
 
+  <!-- HEADER -->
   <header class="about-header">
     <h1>About Crown Creatives</h1>
     <p class="about-tagline">
@@ -15,14 +16,19 @@ title: About
   <!-- INTRO — MYTHIC + PERSONAL -->
   <div class="about-intro">
     <p>
-      Every creative journey begins with a spark — a moment where the ordinary world cracks open just enough to reveal something luminous beneath. 
+      Every creative journey begins with a spark — a moment where the ordinary world cracks open just enough to reveal something luminous beneath.
       Crown Creatives was born from one of those moments: a crossroads of rebuilding, rediscovery, and the quiet courage to begin again.
     </p>
 
     <p>
-      This space is more than a portfolio. It is a living archive of transformation — a place where art, story, and personal evolution weave together. 
+      This space is more than a portfolio. It is a living archive of transformation — a place where art, story, and personal evolution weave together.
       Here, imagination is not an escape from reality, but a way of reshaping it. A way of reclaiming identity, direction, and meaning after the world has shifted.
     </p>
+  </div>
+
+  <!-- SYMBOLIC IMAGE #1 (CROWN) -->
+  <div class="about-visual">
+    <img src="/assets/images/about/crown-symbol.png" alt="Crown Creatives Symbol">
   </div>
 
   <!-- TWO-COLUMN STORY SECTION -->
@@ -32,36 +38,40 @@ title: About
     <div class="about-column">
       <h2>Rebuilding</h2>
       <p>
-        My journey has not been linear. Like many, I’ve walked through seasons of loss, uncertainty, and reinvention. 
+        My journey has not been linear. Like many, I’ve walked through seasons of loss, uncertainty, and reinvention.
         Creativity became the thread I followed back to myself — a way to process, to heal, and to rediscover the parts of me that had gone quiet.
       </p>
 
       <p>
-        Crown Creatives is the result of that process. It reflects the belief that artistry is not just something we make — 
+        Crown Creatives is the result of that process. It reflects the belief that artistry is not just something we make —
         it’s something we become. Every project, every experiment, every idea is a step toward rebuilding a life with intention and wonder.
       </p>
+
+      <!-- SYMBOLIC IMAGE #2 (PERSONAL / ARTISTIC) -->
+      <div class="about-visual">
+        <img src="/assets/images/about/profile.jpg" alt="Artist Portrait">
+      </div>
     </div>
 
     <!-- RIGHT COLUMN — MYTHIC STORY -->
     <div class="about-column">
       <h2>Becoming</h2>
       <p>
-        In the mythic sense, Crown Creatives is a realm — a place where stories breathe, symbols shimmer, and imagination shapes the landscape. 
+        In the mythic sense, Crown Creatives is a realm — a place where stories breathe, symbols shimmer, and imagination shapes the landscape.
         It is a sanctuary for ideas that refuse to stay small, and a reminder that creativity is a form of magic available to all of us.
       </p>
 
       <p>
-        The crown is not a symbol of status, but of awakening — a reminder that each of us carries a spark capable of illuminating the dark, 
+        The crown is not a symbol of status, but of awakening — a reminder that each of us carries a spark capable of illuminating the dark,
         transforming the mundane, and revealing the extraordinary hidden in plain sight.
       </p>
+
+      <!-- SYMBOLIC IMAGE #3 (RUNE / ART OBJECT) -->
+      <div class="about-visual">
+        <img src="/assets/images/about/rune-stone.png" alt="Rune Stone Symbol">
+      </div>
     </div>
 
-  </div>
-
-  <!-- OPTIONAL VISUAL (PLACEHOLDER) -->
-  <div class="about-visual">
-    <!-- You can place an image here later if you wish -->
-    <!-- <img src="/assets/images/about-visual.jpg" alt="Crown Creatives Symbol"> -->
   </div>
 
   <!-- CLOSING MANTRA -->
