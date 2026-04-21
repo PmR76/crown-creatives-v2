@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const safeTheme = theme === 'night' ? 'night' : 'day';
     body.setAttribute('data-theme', safeTheme);
     localStorage.setItem('cc-theme', safeTheme);
-    // stacked crowns (header + hero) are handled purely by CSS
   }
 
   function getInitialTheme() {
@@ -41,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* -------------------------------------------------- */
-  /* HERO GALLERY — FADE ONE IMAGE AT A TIME            */
+  /* HERO GALLERY — SLOW, MAGICAL FADES                 */
   /* -------------------------------------------------- */
 
   if (!body.classList.contains('home')) return;
@@ -51,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!LEFT_LANE || !RIGHT_LANE) return;
 
-  // Live gallery page to scrape
   const GALLERY_PAGE_URL = '/crown-creatives-v2/gallery/';
   const GALLERY_PREFIX = '/crown-creatives-v2/assets/images/gallery/';
 
@@ -112,8 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let index = 0;
     let useLeft = true;
 
-    const VISIBLE_TIME = 6000; // ms image fully visible
-    const FADE_TIME = 2000;    // ms fade out (matches CSS 2s)
+    const VISIBLE_TIME = 8000; // ms fully visible
+    const FADE_TIME = 4000;    // ms fade in/out (matches CSS 4s)
 
     function showNext() {
       const lane = useLeft ? LEFT_LANE : RIGHT_LANE;
