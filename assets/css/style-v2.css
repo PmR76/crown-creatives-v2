@@ -198,8 +198,8 @@ body[data-theme="night"] .crown-night { opacity: 1; }
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin: clamp(8rem, 14vw, 14rem) auto 2rem auto;
-  flex-wrap: wrap;
+.home-cards {
+  margin: calc(clamp(8rem, 14vw, 14rem) + clamp(6rem, 12vw, 10rem)) auto 2rem auto;
 }
 
 .card {
@@ -224,6 +224,13 @@ body[data-theme="night"] .card {
 /* -------------------------------------------------- */
 /* TICKER                                             */
 /* -------------------------------------------------- */
+.inspiration-ticker {
+  margin-top: 3rem;
+}
+
+.site-footer {
+  margin-top: 3rem;
+}
 
 .inspiration-ticker {
   width: 100%;
@@ -362,6 +369,15 @@ body[data-theme="night"] .card {
   .card {
     width: 90%;
   }
+}
+.home-cards {
+  margin-top: calc(8rem + clamp(6rem, 12vw, 10rem));
+}
+.home-cards {
+  margin-top: calc(6rem + clamp(6rem, 12vw, 10rem));
+}
+.home-cards {
+  margin-top: calc(5rem + clamp(6rem, 12vw, 10rem));
 }
 
 /* -------------------------------------------------- */
