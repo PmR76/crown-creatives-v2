@@ -136,7 +136,7 @@ body[data-theme="night"] .crown-night { opacity: 1; }
 }
 
 .home-crown {
-  width: 374px; /* enlarged crown */
+  width: 374px;
   max-width: 60%;
   position: absolute;
   top: 0;
@@ -151,12 +151,12 @@ body[data-theme="day"] .crown-day { opacity: 1; }
 body[data-theme="night"] .crown-night { opacity: 1; }
 
 /* -------------------------------------------------- */
-/* HERO GALLERY LANES — MOVED UP                      */
+/* HERO GALLERY LANES                                 */
 /* -------------------------------------------------- */
 
 .hero-gallery {
   position: absolute;
-  top: 40px;   /* moved UP to align with top of crown */
+  top: 40px;   /* aligned visually with crown top */
   left: 0;
   width: 100%;
   height: 340px;
@@ -181,19 +181,19 @@ body[data-theme="night"] .crown-night { opacity: 1; }
   width: 40%;
   left: 30%;
   opacity: 0;
-  transition: opacity 2s ease-in-out;
+  transition: opacity 4s ease-in-out; /* slower, more magical */
   pointer-events: none;
 }
 
 /* -------------------------------------------------- */
-/* CARDS — MOVED DOWN BY AN EXTRA 20mm                */
+/* CARDS                                              */
 /* -------------------------------------------------- */
 
 .home-cards {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin: calc(11rem + 60mm) auto 1.5rem auto; /* previously 40mm, now +20mm */
+  margin: calc(11rem + 60mm) auto 1.5rem auto;
   flex-wrap: wrap;
 }
 
@@ -213,13 +213,13 @@ body[data-theme="night"] .crown-night { opacity: 1; }
 }
 
 /* -------------------------------------------------- */
-/* TICKER — GAP CLOSED                                */
+/* TICKER                                             */
 /* -------------------------------------------------- */
 
 .inspiration-ticker {
   width: 100%;
   overflow: hidden;
-  margin: 2rem 0 1.5rem 0; /* tightened */
+  margin: 2rem 0 1.5rem 0;
   padding: 0.7rem 0;
   position: relative;
   background: rgba(255, 255, 255, 0.08);
@@ -251,14 +251,14 @@ body[data-theme="night"] .crown-night { opacity: 1; }
 }
 
 /* -------------------------------------------------- */
-/* FOOTER — GAP CLOSED                                */
+/* FOOTER                                             */
 /* -------------------------------------------------- */
 
 .site-footer {
   padding: 2rem 0 2.5rem 0;
   text-align: center;
   background: transparent;
-  margin-top: 2rem; /* tightened */
+  margin-top: 2rem;
 }
 
 .footer-icons img {
@@ -275,4 +275,97 @@ body[data-theme="night"] .crown-night { opacity: 1; }
   position: absolute;
   right: 1rem;
   bottom: 0.5rem;
+}
+
+/* -------------------------------------------------- */
+/* RESPONSIVE TUNING — MOBILE + TABLET                */
+/* -------------------------------------------------- */
+
+/* TABLET (max-width: 1024px) */
+@media (max-width: 1024px) {
+
+  .home-crown {
+    width: 300px;
+    max-width: 70%;
+  }
+
+  .hero-gallery {
+    top: 60px;
+    height: 300px;
+  }
+
+  .home-cards {
+    margin-top: calc(8rem + 40mm);
+  }
+
+  .inspiration-ticker {
+    margin-top: 2rem;
+  }
+
+  .site-footer {
+    margin-top: 2rem;
+  }
+}
+
+/* MOBILE (max-width: 768px) */
+@media (max-width: 768px) {
+
+  .home-crown {
+    width: 240px;
+    max-width: 80%;
+  }
+
+  .hero-gallery {
+    top: 40px;
+    height: 260px;
+  }
+
+  .lane-img {
+    width: 55%;
+    left: 22%;
+  }
+
+  .home-cards {
+    margin-top: calc(6rem + 40mm);
+    gap: 1.5rem;
+  }
+
+  .card {
+    width: 85%;
+    padding: 1.5rem;
+  }
+
+  .inspiration-ticker {
+    margin-top: 1.5rem;
+  }
+
+  .site-footer {
+    margin-top: 1.5rem;
+  }
+}
+
+/* SMALL MOBILE (max-width: 480px) */
+@media (max-width: 480px) {
+
+  .home-crown {
+    width: 200px;
+  }
+
+  .hero-gallery {
+    top: 30px;
+    height: 220px;
+  }
+
+  .lane-img {
+    width: 65%;
+    left: 17%;
+  }
+
+  .home-cards {
+    margin-top: calc(5rem + 40mm);
+  }
+
+  .card {
+    width: 90%;
+  }
 }
