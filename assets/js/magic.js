@@ -1,4 +1,4 @@
-// js.magic.js — Theme engine, crown swap, hero gallery
+// magic.js — theme engine, stacked crown, hero gallery
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.body;
@@ -11,32 +11,21 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('theme-toggle') ||
     document.querySelector('.header-toggle, .toggle-icon, [data-role="theme-toggle"]');
 
-  const heroCrown = document.getElementById('hero-crown');
-  const DAY_CROWN_SRC = './assets/img/day-crown.svg';
-  const NIGHT_CROWN_SRC = './assets/img/night-crown.svg';
-
   function applyTheme(theme) {
     const safeTheme = theme === 'night' ? 'night' : 'day';
     body.setAttribute('data-theme', safeTheme);
     localStorage.setItem('cc-theme', safeTheme);
-
-    // Optional: single hero crown image swap
-    if (heroCrown) {
-      heroCrown.src = safeTheme === 'night' ? NIGHT_CROWN_SRC : DAY_CROWN_SRC;
-      heroCrown.style.opacity = '0';
-      requestAnimationFrame(() => {
-        heroCrown.style.opacity = '1';
-      });
-    }
+    // stacked crowns (header + hero) are handled purely by CSS
   }
 
   function getInitialTheme() {
     const saved = localStorage.getItem('cc-theme');
     if (saved === 'day' || saved === 'night') return saved;
 
-    // Fallback: follow system preference on first visit
-    const prefersDark = window.matchMedia &&
+    const prefersDark =
+      window.matchMedia &&
       window.matchMedia('(prefers-color-scheme: dark)').matches;
+
     return prefersDark ? 'night' : 'day';
   }
 
@@ -52,10 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* -------------------------------------------------- */
-  /* HERO GALLERY — AUTOSCAN ENGINE                     */
+  /* HERO GALLERY — FADE ONE IMAGE AT A TIME            */
   /* -------------------------------------------------- */
 
-  // Only run on home page
   if (!body.classList.contains('home')) return;
 
   const LEFT_LANE = document.querySelector('.gallery-left');
@@ -63,8 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!LEFT_LANE || !RIGHT_LANE) return;
 
-  // GitHub Pages–safe relative URL
-  const GALLERY_URL = './gallery/';
+  // Live gallery page to scrape
+  const GALLERY_PAGE_URL = '/crown-creatives-v2/gallery/';
+  const GALLERY_PREFIX = '/crown-creatives-v2/assets/images/gallery/';
 
   function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -76,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function fetchGalleryImages() {
     try {
-      const response = await fetch(GALLERY_URL, { credentials: 'omit' });
+      const response = await fetch(GALLERY_PAGE_URL, { credentials: 'omit' });
       if (!response.ok) {
         console.error('Gallery fetch failed:', response.status);
         return [];
@@ -90,9 +79,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const sources = imgs
         .map(img => img.getAttribute('src'))
-        .filter(src => src && src.trim() !== '');
+        .filter(src =>
+          src &&
+          src.trim() !== '' &&
+          src.startsWith(GALLERY_PREFIX)
+        );
 
-      // Deduplicate
       return Array.from(new Set(sources));
     } catch (err) {
       console.error('Error fetching gallery:', err);
@@ -106,14 +98,10 @@ document.addEventListener('DOMContentLoaded', () => {
     img.loading = 'lazy';
     img.decoding = 'async';
     img.classList.add('lane-img');
-    // Fade in once loaded
-    img.addEventListener('load', () => {
-      img.style.opacity = '1';
-    });
     return img;
   }
 
-  function populateLanes(images) {
+  function startGalleryCycle(images) {
     if (!images.length) {
       console.warn('No gallery images found.');
       return;
@@ -121,20 +109,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
     shuffle(images);
 
-    images.forEach((src, index) => {
+    let index = 0;
+    let useLeft = true;
+
+    const VISIBLE_TIME = 6000; // ms image fully visible
+    const FADE_TIME = 2000;    // ms fade out (matches CSS 2s)
+
+    function showNext() {
+      const lane = useLeft ? LEFT_LANE : RIGHT_LANE;
+      lane.innerHTML = '';
+
+      const src = images[index];
       const img = createLaneImage(src);
-      if (index % 2 === 0) {
-        LEFT_LANE.appendChild(img);
-      } else {
-        RIGHT_LANE.appendChild(img);
-      }
-    });
+      lane.appendChild(img);
+
+      // fade in
+      requestAnimationFrame(() => {
+        img.style.opacity = '1';
+      });
+
+      // schedule fade out
+      setTimeout(() => {
+        img.style.opacity = '0';
+
+        // after fade, move to next image + lane
+        setTimeout(() => {
+          index = (index + 1) % images.length;
+          useLeft = !useLeft;
+          showNext();
+        }, FADE_TIME);
+      }, VISIBLE_TIME);
+    }
+
+    showNext();
   }
 
-  async function initGalleryLanes() {
+  async function initGallery() {
     const images = await fetchGalleryImages();
-    populateLanes(images);
+    startGalleryCycle(images);
   }
 
-  initGalleryLanes();
+  initGallery();
 });
