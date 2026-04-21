@@ -1,3 +1,5 @@
+theme:
+
 title: "Crown Creatives v2"
 description: "Clean rebuild of the Crown Creatives website."
 
@@ -14,7 +16,7 @@ markdown: kramdown
 # DO NOT add any theme here
 
 # Force rebuild (increment this if GitHub Pages caches layouts)
-version: 10
+version: 11
 
 # Allow Jekyll to process custom folders
 include:
