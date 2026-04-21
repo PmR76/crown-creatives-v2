@@ -49,7 +49,7 @@ title: About
 
       <!-- SYMBOLIC IMAGE #2 — PAINTING -->
       <div class="about-visual about-img-small">
-        <img src="/assets/images/about/painting.jpeg" alt="Painting Artwork">
+      <img src="/assets/images/about/painting.jpeg" alt="Artist Portrait">
       </div>
     </div>
 
