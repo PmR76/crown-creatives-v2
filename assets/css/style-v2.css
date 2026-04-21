@@ -1,11 +1,17 @@
 /* -------------------------------------------------- */
+/* CROWN CREATIVES — MASTER STYLESHEET (style-v2.css) */
+/* Compact, commented, production-ready                */
+/* -------------------------------------------------- */
+
+/* -------------------------------------------------- */
 /* GLOBAL FONT — CINZEL DECORATIVE                    */
 /* -------------------------------------------------- */
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
 
-html, body {
-  overflow-x: hidden;
+html,
+body {
+  overflow-x: hidden;          /* prevent sideways scroll on mobile */
   width: 100%;
   max-width: 100%;
   min-height: 100%;
@@ -47,7 +53,7 @@ body[data-theme="night"] {
 }
 
 /* -------------------------------------------------- */
-/* HEADER                                             */
+/* HEADER — LOGO, TOGGLE, NAV                         */
 /* -------------------------------------------------- */
 
 .site-header {
@@ -57,6 +63,7 @@ body[data-theme="night"] {
   background: transparent;
 }
 
+/* Theme toggle icon (rune stone) */
 .header-toggle {
   position: absolute;
   top: 1rem;
@@ -69,6 +76,7 @@ body[data-theme="night"] {
   cursor: pointer;
 }
 
+/* Header crown (small crown above nav) */
 .header-crown-wrapper {
   margin-top: 0.5rem;
   display: flex;
@@ -92,13 +100,15 @@ body[data-theme="night"] {
   pointer-events: none;
 }
 
-body[data-theme="day"] .crown-day { opacity: 1; }
-body[data-theme="night"] .crown-night { opacity: 1; }
+body[data-theme="day"] .crown-day {
+  opacity: 1;
+}
 
-/* -------------------------------------------------- */
-/* NAVIGATION                                         */
-/* -------------------------------------------------- */
+body[data-theme="night"] .crown-night {
+  opacity: 1;
+}
 
+/* Navigation */
 .site-nav ul {
   list-style: none;
   padding: 0;
@@ -114,7 +124,7 @@ body[data-theme="night"] .crown-night { opacity: 1; }
   font-weight: 700;
   font-size: 1.1rem;
   transition: opacity 0.3s ease;
-  text-shadow: 0 0 4px rgba(255,255,255,0.3);
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
 }
 
 .site-nav a:hover {
@@ -122,7 +132,7 @@ body[data-theme="night"] .crown-night { opacity: 1; }
 }
 
 /* -------------------------------------------------- */
-/* HERO SECTION                                       */
+/* HERO SECTION — CROWN + HERO GALLERY LANES          */
 /* -------------------------------------------------- */
 
 .home-hero {
@@ -130,9 +140,10 @@ body[data-theme="night"] .crown-night { opacity: 1; }
   width: 100%;
   margin-top: 20px;
   text-align: center;
-  z-index: 5;
+  z-index: 5; /* above background elements */
 }
 
+/* Large hero crown (centered) */
 .hero-crown-wrapper {
   position: relative;
   width: 100%;
@@ -154,19 +165,16 @@ body[data-theme="night"] .crown-night { opacity: 1; }
   transition: opacity 8s ease-in-out;
 }
 
-/* -------------------------------------------------- */
-/* HERO GALLERY LANES                                 */
-/* -------------------------------------------------- */
-
+/* Hero gallery lanes (floating images beside crown) */
 .hero-gallery {
   position: absolute;
-  top: 40px;
+  top: 40px;          /* aligned visually with crown */
   left: 0;
   width: 100%;
   height: 340px;
   pointer-events: none;
   z-index: 1;
-  overflow: hidden;
+  overflow: hidden;   /* prevent sideways overflow */
 }
 
 .gallery-left,
@@ -178,28 +186,33 @@ body[data-theme="night"] .crown-night { opacity: 1; }
   overflow: hidden;
 }
 
-.gallery-left { left: 0; }
-.gallery-right { right: 0; }
+.gallery-left {
+  left: 0;
+}
+
+.gallery-right {
+  right: 0;
+}
 
 .lane-img {
   position: absolute;
   width: 40%;
   left: 30%;
   opacity: 0;
-  transition: opacity 4s ease-in-out;
+  transition: opacity 4s ease-in-out; /* slow, magical fade */
   pointer-events: none;
 }
 
 /* -------------------------------------------------- */
-/* CARDS                                              */
+/* HOME CARDS — RESILIENCE / IMAGINATION              */
 /* -------------------------------------------------- */
 
 .home-cards {
   display: flex;
   justify-content: center;
   gap: 2rem;
-.home-cards {
   margin: calc(clamp(8rem, 14vw, 14rem) + clamp(6rem, 12vw, 10rem)) auto 2rem auto;
+  flex-wrap: wrap; /* wrap on smaller screens */
 }
 
 .card {
@@ -213,7 +226,7 @@ body[data-theme="night"] .crown-night { opacity: 1; }
 }
 
 body[data-theme="night"] .card {
-  border-color: rgba(255,255,255,0.25);
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
 .card:hover {
@@ -222,20 +235,13 @@ body[data-theme="night"] .card {
 }
 
 /* -------------------------------------------------- */
-/* TICKER                                             */
+/* INSPIRATION TICKER — SCROLLING MANTRA              */
 /* -------------------------------------------------- */
-.inspiration-ticker {
-  margin-top: 3rem;
-}
-
-.site-footer {
-  margin-top: 3rem;
-}
 
 .inspiration-ticker {
   width: 100%;
   overflow: hidden;
-  margin: 2rem 0 1.5rem 0;
+  margin: 3rem 0 1.5rem 0; /* pushed slightly down for hero spacing */
   padding: 0.7rem 0;
   position: relative;
   background: rgba(255, 255, 255, 0.08);
@@ -262,19 +268,23 @@ body[data-theme="night"] .card {
 }
 
 @keyframes tickerScroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 /* -------------------------------------------------- */
-/* FOOTER                                             */
+/* FOOTER — ICONS + BACK TO TOP                       */
 /* -------------------------------------------------- */
 
 .site-footer {
   padding: 2rem 0 2.5rem 0;
   text-align: center;
   background: transparent;
-  margin-top: 2rem;
+  margin-top: 3rem; /* aligned with ticker spacing */
   position: relative;
 }
 
@@ -292,13 +302,14 @@ body[data-theme="night"] .card {
   position: absolute;
   right: 1rem;
   bottom: 0.5rem;
-  z-index: 50;
+  z-index: 50; /* above gallery tiles/lightbox */
 }
 
 /* -------------------------------------------------- */
-/* RESPONSIVE TUNING — MOBILE + TABLET                */
+/* RESPONSIVE TUNING — TABLET / MOBILE                */
 /* -------------------------------------------------- */
 
+/* Tablet */
 @media (max-width: 1024px) {
   .home-crown {
     width: 300px;
@@ -311,13 +322,14 @@ body[data-theme="night"] .card {
   }
 
   .home-cards {
-    margin-top: calc(8rem + clamp(4rem, 12vw, 8rem));
+    margin-top: calc(8rem + clamp(6rem, 12vw, 10rem));
   }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   .home-crown {
-    width: 85vw;
+    width: 85vw;   /* always fits screen */
     max-width: 300px;
   }
 
@@ -328,11 +340,11 @@ body[data-theme="night"] .card {
 
   .lane-img {
     width: 70vw;
-    left: 15vw;
+    left: 15vw;   /* centered visually */
   }
 
   .home-cards {
-    margin-top: calc(6rem + clamp(4rem, 12vw, 8rem));
+    margin-top: calc(6rem + clamp(6rem, 12vw, 10rem));
     gap: 1.5rem;
   }
 
@@ -347,6 +359,7 @@ body[data-theme="night"] .card {
   }
 }
 
+/* Small mobile */
 @media (max-width: 480px) {
   .home-crown {
     width: 200px;
@@ -363,27 +376,19 @@ body[data-theme="night"] .card {
   }
 
   .home-cards {
-    margin-top: calc(5rem + clamp(4rem, 12vw, 8rem));
+    margin-top: calc(5rem + clamp(6rem, 12vw, 10rem));
   }
 
   .card {
     width: 90%;
   }
 }
-.home-cards {
-  margin-top: calc(8rem + clamp(6rem, 12vw, 10rem));
-}
-.home-cards {
-  margin-top: calc(6rem + clamp(6rem, 12vw, 10rem));
-}
-.home-cards {
-  margin-top: calc(5rem + clamp(6rem, 12vw, 10rem));
-}
 
 /* -------------------------------------------------- */
 /* GALLERY PAGE — THEME-AWARE FLOATING TILES          */
 /* -------------------------------------------------- */
 
+/* Gallery page container */
 .gallery-page {
   max-width: 1200px;
   margin: 0 auto 4rem auto;
@@ -403,6 +408,7 @@ body[data-theme="night"] .card {
   margin: 0.5rem auto 2.5rem auto;
 }
 
+/* Theme-aware gallery background */
 body[data-theme="day"] .gallery-page {
   background: radial-gradient(circle at top, rgba(255, 233, 184, 0.35), rgba(247, 198, 255, 0.25), transparent 70%);
   border-radius: 24px;
@@ -413,6 +419,7 @@ body[data-theme="night"] .gallery-page {
   border-radius: 24px;
 }
 
+/* Gallery grid */
 .magic-gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -421,6 +428,7 @@ body[data-theme="night"] .gallery-page {
   position: relative;
 }
 
+/* Floating tiles */
 .magic-gallery-tile {
   position: relative;
   overflow: hidden;
@@ -445,6 +453,7 @@ body[data-theme="night"] .magic-gallery-tile {
   transition: transform 0.6s ease, filter 0.6s ease, opacity 0.6s ease;
 }
 
+/* Hover shimmer — desktop only */
 @media (hover: hover) and (pointer: fine) {
   .magic-gallery-tile:hover img {
     transform: scale(1.06);
@@ -467,21 +476,45 @@ body[data-theme="night"] .magic-gallery-tile {
   }
 }
 
+/* Floating animation */
 @keyframes tileFloat {
-  0% { transform: translate3d(0, 0, 0) rotate(0deg); opacity: 0; }
-  10% { opacity: 1; }
-  25% { transform: translate3d(2px, -3px, 0) rotate(-1.2deg); }
-  50% { transform: translate3d(-3px, 2px, 0) rotate(1.4deg); }
-  75% { transform: translate3d(1px, -2px, 0) rotate(-0.8deg); }
-  100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  25% {
+    transform: translate3d(2px, -3px, 0) rotate(-1.2deg);
+  }
+  50% {
+    transform: translate3d(-3px, 2px, 0) rotate(1.4deg);
+  }
+  75% {
+    transform: translate3d(1px, -2px, 0) rotate(-0.8deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
 }
 
+/* Shimmer sweep */
 @keyframes shimmerSweep {
-  0% { transform: translateX(-120%); opacity: 0; }
-  30% { opacity: 1; }
-  100% { transform: translateX(120%); opacity: 0; }
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
 }
 
+/* Lightbox container */
 .magic-lightbox {
   position: fixed;
   inset: 0;
@@ -495,6 +528,7 @@ body[data-theme="night"] .magic-gallery-tile {
   display: flex;
 }
 
+/* Lightbox backdrop */
 .magic-lightbox-backdrop {
   position: absolute;
   inset: 0;
@@ -502,6 +536,7 @@ body[data-theme="night"] .magic-gallery-tile {
   backdrop-filter: blur(10px);
 }
 
+/* Lightbox content */
 .magic-lightbox-content {
   position: relative;
   max-width: 90vw;
@@ -516,6 +551,7 @@ body[data-theme="night"] .magic-gallery-tile {
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
 }
 
+/* Lightbox controls */
 .magic-lightbox-close,
 .magic-lightbox-prev,
 .magic-lightbox-next {
@@ -559,6 +595,7 @@ body[data-theme="night"] .magic-gallery-tile {
   transform: scale(1.05);
 }
 
+/* Gallery responsiveness */
 @media (max-width: 1200px) {
   .magic-gallery-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
