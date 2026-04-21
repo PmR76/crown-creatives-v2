@@ -26,9 +26,9 @@ title: About
     </p>
   </div>
 
-  <!-- SYMBOLIC IMAGE #1 (CROWN) -->
-  <div class="about-visual">
-    <img src="/assets/images/about/my-story-photoV5.png" alt="Crown Creatives Symbol">
+  <!-- SYMBOLIC IMAGE #1 — MAIN STORY IMAGE -->
+  <div class="about-visual about-img-medium">
+    <img src="/assets/images/about/my-story-photoV5.png" alt="My Story Image">
   </div>
 
   <!-- TWO-COLUMN STORY SECTION -->
@@ -47,9 +47,9 @@ title: About
         it’s something we become. Every project, every experiment, every idea is a step toward rebuilding a life with intention and wonder.
       </p>
 
-      <!-- SYMBOLIC IMAGE #2 (PERSONAL / ARTISTIC) -->
-      <div class="about-visual">
-        <img src="/assets/images/about/painting.jpg" alt="Artist Portrait">
+      <!-- SYMBOLIC IMAGE #2 — PAINTING -->
+      <div class="about-visual about-img-small">
+        <img src="/assets/images/about/painting.jpeg" alt="Painting Artwork">
       </div>
     </div>
 
@@ -66,9 +66,9 @@ title: About
         transforming the mundane, and revealing the extraordinary hidden in plain sight.
       </p>
 
-      <!-- SYMBOLIC IMAGE #3 (RUNE / ART OBJECT) -->
-      <div class="about-visual">
-        <img src="/assets/images/about/gold-crown.png" alt="Rune Stone Symbol">
+      <!-- SYMBOLIC IMAGE #3 — GOLD CROWN -->
+      <div class="about-visual about-img-small">
+        <img src="/assets/images/about/gold-crown.png" alt="Golden Crown Symbol">
       </div>
     </div>
 
