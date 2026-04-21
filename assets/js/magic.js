@@ -1,89 +1,89 @@
-/* -------------------------------------------------- */
-/*  CROWN CREATIVES — THEME ENGINE                    */
-/* -------------------------------------------------- */
+// ===============================
+// Crown Creatives — magic.js
+// Production‑ready autoscan engine
+// ===============================
 
-document.addEventListener('DOMContentLoaded', () => {
+// CONFIG
+const GALLERY_URL = "/crown-creatives-v2/gallery/";   // Page to autoscan
+const LEFT_LANE = document.querySelector(".gallery-left");
+const RIGHT_LANE = document.querySelector(".gallery-right");
 
-  const body = document.body;
+// Utility: Shuffle array
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
 
-  /* Restore saved theme */
-  const savedTheme = localStorage.getItem('cc-theme');
-  if (savedTheme === 'day' || savedTheme === 'night') {
-    body.setAttribute('data-theme', savedTheme);
-  } else {
-    body.setAttribute('data-theme', 'day');
+// Fetch gallery page → extract all <img> tags → return list of src URLs
+async function fetchGalleryImages() {
+  try {
+    const response = await fetch(GALLERY_URL);
+    if (!response.ok) {
+      console.error("Gallery fetch failed:", response.status);
+      return [];
+    }
+
+    const html = await response.text();
+
+    // Parse HTML
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, "text/html");
+
+    // Extract all <img> tags
+    const imgs = [...doc.querySelectorAll("img")];
+
+    // Extract src values
+    const sources = imgs
+      .map(img => img.getAttribute("src"))
+      .filter(src => src && src.trim() !== "");
+
+    // Remove duplicates
+    return [...new Set(sources)];
+
+  } catch (err) {
+    console.error("Error fetching gallery:", err);
+    return [];
+  }
+}
+
+// Create an <img> element for the lane
+function createLaneImage(src) {
+  const img = document.createElement("img");
+  img.src = src;
+  img.loading = "lazy";
+  img.decoding = "async";
+  img.classList.add("lane-img");
+  return img;
+}
+
+// Populate lanes with alternating images
+function populateLanes(images) {
+  if (!images.length) {
+    console.warn("No gallery images found.");
+    return;
   }
 
-  /* Theme toggle */
-  const toggle = document.querySelector('.header-toggle, .toggle-icon, [data-role="theme-toggle"]');
-  if (toggle) {
-    toggle.addEventListener('click', () => {
-      const current = body.getAttribute('data-theme');
-      const next = current === 'day' ? 'night' : 'day';
-      body.setAttribute('data-theme', next);
-      localStorage.setItem('cc-theme', next);
-    });
-  }
+  shuffle(images);
 
-});
+  images.forEach((src, index) => {
+    const img = createLaneImage(src);
 
-/* -------------------------------------------------- */
-/*  HERO GALLERY — FINAL PRODUCTION VERSION           */
-/* -------------------------------------------------- */
+    if (index % 2 === 0) {
+      LEFT_LANE.appendChild(img);
+    } else {
+      RIGHT_LANE.appendChild(img);
+    }
+  });
+}
 
-document.addEventListener("DOMContentLoaded", () => {
+// Initialise autoscan + lane population
+async function initGalleryLanes() {
+  const images = await fetchGalleryImages();
+  populateLanes(images);
+}
 
-  /* Only run on home page */
-  if (!document.body.classList.contains("home")) return;
-
-  const leftLane = document.querySelector(".gallery-left");
-  const rightLane = document.querySelector(".gallery-right");
-  if (!leftLane || !rightLane) return;
-
-  const galleryImages = [];
-
-  /* Auto-scan gallery folder */
-  fetch("/assets/images/gallery/")
-    .then(response => response.text())
-    .then(text => {
-      const parser = new DOMParser();
-      const html = parser.parseFromString(text, "text/html");
-
-      html.querySelectorAll("a").forEach(link => {
-        const href = link.getAttribute("href");
-        if (href && href.match(/\.(jpg|jpeg|png|webp)$/i)) {
-          galleryImages.push("/assets/images/gallery/" + href);
-        }
-      });
-
-      if (galleryImages.length > 0) {
-        startGalleryCycle();
-      }
-    })
-    .catch(err => console.error("Gallery scan failed:", err));
-
-  /* Start cycle */
-  function startGalleryCycle() {
-    showRandomImage();
-    setInterval(showRandomImage, 16000);
-  }
-
-  /* Show random image */
-  function showRandomImage() {
-    if (galleryImages.length === 0) return;
-
-    const imgSrc = galleryImages[Math.floor(Math.random() * galleryImages.length)];
-    const lane = Math.random() < 0.5 ? leftLane : rightLane;
-
-    const img = document.createElement("img");
-    img.src = imgSrc;
-    img.style.opacity = "0";
-
-    lane.innerHTML = "";
-    lane.appendChild(img);
-
-    setTimeout(() => { img.style.opacity = "1"; }, 100);
-    setTimeout(() => { img.style.opacity = "0"; }, 13000);
-  }
-
-});
+// Run when DOM is ready
+document.addEventListener("DOMContentLoaded", initGalleryLanes);
