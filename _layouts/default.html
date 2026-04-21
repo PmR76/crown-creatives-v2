@@ -8,17 +8,6 @@
   <!-- HEADER -->
   {% include header.html %}
 
-  <!-- OPTIONAL HERO CROWN (HOME PAGE ONLY) -->
-  {% if page.show_hero_crown %}
-  <section class="home-hero">
-    <img 
-      src="{{ '/assets/img/day-crown.svg' | relative_url }}" 
-      alt="Day Crown"
-      class="home-crown"
-      id="crown-img">
-  </section>
-  {% endif %}
-
   <!-- MAIN CONTENT -->
   <main class="site-content">
     {{ content }}
@@ -35,7 +24,7 @@
   {% include footer.html %}
 
   <!-- THEME + GALLERY ENGINE -->
-<script src="/crown-creatives-v2/assets/js/magic.js"></script>
+  <script src="/crown-creatives-v2/assets/js/magic.js"></script>
 
 </body>
 </html>
