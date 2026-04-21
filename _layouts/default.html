@@ -8,9 +8,18 @@
   <!-- HEADER -->
   {% include header.html %}
 
+  <!-- HERO SECTION (HOME PAGE ONLY) -->
+  {% if page.layout == "home" %}
+    {{ content | split:"<!-- PAGE CONTENT -->" | first }}
+  {% endif %}
+
   <!-- MAIN CONTENT -->
   <main class="site-content">
-    {{ content }}
+    {% if page.layout == "home" %}
+      {{ content | split:"<!-- PAGE CONTENT -->" | last }}
+    {% else %}
+      {{ content }}
+    {% endif %}
   </main>
 
   <!-- INSPIRATION TICKER -->
