@@ -1,4 +1,4 @@
-// magic.js — theme engine + slow magical hero gallery
+// magic.js — theme engine + GitHub API autoscan + slow magical fades
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.body;
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* -------------------------------------------------- */
-  /* HERO GALLERY — SLOW, MAGICAL FADES                 */
+  /* HERO GALLERY — TRUE AUTOSCAN (GitHub API)          */
   /* -------------------------------------------------- */
 
   if (!body.classList.contains('home')) return;
@@ -50,8 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!LEFT_LANE || !RIGHT_LANE) return;
 
-  const GALLERY_PAGE_URL = '/crown-creatives-v2/gallery/';
-  const GALLERY_PREFIX = '/crown-creatives-v2/assets/images/gallery/';
+  // GitHub API endpoint for your gallery folder
+  const API_URL =
+    'https://api.github.com/repos/PmR76/crown-creatives-v2/contents/assets/images/gallery';
+
+  // Allowed image extensions
+  const VALID_EXT = ['.jpg', '.jpeg', '.png', '.webp'];
 
   function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -63,29 +67,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function fetchGalleryImages() {
     try {
-      const response = await fetch(GALLERY_PAGE_URL, { credentials: 'omit' });
+      const response = await fetch(API_URL, { cache: 'no-store' });
+
       if (!response.ok) {
-        console.error('Gallery fetch failed:', response.status);
+        console.error('GitHub API error:', response.status);
         return [];
       }
 
-      const html = await response.text();
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
+      const files = await response.json();
 
-      const imgs = Array.from(doc.querySelectorAll('img'));
+      // Extract only valid image files
+      const images = files
+        .filter(file => {
+          if (!file.name) return false;
+          const lower = file.name.toLowerCase();
+          return VALID_EXT.some(ext => lower.endsWith(ext));
+        })
+        .map(file => file.download_url);
 
-      const sources = imgs
-        .map(img => img.getAttribute('src'))
-        .filter(src =>
-          src &&
-          src.trim() !== '' &&
-          src.startsWith(GALLERY_PREFIX)
-        );
-
-      return Array.from(new Set(sources));
+      return shuffle(images);
     } catch (err) {
-      console.error('Error fetching gallery:', err);
+      console.error('Error fetching GitHub API:', err);
       return [];
     }
   }
@@ -105,13 +107,11 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    shuffle(images);
-
     let index = 0;
     let useLeft = true;
 
-    const VISIBLE_TIME = 8000; // image fully visible
-    const FADE_TIME = 4000;    // slow magical fade
+    const VISIBLE_TIME = 8000; // ms fully visible
+    const FADE_TIME = 4000;    // ms fade in/out
 
     function showNext() {
       const lane = useLeft ? LEFT_LANE : RIGHT_LANE;
