@@ -2,11 +2,23 @@
 layout: default
 ---
 
-<!-- HERO GALLERY LANES (LEFT + RIGHT) -->
-<div class="hero-gallery">
-  <div class="gallery-left"></div>
-  <div class="gallery-right"></div>
-</div>
+<!-- HERO SECTION (CROWN + LANES) -->
+<section class="home-hero">
+
+  <!-- Crown -->
+  <img 
+    src="{{ '/assets/img/day-crown.svg' | relative_url }}" 
+    alt="Day Crown"
+    class="home-crown"
+    id="crown-img">
+
+  <!-- HERO GALLERY LANES -->
+  <div class="hero-gallery">
+    <div class="gallery-left"></div>
+    <div class="gallery-right"></div>
+  </div>
+
+</section>
 
 <!-- PAGE CONTENT -->
 {{ content }}
