@@ -118,7 +118,7 @@ body[data-theme="night"] .crown-night {
 }
 
 /* -------------------------------------------------- */
-/* HERO SECTION — CLEAN, FINAL VERSION                */
+/* HERO SECTION                                       */
 /* -------------------------------------------------- */
 
 .home-hero {
@@ -129,22 +129,32 @@ body[data-theme="night"] .crown-night {
   z-index: 5;
 }
 
-/* MAIN HERO CROWN */
-.home-crown {
-  width: 260px;        /* reduced crown size */
-  max-width: 50%;
-  height: auto;
-  z-index: 10;
+/* HERO CROWN — STACKED DAY/NIGHT, 20% LARGER */
+
+.hero-crown-wrapper {
   position: relative;
-  pointer-events: none;
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-/* NIGHT MODE CROWN EFFECT */
-body[data-theme="night"] .home-crown {
-  opacity: 0.85;
-  transform: translateY(-4px);
+.home-crown {
+  width: 312px; /* 20% larger than 260px */
+  max-width: 55%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 8s ease-in-out;
 }
+
+/* DAY → NIGHT FADE */
+body[data-theme="day"] .crown-day { opacity: 1; }
+body[data-theme="night"] .crown-night { opacity: 1; }
 
 /* -------------------------------------------------- */
 /* HERO GALLERY LANES                                 */
@@ -152,10 +162,10 @@ body[data-theme="night"] .home-crown {
 
 .hero-gallery {
   position: absolute;
-  top: 40px;          /* moves images down into natural space beside crown */
+  top: 70px;   /* lowered to clear larger crown */
   left: 0;
   width: 100%;
-  height: 300px;      /* vertical space for images */
+  height: 320px;
   pointer-events: none;
   z-index: 1;
 }
@@ -173,9 +183,7 @@ body[data-theme="night"] .home-crown {
 .gallery-left { left: 0; }
 .gallery-right { right: 0; }
 
-/* -------------------------------------------------- */
-/* GALLERY IMAGES — FINAL VERSION                     */
-/* -------------------------------------------------- */
+/* GALLERY IMAGES */
 
 .lane-img {
   position: absolute;
@@ -194,7 +202,7 @@ body[data-theme="night"] .home-crown {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin: 4rem auto 1.5rem auto;
+  margin: 7rem auto 1.5rem auto; /* pushed down to avoid overlap with hero */
   flex-wrap: wrap;
 }
 
@@ -276,27 +284,3 @@ body[data-theme="night"] .home-crown {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-100%); }
 }
-.hero-crown-wrapper {
-  position: relative;
-  width: 100%;
-  height: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.home-crown {
-  width: 312px; /* 20% larger than 260px */
-  max-width: 55%;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 8s ease-in-out;
-}
-
-/* DAY → NIGHT FADE */
-body[data-theme="day"] .crown-day { opacity: 1; }
-body[data-theme="night"] .crown-night { opacity: 1; }
