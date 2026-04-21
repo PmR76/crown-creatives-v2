@@ -4,9 +4,8 @@ Status: Stable build with working icons, crowns, navigation, and relative_url pa
 Stable Build Checkpoint – 20 April 2026
 Stable build. Nice col,our gradients (no magic yet) with inspirational ticker on each page - looks nice 20 April 26 at 20:20
 /crown-creatives-v2/): 
-# CHECKPOINT — 21 April 2026 (Evening)
+# CHECKPOINT — 21 April 2026 (Evening)-V4
 Stable build after mobile fixes + slow fade gallery.
-
 Included in this save point:
 - Full merged CSS with mobile centering + overflow fixes
 - Full magic.js with slow magical fade timings
@@ -14,5 +13,5 @@ Included in this save point:
 - Gallery lanes tuned for mobile
 - Cards/ticker/footer spacing corrected
 - Desktop + tablet + mobile responsive layout stable
-
 This is a production‑ready restore point.
+# SAVE POINT — Crown Creatives (Style‑V2) **Date:** 2026‑04‑21 @ 22:39_V5
