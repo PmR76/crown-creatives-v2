@@ -1,4 +1,4 @@
-// magic.js — theme engine, stacked crown, hero gallery
+// magic.js — theme engine + slow magical hero gallery
 
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.body;
@@ -110,8 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let index = 0;
     let useLeft = true;
 
-    const VISIBLE_TIME = 8000; // ms fully visible
-    const FADE_TIME = 4000;    // ms fade in/out (matches CSS 4s)
+    const VISIBLE_TIME = 8000; // image fully visible
+    const FADE_TIME = 4000;    // slow magical fade
 
     function showNext() {
       const lane = useLeft ? LEFT_LANE : RIGHT_LANE;
