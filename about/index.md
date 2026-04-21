@@ -28,7 +28,7 @@ title: About
 
   <!-- SYMBOLIC IMAGE #1 (CROWN) -->
   <div class="about-visual">
-    <img src="/assets/images/about/crown-symbol.png" alt="Crown Creatives Symbol">
+    <img src="/assets/images/about/my-story-photoV5.png" alt="Crown Creatives Symbol">
   </div>
 
   <!-- TWO-COLUMN STORY SECTION -->
@@ -49,7 +49,7 @@ title: About
 
       <!-- SYMBOLIC IMAGE #2 (PERSONAL / ARTISTIC) -->
       <div class="about-visual">
-        <img src="/assets/images/about/profile.jpg" alt="Artist Portrait">
+        <img src="/assets/images/about/painting.jpg" alt="Artist Portrait">
       </div>
     </div>
 
@@ -68,7 +68,7 @@ title: About
 
       <!-- SYMBOLIC IMAGE #3 (RUNE / ART OBJECT) -->
       <div class="about-visual">
-        <img src="/assets/images/about/rune-stone.png" alt="Rune Stone Symbol">
+        <img src="/assets/images/about/gold-crown.png" alt="Rune Stone Symbol">
       </div>
     </div>
 
