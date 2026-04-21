@@ -124,7 +124,7 @@ body[data-theme="night"] .crown-night { opacity: 1; }
   z-index: 5;
 }
 
-/* HERO CROWN — STACKED DAY/NIGHT, 20% LARGER AGAIN */
+/* HERO CROWN — STACKED DAY/NIGHT, ENLARGED */
 
 .hero-crown-wrapper {
   position: relative;
@@ -136,7 +136,7 @@ body[data-theme="night"] .crown-night { opacity: 1; }
 }
 
 .home-crown {
-  width: 374px; /* increased again by 20% */
+  width: 374px; /* enlarged crown */
   max-width: 60%;
   position: absolute;
   top: 0;
@@ -151,12 +151,12 @@ body[data-theme="day"] .crown-day { opacity: 1; }
 body[data-theme="night"] .crown-night { opacity: 1; }
 
 /* -------------------------------------------------- */
-/* HERO GALLERY LANES                                 */
+/* HERO GALLERY LANES — MOVED UP                      */
 /* -------------------------------------------------- */
 
 .hero-gallery {
   position: absolute;
-  top: 110px;   /* lowered to clear larger crown */
+  top: 40px;   /* moved UP to align with top of crown */
   left: 0;
   width: 100%;
   height: 340px;
@@ -176,8 +176,6 @@ body[data-theme="night"] .crown-night { opacity: 1; }
 .gallery-left { left: 0; }
 .gallery-right { right: 0; }
 
-/* GALLERY IMAGES */
-
 .lane-img {
   position: absolute;
   width: 40%;
@@ -188,14 +186,14 @@ body[data-theme="night"] .crown-night { opacity: 1; }
 }
 
 /* -------------------------------------------------- */
-/* CARDS — SHIFTED DOWN BY 40mm                       */
+/* CARDS — MOVED DOWN BY AN EXTRA 20mm                */
 /* -------------------------------------------------- */
 
 .home-cards {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin: calc(11rem + 40mm) auto 1.5rem auto;
+  margin: calc(11rem + 60mm) auto 1.5rem auto; /* previously 40mm, now +20mm */
   flex-wrap: wrap;
 }
 
@@ -215,40 +213,13 @@ body[data-theme="night"] .crown-night { opacity: 1; }
 }
 
 /* -------------------------------------------------- */
-/* FOOTER — SHIFTED DOWN BY 40mm                      */
-/* -------------------------------------------------- */
-
-.site-footer {
-  padding: 2rem 0 2.5rem 0;
-  text-align: center;
-  background: transparent;
-  margin-top: calc(3rem + 40mm);
-}
-
-.footer-icons img {
-  width: 48px;
-  height: auto;
-}
-
-.footer-backtotop img {
-  width: 48px;
-  cursor: pointer;
-}
-
-.footer-backtotop {
-  position: absolute;
-  right: 1rem;
-  bottom: 0.5rem;
-}
-
-/* -------------------------------------------------- */
-/* TICKER — SHIFTED DOWN BY 40mm                      */
+/* TICKER — GAP CLOSED                                */
 /* -------------------------------------------------- */
 
 .inspiration-ticker {
   width: 100%;
   overflow: hidden;
-  margin: calc(4rem + 40mm) 0 1.5rem 0;
+  margin: 2rem 0 1.5rem 0; /* tightened */
   padding: 0.7rem 0;
   position: relative;
   background: rgba(255, 255, 255, 0.08);
@@ -277,4 +248,31 @@ body[data-theme="night"] .crown-night { opacity: 1; }
 @keyframes tickerScroll {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-100%); }
+}
+
+/* -------------------------------------------------- */
+/* FOOTER — GAP CLOSED                                */
+/* -------------------------------------------------- */
+
+.site-footer {
+  padding: 2rem 0 2.5rem 0;
+  text-align: center;
+  background: transparent;
+  margin-top: 2rem; /* tightened */
+}
+
+.footer-icons img {
+  width: 48px;
+  height: auto;
+}
+
+.footer-backtotop img {
+  width: 48px;
+  cursor: pointer;
+}
+
+.footer-backtotop {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.5rem;
 }
