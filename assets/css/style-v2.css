@@ -4,6 +4,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
 
+html, body {
+  overflow-x: hidden;   /* prevents sideways shifting on mobile */
+  width: 100%;
+  max-width: 100%;
+}
+
 body {
   font-family: 'Cinzel Decorative', serif;
   text-align: center;
@@ -162,6 +168,7 @@ body[data-theme="night"] .crown-night { opacity: 1; }
   height: 340px;
   pointer-events: none;
   z-index: 1;
+  overflow: hidden; /* prevents sideways overflow */
 }
 
 .gallery-left,
@@ -311,8 +318,8 @@ body[data-theme="night"] .crown-night { opacity: 1; }
 @media (max-width: 768px) {
 
   .home-crown {
-    width: 240px;
-    max-width: 80%;
+    width: 85vw;   /* always fits screen */
+    max-width: 300px;
   }
 
   .hero-gallery {
@@ -321,8 +328,8 @@ body[data-theme="night"] .crown-night { opacity: 1; }
   }
 
   .lane-img {
-    width: 55%;
-    left: 22%;
+    width: 70vw;
+    left: 15vw;   /* perfectly centred */
   }
 
   .home-cards {
@@ -341,6 +348,11 @@ body[data-theme="night"] .crown-night { opacity: 1; }
 
   .site-footer {
     margin-top: 1.5rem;
+  }
+
+  .site-nav ul {
+    gap: 1rem;
+    font-size: 0.9rem;
   }
 }
 
