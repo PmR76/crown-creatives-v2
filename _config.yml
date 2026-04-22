@@ -35,3 +35,6 @@ defaults:
       layout: default
       seo:
         type: website
+        git commit --allow-empty -m "Force rebuild"
+git push
+
