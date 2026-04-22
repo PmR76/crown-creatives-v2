@@ -44,10 +44,10 @@ document.addEventListener("DOMContentLoaded", () => {
      ------------------------------------------------------------ */
   function updateIcon(theme) {
     if (theme === "night") {
-      toggleIcon.src = "/assets/icons/moon.svg";
+      toggleIcon.src = "/assets/icons/sun-moon-magic.svg";
       toggleIcon.alt = "Switch to day mode";
     } else {
-      toggleIcon.src = "/assets/icons/sun.svg";
+      toggleIcon.src = "/assets/icons/sun-moon-magic.svg";
       toggleIcon.alt = "Switch to night mode";
     }
   }
