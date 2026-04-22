@@ -16,7 +16,7 @@ markdown: kramdown
 # DO NOT add any theme here
 
 # Force rebuild (increment this if GitHub Pages caches layouts)
-version: 1.0.2
+version: 12
 
 # Allow Jekyll to process custom folders
 include:
