@@ -110,3 +110,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+/* ------------------------------------------------------------
+   THEME TOGGLE (Day/Night Mode)
+   ------------------------------------------------------------ */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleButton = document.querySelector(".theme-toggle");
+  const html = document.documentElement;
+
+  const dayCrown = document.querySelector(".crown-day");
+  const nightCrown = document.querySelector(".crown-night");
+
+  if (!toggleButton) return;
+
+  toggleButton.addEventListener("click", () => {
+    html.classList.toggle("dark-theme");
+
+    const isDark = html.classList.contains("dark-theme");
+
+    if (dayCrown && nightCrown) {
+      dayCrown.style.display = isDark ? "none" : "block";
+      nightCrown.style.display = isDark ? "block" : "none";
+    }
+  });
+});
+
