@@ -1,14 +1,11 @@
 /* ============================================================
-   Crown Creatives — Master Stylesheet (v3)
+   Crown Creatives — Master Stylesheet (v4)
    Magical gradients • Hero crown • Gallery engine • About page
+   Fully aligned with updated HTML + JS + icon structure
    ============================================================ */
 
-/* Google Fonts — FIXED (display=swap) */
+/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
-
-/* Cache‑buster to force GitHub Pages rebuild */
-/* rebuild-v3 */
-
 
 /* ------------------------------------------------------------
    GLOBAL RESET + BASE
@@ -26,7 +23,7 @@ body {
 
 
 /* ------------------------------------------------------------
-   THEME ENGINE — DAY & NIGHT
+   THEME ENGINE — DAY & NIGHT (matches JS)
    ------------------------------------------------------------ */
 
 :root {
@@ -40,12 +37,14 @@ body {
   --glow-night: rgba(120, 200, 255, 0.55);
 }
 
-body[data-theme="day"] {
+/* DAY MODE */
+html:not(.dark-theme) {
   background: var(--bg-day);
   color: var(--text-day);
 }
 
-body[data-theme="night"] {
+/* NIGHT MODE */
+html.dark-theme {
   background: var(--bg-night);
   color: var(--text-night);
 }
@@ -62,16 +61,20 @@ body[data-theme="night"] {
   background: transparent;
 }
 
-.header-toggle {
+/* Updated toggle selectors */
+.theme-toggle {
   position: absolute;
   top: 1rem;
   right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-.toggle-icon {
+.theme-icon {
   width: 48px;
   height: auto;
-  cursor: pointer;
+  pointer-events: none;
 }
 
 .header-crown-wrapper {
@@ -79,12 +82,6 @@ body[data-theme="night"] {
   display: flex;
   justify-content: center;
   max-height: 120px;
-}
-
-.header-crown {
-  position: relative;
-  width: 160px;
-  height: auto;
 }
 
 .crown {
@@ -97,8 +94,8 @@ body[data-theme="night"] {
   pointer-events: none;
 }
 
-body[data-theme="day"] .crown-day { opacity: 1; }
-body[data-theme="night"] .crown-night { opacity: 1; }
+/* JS now controls crown visibility — no CSS needed */
+
 
 /* Navigation */
 .site-nav ul {
@@ -211,7 +208,7 @@ body[data-theme="night"] .crown-night { opacity: 1; }
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-body[data-theme="night"] .card {
+html.dark-theme .card {
   border-color: rgba(255, 255, 255, 0.25);
 }
 
@@ -322,6 +319,17 @@ body[data-theme="night"] .card {
   text-align: center;
 }
 
+/* Updated theme rules */
+html:not(.dark-theme) .gallery-page {
+  background: radial-gradient(circle at top, rgba(255,233,184,0.35), rgba(247,198,255,0.25), transparent 70%);
+  border-radius: 24px;
+}
+
+html.dark-theme .gallery-page {
+  background: radial-gradient(circle at top, rgba(40,30,90,0.7), rgba(90,40,140,0.5), transparent 70%);
+  border-radius: 24px;
+}
+
 .gallery-header h1 { font-size: 2.4rem; margin-bottom: 0.5rem; }
 
 .gallery-tagline {
@@ -329,16 +337,6 @@ body[data-theme="night"] .card {
   opacity: 0.85;
   max-width: 520px;
   margin: 0.5rem auto 2.5rem auto;
-}
-
-body[data-theme="day"] .gallery-page {
-  background: radial-gradient(circle at top, rgba(255,233,184,0.35), rgba(247,198,255,0.25), transparent 70%);
-  border-radius: 24px;
-}
-
-body[data-theme="night"] .gallery-page {
-  background: radial-gradient(circle at top, rgba(40,30,90,0.7), rgba(90,40,140,0.5), transparent 70%);
-  border-radius: 24px;
 }
 
 .magic-gallery-grid {
@@ -361,7 +359,7 @@ body[data-theme="night"] .gallery-page {
   box-shadow: 0 0 18px var(--glow-day);
 }
 
-body[data-theme="night"] .magic-gallery-tile {
+html.dark-theme .magic-gallery-tile {
   box-shadow: 0 0 22px var(--glow-night);
 }
 
@@ -506,7 +504,8 @@ body[data-theme="night"] .magic-gallery-tile {
   z-index: 2;
 }
 
-body[data-theme="day"] .about-page {
+/* Updated theme rules */
+html:not(.dark-theme) .about-page {
   background: radial-gradient(circle at top,
     rgba(255,233,184,0.35),
     rgba(247,198,255,0.25),
@@ -515,7 +514,7 @@ body[data-theme="day"] .about-page {
   border-radius: 24px;
 }
 
-body[data-theme="night"] .about-page {
+html.dark-theme .about-page {
   background: radial-gradient(circle at top,
     rgba(40,30,90,0.7),
     rgba(90,40,140,0.5),
@@ -573,8 +572,12 @@ body[data-theme="night"] .about-page {
   width: 220px;
   max-width: 75%;
   border-radius: 18px;
-  box-shadow: 0 0 22px var(--glow-day);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-body[data-theme="night
+/* Glow effects updated */
+html:not(.dark-theme) .about-visual img {
+  box-shadow: 0 0 22px var(--glow-day);
+}
+
+html.dark
