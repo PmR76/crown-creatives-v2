@@ -1,11 +1,11 @@
 theme:
 
-title: "Crown Creatives v2"
+title: "Crown Creatives v3"
 description: "Clean rebuild of the Crown Creatives website."
 
 # GitHub Pages settings
 url: "https://pmr76.github.io"
-baseurl: "/crown-creatives-v2"
+baseurl: "/crown-creatives-v3"
 
 # Markdown engine
 markdown: kramdown
@@ -16,7 +16,7 @@ markdown: kramdown
 # DO NOT add any theme here
 
 # Force rebuild (increment this if GitHub Pages caches layouts)
-version: 11
+version: 1.0.2
 
 # Allow Jekyll to process custom folders
 include:
