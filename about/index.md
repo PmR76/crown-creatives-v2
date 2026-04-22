@@ -6,14 +6,6 @@ bodyClass: about
 
 <section class="about-page">
 
-  <!-- ============================
-       HEADER
-       ============================ -->
-  <header class="about-header">
-    <h1>About Crown Creatives</h1>
-    <p class="about-tagline">Artistry • Resilience • Imagination</p>
-  </header>
-
 
   <!-- ============================
        GOLD CROWN SYMBOL (SMALL)
@@ -21,7 +13,7 @@ bodyClass: about
   <section class="about-visual">
     <img src="{{ '/assets/images/about/gold-crown.png' | relative_url }}"
          alt="Crown Creatives Gold Crown"
-         class="about-img-small">
+         class="about-img-medium">
   </section>
 
 
