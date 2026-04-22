@@ -505,3 +505,19 @@ html.dark-theme .about-page {
   .home-cards { margin-top: calc(5rem + clamp(6rem, 12vw, 10rem)); }
   .card { width: 90%; }
 }
+/* FIX HEADER CROWN SIZE */
+.header-logo,
+.header-brand img,
+.site-header img {
+  width: 150px !important;
+  max-width: 150px !important;
+  height: auto !important;
+  display: block;
+  margin: 0 auto;
+}
+.site-header svg,
+.site-header img {
+  width: 150px !important;
+  max-width: 150px !important;
+  height: auto !important;
+}
