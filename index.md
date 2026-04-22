@@ -3,9 +3,12 @@ layout: default
 title: Home
 ---
 
+<!-- ============================
+     HERO SECTION
+     ============================ -->
 <section class="home-hero">
 
-  <!-- HERO CROWN (day/night swap) -->
+  <!-- HERO CROWN (150% SIZE + TRANSITION) -->
   <div class="hero-crown-wrapper">
     <img src="{{ '/assets/icons/day-crown.svg' | relative_url }}"
          alt="Day Crown"
@@ -25,7 +28,9 @@ title: Home
 </section>
 
 
-<!-- MAGICAL CARDS -->
+<!-- ============================
+     MAGICAL CARDS
+     ============================ -->
 <section class="home-cards">
 
   <article class="card">
@@ -44,3 +49,16 @@ title: Home
   </article>
 
 </section>
+
+
+<!-- ============================
+     INSPIRATION TICKER
+     ============================ -->
+<div class="inspiration-ticker">
+  <div class="ticker-track">
+    <span>Creativity is the purest form of magic.</span>
+    <span>Every idea begins with imagination.</span>
+    <span>Resilience turns dreams into reality.</span>
+    <span>Artistry transforms the ordinary into the extraordinary.</span>
+  </div>
+</div>
