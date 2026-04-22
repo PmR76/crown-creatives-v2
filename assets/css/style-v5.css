@@ -527,3 +527,14 @@ html.dark-theme .about-page {
   padding: 3rem 2rem;
   line-height: 1.7;
 }
+/* LOCK HEADER CROWN SIZE */
+.site-header .header-logo,
+.site-header img.header-logo {
+  width: 150px !important;
+  max-width: 150px !important;
+  height: auto !important;
+  background: transparent !important;
+}
+.site-header {
+  background: transparent !important;
+}
