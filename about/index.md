@@ -13,7 +13,7 @@ title: About
     </p>
   </header>
 
-  <!-- INTRO — MYTHIC + PERSONAL -->
+  <!-- INTRO — PERSONAL + MYTHIC -->
   <div class="about-intro">
     <p>
       Every creative journey begins with a spark — a moment where the ordinary world cracks open just enough to reveal something luminous beneath.
@@ -82,4 +82,3 @@ title: About
   </div>
 
 </section>
-<!-- rebuild 3 -->
