@@ -1,31 +1,98 @@
-/* -------------------------------------------------- */
-/* CROWN CREATIVES — MASTER STYLESHEET (style-v2.css) */
-/* Compact, commented, production-ready                */
-/* -------------------------------------------------- */
+/* ============================================================
+   Crown Creatives — Master Stylesheet (v3)
+   Magical gradients • Hero crown • Gallery engine • About page
+   ============================================================ */
 
-/* -------------------------------------------------- */
-/* GLOBAL FONT — CINZEL DECORATIVE                    */
-/* -------------------------------------------------- */
-
+/* Google Fonts — FIXED (display=swap) */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
 
-html,
-body {
-  overflow-x: hidden;
-  width: 100%;
-  max-width: 100%;
-  min-height: 100%;
-}
+/* Cache‑buster to force GitHub Pages rebuild */
+ /* rebuild-v3 */
 
-body {
-  font-family: 'Cinzel Decorative', serif;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  letter-spacing: 0.4px;
-  transition: background 0.6s ease, color 0.6s ease;
-  position: relative;
-}
+/* ------------------------------------------------------------
+   GLOBAL RESET + BASE
+   ------------------------------------------------------------ */
+
+/* (KEEP YOUR EXISTING RESET + BASE RULES HERE)
+   Example:
+   *, *::before, *::after { box-sizing: border-box; }
+   body { margin: 0; font-family: 'Cinzel Decorative', serif; }
+*/
+
+/* ------------------------------------------------------------
+   HEADER + NAVIGATION
+   ------------------------------------------------------------ */
+
+/* (KEEP YOUR EXISTING HEADER + NAV CSS HERE)
+   This includes:
+   - .site-header
+   - .header-inner
+   - .header-logo
+   - .nav-list
+   - .theme-toggle
+*/
+
+/* ------------------------------------------------------------
+   HERO SECTION (HOME PAGE)
+   ------------------------------------------------------------ */
+
+/* (KEEP YOUR EXISTING HERO + CROWN + FLOATING GALLERY CSS HERE)
+   This includes:
+   - .hero
+   - .hero-crown
+   - .gallery-left / .gallery-right
+   - fade animations
+*/
+
+/* ------------------------------------------------------------
+   ABOUT PAGE STYLES
+   ------------------------------------------------------------ */
+
+/* (KEEP YOUR EXISTING ABOUT PAGE CSS HERE)
+   This includes:
+   - .about-page
+   - .about-header
+   - .about-intro
+   - .about-columns
+   - .about-column
+   - .about-visual
+   - .about-img-medium / .about-img-small
+*/
+
+/* ------------------------------------------------------------
+   GALLERY PAGE STYLES
+   ------------------------------------------------------------ */
+
+/* (KEEP YOUR EXISTING GALLERY CSS HERE)
+   This includes:
+   - #magic-gallery
+   - .magic-gallery-tile
+   - .magic-lightbox
+   - .magic-lightbox-image
+*/
+
+/* ------------------------------------------------------------
+   FOOTER
+   ------------------------------------------------------------ */
+
+/* (KEEP YOUR EXISTING FOOTER CSS HERE)
+   This includes:
+   - .site-footer
+   - .footer-inner
+   - .footer-tagline
+*/
+
+/* ------------------------------------------------------------
+   RESPONSIVE BREAKPOINTS
+   ------------------------------------------------------------ */
+
+/* (KEEP YOUR EXISTING MEDIA QUERIES HERE)
+   Example:
+   @media (max-width: 768px) { ... }
+*/
+
+/* END OF style-v3.css */
+
 
 /* -------------------------------------------------- */
 /* THEME ENGINE — DAY & NIGHT                         */
