@@ -1,25 +1,26 @@
 ---
 layout: default
 title: Home
+bodyClass: home
 ---
 
 <!-- ============================
-     HERO SECTION
+     HERO SECTION (CROWN + LANES)
      ============================ -->
 <section class="home-hero">
 
-  <!-- HERO CROWN (150% SIZE + TRANSITION) -->
+  <!-- HERO CROWN (day/night swap) -->
   <div class="hero-crown-wrapper">
     <img src="{{ '/assets/icons/day-crown.svg' | relative_url }}"
-         alt="Day Crown"
-         class="home-crown crown-day">
+         class="home-crown crown-day"
+         alt="Day Crown">
 
     <img src="{{ '/assets/icons/night-crown.svg' | relative_url }}"
-         alt="Night Crown"
-         class="home-crown crown-night">
+         class="home-crown crown-night"
+         alt="Night Crown">
   </div>
 
-  <!-- HERO GALLERY LANES -->
+  <!-- HERO GALLERY LANES (left + right) -->
   <div class="hero-gallery">
     <div class="gallery-left"></div>
     <div class="gallery-right"></div>
