@@ -646,3 +646,35 @@ section {
   padding: 3rem 2rem;
   line-height: 1.7;
 }
+/* ABOUT PAGE — HERO CROWN */
+.about-crown-hero {
+  width: clamp(220px, 40vw, 420px);
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 2.5rem auto;
+  filter: drop-shadow(0 0 18px rgba(255, 215, 120, 0.55));
+}
+
+/* Supporting images */
+.about-img-medium {
+  width: clamp(140px, 22vw, 200px);
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+  display: block;
+  margin: 2.5rem auto;
+}
+
+/* Page spacing */
+.about-page {
+  padding: clamp(3rem, 6vw, 5rem) 1.5rem;
+  text-align: center;
+}
+
+.about-intro p {
+  max-width: 680px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.6;
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+}
