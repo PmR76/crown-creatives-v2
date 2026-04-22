@@ -50,17 +50,3 @@ bodyClass: home
   </article>
 
 </section>
-
-
-<!-- ============================
-     INSPIRATION TICKER
-     ============================ -->
-<div class="inspiration-ticker">
-  <div class="ticker-track">
-    <span>Creativity is the purest form of magic.</span>
-    <span>Every idea begins with imagination.</span>
-    <span>Resilience turns dreams into reality.</span>
-    <span>Artistry transforms the ordinary into the extraordinary.</span>
-  </div>
-</div>
-
