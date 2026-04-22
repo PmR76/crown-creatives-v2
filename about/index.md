@@ -28,7 +28,7 @@ title: About
 
   <!-- SYMBOLIC IMAGE #1 — MAIN STORY IMAGE -->
   <div class="about-visual about-img-medium">
-    <img src="/assets/images/about/my-story-photoV5.PNG" alt="My Story Image">
+    <img src="/assets/images/about/my-story-photoV5.png" alt="My Story Image">
   </div>
 
   <!-- TWO-COLUMN STORY SECTION -->
@@ -68,7 +68,7 @@ title: About
 
       <!-- SYMBOLIC IMAGE #3 — GOLD CROWN -->
       <div class="about-visual about-img-small">
-        <img src="/assets/images/about/gold-crown.PNG" alt="Golden Crown Symbol">
+        <img src="/assets/images/about/gold-crown.png" alt="Golden Crown Symbol">
       </div>
     </div>
 
