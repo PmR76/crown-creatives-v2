@@ -542,3 +542,18 @@ html.dark-theme .magic-gallery-tile {
 
 /* Updated theme rules */
 html:not(.dark-theme) .about
+/* ============================================================
+   GLOBAL DOWNWARD SHIFT — CARDS, TICKER, FOOTER (30mm)
+   ============================================================ */
+
+.home-cards {
+  margin-top: calc(18rem + 30mm) !important;
+}
+
+.inspiration-ticker {
+  margin-top: calc(2rem + 30mm) !important;
+}
+
+.site-footer {
+  margin-top: calc(3rem + 30mm) !important;
+}
