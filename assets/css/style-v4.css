@@ -603,4 +603,22 @@ html.dark
   font-size: 0.95rem;
   opacity: 0.85;
 }
+.theme-icon {
+  width: 48px;
+  height: auto;
+  pointer-events: none;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.7));
+  animation: themePulse 3.5s ease-in-out infinite;
+}
+
+@keyframes themePulse {
+  0%   { transform: scale(1);   filter: drop-shadow(0 0 6px rgba(255,255,255,0.5)); }
+  50%  { transform: scale(1.06); filter: drop-shadow(0 0 16px rgba(255,255,255,0.9)); }
+  100% { transform: scale(1);   filter: drop-shadow(0 0 6px rgba(255,255,255,0.5)); }
+}
+.home-crown {
+  width: 189px;
+  max-width: 189px;
+  …
+}
 
