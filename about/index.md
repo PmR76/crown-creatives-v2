@@ -77,7 +77,7 @@ bodyClass: about
        RESPONSIVE VISUAL
        ============================ -->
   <section class="about-visual">
-    <img src="{{ '/assets/images/about/about-symbol.png' | relative_url }}"
+    <img src="{{ '/assets/images/about/gold-crown.png' | relative_url }}"
          alt="Crown Creatives Symbol">
   </section>
 
