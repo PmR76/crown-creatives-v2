@@ -581,3 +581,26 @@ html:not(.dark-theme) .about-visual img {
 }
 
 html.dark
+
+.header-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.header-logo {
+  width: 120px;
+  height: auto;
+}
+
+.header-title {
+  font-size: 1.8rem;
+  letter-spacing: 0.18em;
+}
+
+.header-tagline {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
