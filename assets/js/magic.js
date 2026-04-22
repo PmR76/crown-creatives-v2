@@ -1,151 +1,112 @@
-// magic.js — theme engine + GitHub API autoscan + slow magical fades
+/* ============================================================
+   Crown Creatives — Magic Engine (v3)
+   Handles:
+   - Hero crown fade-in
+   - Hero gallery lane animations
+   - Lightbox system
+   - Smooth scroll to top
+   ============================================================ */
 
-document.addEventListener('DOMContentLoaded', () => {
-  const body = document.body;
 
-  /* -------------------------------------------------- */
-  /* THEME ENGINE — DAY / NIGHT                         */
-  /* -------------------------------------------------- */
+/* ------------------------------------------------------------
+   HERO CROWN FADE-IN
+   ------------------------------------------------------------ */
 
-  const toggle =
-    document.getElementById('theme-toggle') ||
-    document.querySelector('.header-toggle, .toggle-icon, [data-role="theme-toggle"]');
-
-  function applyTheme(theme) {
-    const safeTheme = theme === 'night' ? 'night' : 'day';
-    body.setAttribute('data-theme', safeTheme);
-    localStorage.setItem('cc-theme', safeTheme);
+document.addEventListener("DOMContentLoaded", () => {
+  const homeCrown = document.querySelector(".home-crown");
+  if (homeCrown) {
+    setTimeout(() => {
+      homeCrown.style.opacity = "1";
+    }, 300);
   }
+});
 
-  function getInitialTheme() {
-    const saved = localStorage.getItem('cc-theme');
-    if (saved === 'day' || saved === 'night') return saved;
 
-    const prefersDark =
-      window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches;
+/* ------------------------------------------------------------
+   HERO GALLERY — FLOATING LANES
+   ------------------------------------------------------------ */
 
-    return prefersDark ? 'night' : 'day';
-  }
+function fadeInLaneImages() {
+  const laneImages = document.querySelectorAll(".lane-img");
+  let delay = 200;
 
-  const initialTheme = getInitialTheme();
-  applyTheme(initialTheme);
+  laneImages.forEach(img => {
+    setTimeout(() => {
+      img.style.opacity = "1";
+    }, delay);
+    delay += 400;
+  });
+}
 
-  if (toggle) {
-    toggle.addEventListener('click', () => {
-      const current = body.getAttribute('data-theme') || 'day';
-      const next = current === 'day' ? 'night' : 'day';
-      applyTheme(next);
+document.addEventListener("DOMContentLoaded", fadeInLaneImages);
+
+
+/* ------------------------------------------------------------
+   LIGHTBOX ENGINE
+   ------------------------------------------------------------ */
+
+const lightbox = document.querySelector(".magic-lightbox");
+const lightboxImage = document.querySelector(".magic-lightbox-image");
+const lightboxBackdrop = document.querySelector(".magic-lightbox-backdrop");
+const lightboxClose = document.querySelector(".magic-lightbox-close");
+const lightboxPrev = document.querySelector(".magic-lightbox-prev");
+const lightboxNext = document.querySelector(".magic-lightbox-next");
+
+let galleryImages = [];
+let currentIndex = 0;
+
+function openLightbox(index) {
+  currentIndex = index;
+  lightboxImage.src = galleryImages[index].src;
+  lightbox.classList.add("is-active");
+}
+
+function closeLightbox() {
+  lightbox.classList.remove("is-active");
+}
+
+function showPrev() {
+  currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+  lightboxImage.src = galleryImages[currentIndex].src;
+}
+
+function showNext() {
+  currentIndex = (currentIndex + 1) % galleryImages.length;
+  lightboxImage.src = galleryImages[currentIndex].src;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  galleryImages = Array.from(document.querySelectorAll(".magic-gallery-tile img"));
+
+  galleryImages.forEach((img, index) => {
+    img.addEventListener("click", () => openLightbox(index));
+  });
+
+  if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+  if (lightboxBackdrop) lightboxBackdrop.addEventListener("click", closeLightbox);
+  if (lightboxPrev) lightboxPrev.addEventListener("click", showPrev);
+  if (lightboxNext) lightboxNext.addEventListener("click", showNext);
+
+  document.addEventListener("keydown", (e) => {
+    if (!lightbox.classList.contains("is-active")) return;
+
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowLeft") showPrev();
+    if (e.key === "ArrowRight") showNext();
+  });
+});
+
+
+/* ------------------------------------------------------------
+   SMOOTH SCROLL TO TOP
+   ------------------------------------------------------------ */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const backToTop = document.querySelector(".footer-backtotop a");
+  if (backToTop) {
+    backToTop.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
-
-  /* -------------------------------------------------- */
-  /* HERO GALLERY — TRUE AUTOSCAN (GitHub API)          */
-  /* -------------------------------------------------- */
-
-  if (!body.classList.contains('home')) return;
-
-  const LEFT_LANE = document.querySelector('.gallery-left');
-  const RIGHT_LANE = document.querySelector('.gallery-right');
-
-  if (!LEFT_LANE || !RIGHT_LANE) return;
-
-  // GitHub API endpoint for your gallery folder
-  const API_URL =
-    'https://api.github.com/repos/PmR76/crown-creatives-v2/contents/assets/images/gallery';
-
-  // Allowed image extensions
-  const VALID_EXT = ['.jpg', '.jpeg', '.png', '.webp'];
-
-  function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-  }
-
-  async function fetchGalleryImages() {
-    try {
-      const response = await fetch(API_URL, { cache: 'no-store' });
-
-      if (!response.ok) {
-        console.error('GitHub API error:', response.status);
-        return [];
-      }
-
-      const files = await response.json();
-
-      // Extract only valid image files
-      const images = files
-        .filter(file => {
-          if (!file.name) return false;
-          const lower = file.name.toLowerCase();
-          return VALID_EXT.some(ext => lower.endsWith(ext));
-        })
-        .map(file => file.download_url);
-
-      return shuffle(images);
-    } catch (err) {
-      console.error('Error fetching GitHub API:', err);
-      return [];
-    }
-  }
-
-  function createLaneImage(src) {
-    const img = document.createElement('img');
-    img.src = src;
-    img.loading = 'lazy';
-    img.decoding = 'async';
-    img.classList.add('lane-img');
-    return img;
-  }
-
-  function startGalleryCycle(images) {
-    if (!images.length) {
-      console.warn('No gallery images found.');
-      return;
-    }
-
-    let index = 0;
-    let useLeft = true;
-
-    const VISIBLE_TIME = 8000; // ms fully visible
-    const FADE_TIME = 4000;    // ms fade in/out
-
-    function showNext() {
-      const lane = useLeft ? LEFT_LANE : RIGHT_LANE;
-      lane.innerHTML = '';
-
-      const src = images[index];
-      const img = createLaneImage(src);
-      lane.appendChild(img);
-
-      // fade in
-      requestAnimationFrame(() => {
-        img.style.opacity = '1';
-      });
-
-      // schedule fade out
-      setTimeout(() => {
-        img.style.opacity = '0';
-
-        // after fade, move to next image + lane
-        setTimeout(() => {
-          index = (index + 1) % images.length;
-          useLeft = !useLeft;
-          showNext();
-        }, FADE_TIME);
-      }, VISIBLE_TIME);
-    }
-
-    showNext();
-  }
-
-  async function initGallery() {
-    const images = await fetchGalleryImages();
-    startGalleryCycle(images);
-  }
-
-  initGallery();
 });
