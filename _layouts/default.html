@@ -1,34 +1,103 @@
-<header class="site-header">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Theme Toggle -->
-  <button class="theme-toggle" aria-label="Toggle theme">
-    <img src="{{ '/assets/icons/sun-moon-magic.svg' | relative_url }}"
-         alt="Theme toggle icon"
-         class="theme-icon">
-  </button>
+  <title>{{ page.title }} | Crown Creatives</title>
 
-  <!-- Brand Crown + Title -->
-  <div class="header-brand">
-    <img src="{{ '/assets/img/head-crown.svg' | relative_url }}"
-         alt="Crown Creatives Logo"
-         class="header-logo">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{{ '/assets/css/style-v4.css' | relative_url }}">
 
-    <h1 class="header-title">CROWN CREATIVES</h1>
-    <p class="header-tagline">Artistry • Resilience • Imagination</p>
-  </div>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="{{ '/assets/icons/favicon.ico' | relative_url }}">
+</head>
 
-  <!-- Navigation (we’ll expand in step 3) -->
-<nav class="site-nav">
-  <ul>
-    <li><a href="{{ '/' | relative_url }}">Home</a></li>
-    <li><a href="{{ '/about/' | relative_url }}">About</a></li>
-    <li><a href="{{ '/gallery/' | relative_url }}">Gallery</a></li>
-    <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
-    <li><a href="{{ '/videos/' | relative_url }}">Videos</a></li>
-    <li><a href="{{ '/podcasts/' | relative_url }}">Podcasts</a></li>
-    <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
-    <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
-  </ul>
-</nav>
+<body>
 
-</header>
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="site-header">
+
+    <!-- THEME TOGGLE (always top-right) -->
+    <button class="theme-toggle" type="button" aria-label="Toggle theme">
+      <img class="theme-icon" 
+           src="{{ '/assets/icons/sun-moon-magic.svg' | relative_url }}" 
+           alt="Toggle Theme">
+    </button>
+
+    <div class="header-inner">
+
+      <!-- BRAND BLOCK -->
+      <div class="header-brand">
+        <a href="{{ '/' | relative_url }}">
+          <img src="{{ '/assets/img/head-crown.svg' | relative_url }}"
+               alt="Crown Creatives Logo"
+               class="header-logo">
+        </a>
+
+        <h1 class="header-title">CROWN CREATIVES</h1>
+        <p class="header-tagline">Artistry • Resilience • Imagination</p>
+      </div>
+
+      <!-- NAVIGATION -->
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+          <li><a href="{{ '/gallery/' | relative_url }}">Gallery</a></li>
+          <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
+          <li><a href="{{ '/videos/' | relative_url }}">Videos</a></li>
+          <li><a href="{{ '/podcasts/' | relative_url }}">Podcasts</a></li>
+          <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       PAGE CONTENT
+       ============================================================ -->
+  <main class="site-content">
+    {{ content }}
+  </main>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+
+    <!-- Footer Icons -->
+    <div class="footer-icons">
+      <a href="mailto:info@crowncreatives.co.uk">
+        <img src="{{ '/assets/icons/email-magic.svg' | relative_url }}" alt="Email">
+      </a>
+
+      <a href="https://www.instagram.com/" target="_blank">
+        <img src="{{ '/assets/icons/instagram-magic.svg' | relative_url }}" alt="Instagram">
+      </a>
+
+      <a href="https://www.facebook.com/" target="_blank">
+        <img src="{{ '/assets/icons/facebook-magic.svg' | relative_url }}" alt="Facebook">
+      </a>
+    </div>
+
+    <!-- Back to Top -->
+    <div class="footer-backtotop">
+      <a href="#">
+        <img src="{{ '/assets/icons/up-arrow-magic.svg' | relative_url }}" alt="Back to top">
+      </a>
+    </div>
+
+  </footer>
+
+  <!-- Scripts -->
+  <script src="{{ '/assets/js/magic.js' | relative_url }}"></script>
+
+</body>
+</html>
