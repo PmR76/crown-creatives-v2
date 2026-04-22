@@ -1,53 +1,83 @@
 ---
 layout: default
-title: Home
-bodyClass: home
+title: About
+bodyClass: about
 ---
 
-<!-- ============================
-     HERO SECTION (CROWN + LANES)
-     ============================ -->
-<section class="home-hero">
+<section class="about-page">
 
-  <!-- HERO CROWN (day/night swap) -->
-  <div class="hero-crown-wrapper">
-    <img src="{{ '/assets/icons/day-crown.svg' | relative_url }}"
-         class="home-crown crown-day"
-         alt="Day Crown">
+  <!-- ============================
+       HEADER
+       ============================ -->
+  <header class="about-header">
+    <h1>About Crown Creatives</h1>
+    <p class="about-tagline">Artistry • Resilience • Imagination</p>
+  </header>
 
-    <img src="{{ '/assets/icons/night-crown.svg' | relative_url }}"
-         class="home-crown crown-night"
-         alt="Night Crown">
-  </div>
 
-  <!-- HERO GALLERY LANES (left + right) -->
-  <div class="hero-gallery">
-    <div class="gallery-left"></div>
-    <div class="gallery-right"></div>
-  </div>
+  <!-- ============================
+       GOLD CROWN SYMBOL
+       ============================ -->
+  <section class="about-visual">
+    <img src="{{ '/assets/images/about/gold-crown.png' | relative_url }}"
+         alt="Crown Creatives Gold Crown"
+         class="about-img-small">
+  </section>
+
+
+  <!-- ============================
+       SHORT INTRO
+       ============================ -->
+  <section class="about-intro">
+    <p>
+      Crown Creatives is a space shaped by imagination, symbolism, and the quiet
+      resilience behind every creative journey. It’s a home for storytelling,
+      design, and the kind of artistry that transforms lived experience into
+      something meaningful.
+    </p>
+  </section>
+
+
+  <!-- ============================
+       MY STORY PHOTO
+       ============================ -->
+  <section class="about-visual">
+    <img src="{{ '/assets/images/about/my-story-photoV5.png' | relative_url }}"
+         alt="My Story"
+         class="about-img-medium">
+  </section>
+
+
+  <!-- ============================
+       SHORT STORY BLOCK
+       ============================ -->
+  <section class="about-intro">
+    <p>
+      Creativity often grows from challenge. Crown Creatives honours the process
+      of rebuilding — the courage to evolve, the strength to begin again, and the
+      imagination required to shape a new story from the fragments of an old one.
+    </p>
+  </section>
+
+
+  <!-- ============================
+       PAINTING IMAGE
+       ============================ -->
+  <section class="about-visual">
+    <img src="{{ '/assets/images/about/painting.png' | relative_url }}"
+         alt="Painting"
+         class="about-img-medium">
+  </section>
+
+
+  <!-- ============================
+       FINAL NOTE
+       ============================ -->
+  <section class="about-intro">
+    <p>
+      This space is a testament to becoming — a reminder that transformation is
+      possible, and that art can be both a sanctuary and a spark.
+    </p>
+  </section>
 
 </section>
-
-
-<!-- ============================
-     MAGICAL CARDS
-     ============================ -->
-<section class="home-cards">
-
-  <article class="card">
-    <h2>Artistry</h2>
-    <p>Celebrating creative expression through design, craft, and storytelling.</p>
-  </article>
-
-  <article class="card">
-    <h2>Resilience</h2>
-    <p>Honouring strength, growth, and the courage to evolve through challenges.</p>
-  </article>
-
-  <article class="card">
-    <h2>Imagination</h2>
-    <p>Igniting wonder and innovation — where ideas transform into magical realities.</p>
-  </article>
-
-</section>
-
