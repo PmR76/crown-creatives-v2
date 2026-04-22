@@ -1,6 +1,7 @@
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>
     {% if page.title %}
@@ -10,9 +11,16 @@
     {% endif %}
   </title>
 
-  <!-- Core Stylesheet (Stable Restore Version) -->
-  <link rel="stylesheet" href="{{ '/assets/css/style-v2.css' | relative_url }}">
+  <meta name="description" content="Crown Creatives — Artistry, resilience, imagination, and creative transformation.">
 
   <!-- Favicon -->
-  <link rel="icon" href="{{ '/assets/images/favicon.png' | relative_url }}">
+  <link rel="icon" type="image/png" href="{{ '/assets/icons/crown-favicon.png' | relative_url }}">
+
+  <!-- MAIN STYLESHEET (UPDATED TO v3) -->
+  <link rel="stylesheet" href="{{ '/assets/css/style-v3.css?v=1.0.1' | relative_url }}">
+
+  <!-- Google Fonts Preconnect (optional but recommended) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 </head>
