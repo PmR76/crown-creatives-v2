@@ -16,7 +16,7 @@ bodyClass: about
 
 
   <!-- ============================
-       GOLD CROWN SYMBOL
+       GOLD CROWN SYMBOL (SMALL)
        ============================ -->
   <section class="about-visual">
     <img src="{{ '/assets/images/about/gold-crown.png' | relative_url }}"
@@ -30,16 +30,15 @@ bodyClass: about
        ============================ -->
   <section class="about-intro">
     <p>
-      Crown Creatives is a space shaped by imagination, symbolism, and the quiet
-      resilience behind every creative journey. It’s a home for storytelling,
-      design, and the kind of artistry that transforms lived experience into
-      something meaningful.
+      Crown Creatives is shaped by imagination, symbolism, and the quiet resilience
+      behind every creative journey. It’s a home for storytelling, design, and the
+      kind of artistry that transforms lived experience into something meaningful.
     </p>
   </section>
 
 
   <!-- ============================
-       MY STORY PHOTO
+       MY STORY PHOTO (MEDIUM)
        ============================ -->
   <section class="about-visual">
     <img src="{{ '/assets/images/about/my-story-photoV5.png' | relative_url }}"
@@ -53,15 +52,15 @@ bodyClass: about
        ============================ -->
   <section class="about-intro">
     <p>
-      Creativity often grows from challenge. Crown Creatives honours the process
-      of rebuilding — the courage to evolve, the strength to begin again, and the
+      Creativity often grows from challenge. Crown Creatives honours the process of
+      rebuilding — the courage to evolve, the strength to begin again, and the
       imagination required to shape a new story from the fragments of an old one.
     </p>
   </section>
 
 
   <!-- ============================
-       PAINTING IMAGE
+       PAINTING IMAGE (MEDIUM)
        ============================ -->
   <section class="about-visual">
     <img src="{{ '/assets/images/about/painting.png' | relative_url }}"
