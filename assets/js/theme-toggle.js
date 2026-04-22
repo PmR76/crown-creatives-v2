@@ -1,59 +1,54 @@
-// ============================================================
-//  Crown Creatives — Theme Toggle Engine (DAY / NIGHT VERSION)
-// ============================================================
+/* ============================================================
+   Crown Creatives — Theme Toggle Engine (v3)
+   Handles:
+   - Day/Night theme switching
+   - Icon swapping
+   - Local storage persistence
+   ============================================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
-  const root = document.documentElement;
-  const toggle = document.querySelector(".theme-toggle");
-  const icon = document.querySelector(".theme-icon");
+  const body = document.body;
+  const toggleButton = document.querySelector(".theme-toggle");
+  const toggleIcon = document.querySelector(".theme-icon");
 
-  if (!toggle || !icon) {
-    console.warn("Theme toggle not found.");
-    return;
-  }
+  if (!toggleButton || !toggleIcon) return;
 
-  // ------------------------------------------------------------
-  // Load saved theme (day / night)
-  // ------------------------------------------------------------
-  const saved = localStorage.getItem("cc-theme");
+  /* ------------------------------------------------------------
+     LOAD SAVED THEME
+     ------------------------------------------------------------ */
+  const savedTheme = localStorage.getItem("cc-theme");
 
-  if (saved === "day" || saved === "night") {
-    root.setAttribute("data-theme", saved);
+  if (savedTheme === "night" || savedTheme === "day") {
+    body.setAttribute("data-theme", savedTheme);
+    updateIcon(savedTheme);
   } else {
-    root.setAttribute("data-theme", "day");
+    // Default to day
+    body.setAttribute("data-theme", "day");
+    updateIcon("day");
   }
 
-  // ------------------------------------------------------------
-  // Smooth transition
-  // ------------------------------------------------------------
-  function applyTransition() {
-    root.style.transition =
-      "background 1s ease, color 1s ease, filter 1s ease";
-  }
-
-  setTimeout(applyTransition, 50);
-
-  // ------------------------------------------------------------
-  // Update icon
-  // ------------------------------------------------------------
-  function updateIcon(theme) {
-    icon.src = theme === "night"
-      ? "/assets/icons/moon.svg"
-      : "/assets/icons/sun.svg";
-  }
-
-  updateIcon(root.getAttribute("data-theme"));
-
-  // ------------------------------------------------------------
-  // Toggle theme (day <-> night)
-  // ------------------------------------------------------------
-  toggle.addEventListener("click", () => {
-    const current = root.getAttribute("data-theme");
+  /* ------------------------------------------------------------
+     TOGGLE THEME
+     ------------------------------------------------------------ */
+  toggleButton.addEventListener("click", () => {
+    const current = body.getAttribute("data-theme");
     const next = current === "day" ? "night" : "day";
 
-    root.setAttribute("data-theme", next);
+    body.setAttribute("data-theme", next);
     localStorage.setItem("cc-theme", next);
     updateIcon(next);
-    applyTransition();
   });
+
+  /* ------------------------------------------------------------
+     ICON SWAP
+     ------------------------------------------------------------ */
+  function updateIcon(theme) {
+    if (theme === "night") {
+      toggleIcon.src = "/assets/icons/moon.svg";
+      toggleIcon.alt = "Switch to day mode";
+    } else {
+      toggleIcon.src = "/assets/icons/sun.svg";
+      toggleIcon.alt = "Switch to night mode";
+    }
+  }
 });
