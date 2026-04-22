@@ -10,10 +10,10 @@
   <link rel="stylesheet" href="{{ '/assets/css/style-v4.css' | relative_url }}">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="{{ '/assets/icons/favicon.ico' | relative_url }}">
+  <link rel="icon" type="image/x-icon" href="{{ '/assets/icons/favicon.ico' | relative_url }}">
 </head>
 
-<body>
+<body class="{{ page.bodyClass }}">
 
   <!-- ============================================================
        HEADER
@@ -62,19 +62,23 @@
   <!-- ============================================================
        PAGE CONTENT
        ============================================================ -->
-<main class="site-content">
-  {{ content }}
-</main>
+  <main class="site-content">
+    {{ content }}
+  </main>
 
-  <!-- GLOBAL INSPIRATION TICKER -->
-<div class="inspiration-ticker">
-  <div class="ticker-track">
-    <span>Creativity is the purest form of magic.</span>
-    <span>Every idea begins with imagination.</span>
-    <span>Resilience turns dreams into reality.</span>
-    <span>Artistry transforms the ordinary into the extraordinary.</span>
+
+  <!-- ============================================================
+       GLOBAL INSPIRATION TICKER (ALL PAGES)
+       ============================================================ -->
+  <div class="inspiration-ticker">
+    <div class="ticker-track">
+      <span>Creativity is the purest form of magic.</span>
+      <span>Every idea begins with imagination.</span>
+      <span>Resilience turns dreams into reality.</span>
+      <span>Artistry transforms the ordinary into the extraordinary.</span>
+    </div>
   </div>
-</div>
+
 
   <!-- ============================================================
        FOOTER
@@ -87,6 +91,7 @@
         <img src="{{ '/assets/icons/email-magic.svg' | relative_url }}" alt="Email">
       </a>
 
+      <!-- SOCIAL MEDIA TARGET ATTRIBUTES LEFT EXACTLY AS YOU HAD THEM -->
       <a href="https://www.instagram.com/" target="crown_creatives_uk/">
         <img src="{{ '/assets/icons/instagram-magic.svg' | relative_url }}" alt="Instagram">
       </a>
