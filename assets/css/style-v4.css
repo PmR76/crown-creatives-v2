@@ -557,3 +557,30 @@ html:not(.dark-theme) .about
 .site-footer {
   margin-top: calc(3rem + 30mm) !important;
 }
+/* ABOUT PAGE — FIXED, SMALLER, RESPONSIVE IMAGES */
+
+.about-img-small {
+  width: 120px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
+.about-img-medium {
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
+/* Improve spacing */
+.about-visual {
+  margin: 2.5rem auto;
+}
+
+.about-intro p {
+  max-width: 680px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.6;
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+}
