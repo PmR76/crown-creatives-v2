@@ -41,41 +41,83 @@ function updateCrown() {
 
 updateCrown();
 
-
 /* ------------------------------------------------------------
-   HERO GALLERY LANES
+   HERO GALLERY — AUTO SCAN + RANDOM + FADE + HOLD 10s
+   HOME PAGE ONLY
    ------------------------------------------------------------ */
 
-function startGalleryLane(selector) {
-  const lane = document.querySelector(selector);
-  if (!lane) return;
+(function() {
 
-  // Collect gallery images from gallery page
-  const galleryImages = Array.from(
-    document.querySelectorAll('.magic-gallery-tile img')
-  );
+  // Only run on the home page
+  if (!document.body.classList.contains('home')) return;
 
-  if (galleryImages.length === 0) return;
+  const leftLane = document.querySelector('.gallery-left');
+  const rightLane = document.querySelector('.gallery-right');
 
-  function cycle() {
-    const img = galleryImages[Math.floor(Math.random() * galleryImages.length)].cloneNode();
+  if (!leftLane || !rightLane) return;
+
+  // Folder to scan
+  const galleryPath = '/assets/images/gallery/';
+
+  // File types allowed
+  const extensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+
+  // Auto-scan engine
+  async function loadGalleryImages() {
+    try {
+      const response = await fetch(galleryPath);
+      const text = await response.text();
+
+      // Extract filenames
+      const matches = [...text.matchAll(/href="([^"]+)"/g)]
+        .map(m => m[1])
+        .filter(file => extensions.some(ext => file.toLowerCase().endsWith(ext)));
+
+      return matches.map(file => galleryPath + file);
+
+    } catch (e) {
+      console.error('Gallery scan failed:', e);
+      return [];
+    }
+  }
+
+  // Fade cycle: fade in → hold 10s → fade out
+  function cycleImage(lane, images) {
+    if (!images.length) return;
+
+    const src = images[Math.floor(Math.random() * images.length)];
+    const img = document.createElement('img');
+    img.src = src;
     img.classList.add('lane-img');
     lane.appendChild(img);
 
+    // Fade in
     requestAnimationFrame(() => img.style.opacity = 1);
 
+    // Hold 10 seconds
     setTimeout(() => {
       img.style.opacity = 0;
-      setTimeout(() => img.remove(), 4000);
-    }, 6000);
+
+      // Remove after fade out
+      setTimeout(() => img.remove(), 2000);
+
+    }, 10000);
   }
 
-  cycle();
-  setInterval(cycle, 5000);
-}
+  // Start engine
+  loadGalleryImages().then(images => {
+    if (!images.length) return;
 
-startGalleryLane('.gallery-left');
-startGalleryLane('.gallery-right');
+    // Left lane cycle
+    setInterval(() => cycleImage(leftLane, images), 14000);
+    cycleImage(leftLane, images);
+
+    // Right lane cycle
+    setInterval(() => cycleImage(rightLane, images), 14000);
+    setTimeout(() => cycleImage(rightLane, images), 7000); // offset for staggered magic
+  });
+
+})();
 
 
 /* ------------------------------------------------------------
