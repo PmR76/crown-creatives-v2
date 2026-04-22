@@ -14,7 +14,6 @@ bodyClass: home
     <img src="{{ '/assets/icons/day-crown.svg' | relative_url }}"
          class="home-crown crown-day"
          alt="Day Crown">
-
     <img src="{{ '/assets/icons/night-crown.svg' | relative_url }}"
          class="home-crown crown-night"
          alt="Night Crown">
@@ -27,7 +26,6 @@ bodyClass: home
   </div>
 
 </section>
-
 
 <!-- ============================
      MAGICAL CARDS
