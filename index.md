@@ -1,11 +1,11 @@
 ---
-layout: home
+layout: default
 title: Home
 ---
 
 <section class="home-hero">
 
-  <!-- HERO CROWN -->
+  <!-- HERO CROWN (day/night swap) -->
   <div class="hero-crown-wrapper">
     <img src="{{ '/assets/icons/day-crown.svg' | relative_url }}"
          alt="Day Crown"
