@@ -521,3 +521,9 @@ html.dark-theme .about-page {
   max-width: 150px !important;
   height: auto !important;
 }
+.about-page section {
+  max-width: 900px;
+  margin: auto;
+  padding: 3rem 2rem;
+  line-height: 1.7;
+}
