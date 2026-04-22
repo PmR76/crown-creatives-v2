@@ -615,3 +615,315 @@ html.dark-theme .about-visual img {
   gap: 1.2rem;
   position: relative;
 }
+/* ============================================================
+   Crown Creatives — Master Stylesheet (v4)
+   Magical gradients • Hero crown • Gallery engine • About page
+   Fully aligned with updated HTML + JS + icon structure
+   ============================================================ */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
+
+/* ------------------------------------------------------------
+   GLOBAL RESET + BASE
+   ------------------------------------------------------------ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Cinzel Decorative', serif;
+  overflow-x: hidden;
+}
+
+
+/* ------------------------------------------------------------
+   THEME ENGINE — DAY & NIGHT (matches JS)
+   ------------------------------------------------------------ */
+
+:root {
+  --bg-day: radial-gradient(circle at top, #ffe9b8 0%, #f7c6ff 40%, #2b2c5f 100%);
+  --bg-night: radial-gradient(circle at top, #05030b 0%, #151533 35%, #020008 100%);
+
+  --text-day: #1b1230;
+  --text-night: #f5ecff;
+
+  --glow-day: rgba(255, 210, 150, 0.45);
+  --glow-night: rgba(120, 200, 255, 0.55);
+}
+
+/* DAY MODE */
+html:not(.dark-theme) {
+  background: var(--bg-day);
+  color: var(--text-day);
+}
+
+/* NIGHT MODE */
+html.dark-theme {
+  background: var(--bg-night);
+  color: var(--text-night);
+}
+
+
+/* ------------------------------------------------------------
+   HEADER — LOGO, TOGGLE, NAV
+   ------------------------------------------------------------ */
+
+.site-header {
+  position: relative;
+  text-align: center;
+  padding-top: 3rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  padding-bottom: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* Theme toggle */
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.theme-icon {
+  width: 48px;
+  height: auto;
+  pointer-events: none;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.7));
+  animation: themePulse 3.5s ease-in-out infinite;
+}
+
+@keyframes themePulse {
+  0%   { transform: scale(1);   filter: drop-shadow(0 0 6px rgba(255,255,255,0.5)); }
+  50%  { transform: scale(1.06); filter: drop-shadow(0 0 16px rgba(255,255,255,0.9)); }
+  100% { transform: scale(1);   filter: drop-shadow(0 0 6px rgba(255,255,255,0.5)); }
+}
+
+/* Header brand */
+.header-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.header-logo {
+  width: 150px;
+  height: auto;
+}
+
+.header-title {
+  font-size: 2rem;
+  letter-spacing: 0.18em;
+  margin: 0.3rem 0 0 0;
+}
+
+.header-tagline {
+  font-size: 1rem;
+  opacity: 0.85;
+  margin: 0;
+}
+
+/* Navigation */
+.site-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.2rem auto 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.site-nav a {
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+  text-shadow: 0 0 4px rgba(255,255,255,0.3);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.site-nav a:hover {
+  opacity: 0.7;
+  transform: translateY(-2px);
+}
+
+
+/* ------------------------------------------------------------
+   HERO SECTION — CROWN + HERO GALLERY LANES
+   ------------------------------------------------------------ */
+
+.home-hero {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+  z-index: 5;
+}
+
+.hero-crown-wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.home-crown {
+  width: 150%;
+  max-width: 300px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 8s ease-in-out;
+}
+
+/* Hero gallery lanes */
+.hero-gallery {
+  position: absolute;
+  top: 140px;
+  left: 0;
+  width: 100%;
+  height: 340px;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.gallery-left,
+.gallery-right {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gallery-left { left: 0; }
+.gallery-right { right: 0; }
+
+.lane-img {
+  position: absolute;
+  width: 40%;
+  left: 30%;
+  opacity: 0;
+  transition: opacity 4s ease-in-out;
+  pointer-events: none;
+}
+
+
+/* ------------------------------------------------------------
+   HOME CARDS
+   ------------------------------------------------------------ */
+
+.home-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 18rem auto 2rem auto;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 280px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+html.dark-theme .card {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ------------------------------------------------------------
+   INSPIRATION TICKER
+   ------------------------------------------------------------ */
+
+.inspiration-ticker {
+  width: 100%;
+  overflow: hidden;
+  margin: 2rem 0 1.5rem 0;
+  padding: 0.7rem 0;
+  position: relative;
+  background: rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+  white-space: nowrap;
+}
+
+.ticker-track {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+  animation: tickerScroll 35s linear infinite;
+  padding-left: 100%;
+}
+
+.ticker-track span {
+  display: inline-block;
+  padding-right: 4rem;
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+}
+
+@keyframes tickerScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+
+/* ------------------------------------------------------------
+   FOOTER
+   ------------------------------------------------------------ */
+
+.site-footer {
+  padding: 2rem 0 2.5rem 0;
+  text-align: center;
+  background: transparent;
+  margin-top: 3rem;
+  position: relative;
+}
+
+.footer-icons img { width: 48px; height: auto; }
+.footer-backtotop img { width: 48px; cursor: pointer; }
+
+.footer-backtotop {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.5rem;
+  z-index: 50;
+}
