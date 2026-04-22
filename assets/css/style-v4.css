@@ -153,7 +153,7 @@ html.dark-theme {
 
 
 /* ------------------------------------------------------------
-   HERO SECTION — CROWN + HERO GALLERY LANES
+   HERO SECTION — UPDATED FOR DOUBLE CROWN + NARROW LANES
    ------------------------------------------------------------ */
 
 .home-hero {
@@ -164,6 +164,7 @@ html.dark-theme {
   z-index: 5;
 }
 
+/* Crown wrapper */
 .hero-crown-wrapper {
   position: relative;
   width: 100%;
@@ -173,9 +174,10 @@ html.dark-theme {
   align-items: flex-start;
 }
 
+/* DOUBLE SIZE CROWN */
 .home-crown {
-  width: 150%;
-  max-width: 300px;
+  width: 300%;
+  max-width: 600px;
   position: absolute;
   top: 0;
   left: 50%;
@@ -185,23 +187,24 @@ html.dark-theme {
   transition: opacity 8s ease-in-out;
 }
 
-/* Hero gallery lanes */
+/* HERO GALLERY LANES — NARROW (25% each side) */
 .hero-gallery {
   position: absolute;
-  top: 140px;
+  top: 180px; /* below the crown */
   left: 0;
   width: 100%;
-  height: 340px;
+  height: 320px;
   pointer-events: none;
   z-index: 1;
   overflow: hidden;
 }
 
+/* Narrow lanes */
 .gallery-left,
 .gallery-right {
   position: absolute;
   top: 0;
-  width: 50%;
+  width: 25%;
   height: 100%;
   overflow: hidden;
 }
@@ -209,15 +212,15 @@ html.dark-theme {
 .gallery-left { left: 0; }
 .gallery-right { right: 0; }
 
+/* Lane images */
 .lane-img {
   position: absolute;
-  width: 40%;
-  left: 30%;
+  width: 90%;
+  left: 5%;
   opacity: 0;
-  transition: opacity 4s ease-in-out;
+  transition: opacity 2s ease-in-out;
   pointer-events: none;
 }
-
 
 /* ------------------------------------------------------------
    HOME CARDS
