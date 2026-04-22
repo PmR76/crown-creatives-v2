@@ -584,3 +584,65 @@ html:not(.dark-theme) .about
   line-height: 1.6;
   font-size: clamp(1rem, 1.2vw, 1.15rem);
 }
+.about-img-small {
+  width: 120px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
+.about-img-medium {
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
+.about-visual {
+  margin: 2.5rem auto;
+}
+
+.about-intro p {
+  max-width: 680px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.6;
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+}
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #ffffff, #f7f4ff);
+}
+
+.hero-crown {
+  width: 220px; /* Make it bigger */
+  filter: drop-shadow(0 0 12px gold);
+  animation: shimmer 4s infinite ease-in-out;
+}
+
+@keyframes shimmer {
+  0%, 100% { filter: drop-shadow(0 0 12px gold); }
+  50% { filter: drop-shadow(0 0 22px #ffd700); }
+}
+
+.values {
+  display: flex;
+  gap: 2rem;
+  padding: 3rem 2rem;
+}
+
+.value h3 {
+  color: #c9a44f;
+  border-bottom: 2px solid #c9a44f;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+section {
+  max-width: 900px;
+  margin: auto;
+  padding: 3rem 2rem;
+  line-height: 1.7;
+}
