@@ -1,24 +1,46 @@
 ---
 layout: home
-show_hero_crown: true
+title: Home
 ---
-<section class="home-cards">
 
-  <div class="card">
-    <h2>Artistry</h2>
-    <p>Celebrating creative expression through design, craft, and storytelling.</p>
+<section class="home-hero">
+
+  <!-- HERO CROWN -->
+  <div class="hero-crown-wrapper">
+    <img src="{{ '/assets/icons/day-crown.svg' | relative_url }}"
+         alt="Day Crown"
+         class="home-crown crown-day">
+
+    <img src="{{ '/assets/icons/night-crown.svg' | relative_url }}"
+         alt="Night Crown"
+         class="home-crown crown-night">
   </div>
 
-  <div class="card">
-    <h2>Resilience</h2>
-    <p>Honouring strength, growth, and the courage to evolve through challenges.</p>
-  </div>
-
-  <div class="card">
-    <h2>Imagination</h2>
-    <p>Igniting wonder and innovation — where ideas transform into magical realities.</p>
+  <!-- HERO GALLERY LANES -->
+  <div class="hero-gallery">
+    <div class="gallery-left"></div>
+    <div class="gallery-right"></div>
   </div>
 
 </section>
-<!-- rebuild --> 
-<!-- rebuild 2 -->
+
+
+<!-- MAGICAL CARDS -->
+<section class="home-cards">
+
+  <article class="card">
+    <h2>Artistry</h2>
+    <p>Celebrating creative expression through design, craft, and storytelling.</p>
+  </article>
+
+  <article class="card">
+    <h2>Resilience</h2>
+    <p>Honouring strength, growth, and the courage to evolve through challenges.</p>
+  </article>
+
+  <article class="card">
+    <h2>Imagination</h2>
+    <p>Igniting wonder and innovation — where ideas transform into magical realities.</p>
+  </article>
+
+</section>
