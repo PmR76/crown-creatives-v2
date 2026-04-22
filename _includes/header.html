@@ -1,20 +1,25 @@
 <header class="site-header">
+
+  <!-- THEME TOGGLE (always top-right) -->
+  <button class="theme-toggle" type="button" aria-label="Toggle theme">
+    <img class="theme-icon" 
+         src="{{ '/assets/icons/sun-moon-magic.svg' | relative_url }}" 
+         alt="Toggle Theme">
+  </button>
+
   <div class="header-inner">
 
-    <!-- BRAND + LOGO -->
-    <a href="{{ '/' | relative_url }}" class="header-logo">
+    <!-- BRAND BLOCK -->
+    <div class="header-brand">
+      <a href="{{ '/' | relative_url }}">
+        <img src="{{ '/assets/img/head-crown.svg' | relative_url }}"
+             alt="Crown Creatives Logo"
+             class="header-logo">
+      </a>
 
-      <!-- Crown wrapper (day/night swap handled in CSS) -->
-     <div class="header-brand">
-  <img src="{{ '/assets/img/head-crown.svg' | relative_url }}"
-       alt="Crown Creatives Logo"
-       class="header-logo">
-
-  <h1 class="header-title">CROWN CREATIVES</h1>
-  <p class="header-tagline">Artistry • Resilience • Imagination</p>
-</div>
-
-    </a>
+      <h1 class="header-title">CROWN CREATIVES</h1>
+      <p class="header-tagline">Artistry • Resilience • Imagination</p>
+    </div>
 
     <!-- NAVIGATION -->
     <nav class="site-nav" aria-label="Main navigation">
@@ -29,13 +34,6 @@
         <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
       </ul>
     </nav>
-
-    <!-- THEME TOGGLE -->
-    <button class="theme-toggle" type="button" aria-label="Toggle theme">
-      <img class="theme-icon" 
-           src="{{ '/assets/icons/sun-moon-magic.svg' | relative_url }}" 
-           alt="Toggle Theme">
-    </button>
 
   </div>
 </header>
