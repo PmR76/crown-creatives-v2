@@ -546,16 +546,18 @@ html:not(.dark-theme) .about
    GLOBAL DOWNWARD SHIFT — CARDS, TICKER, FOOTER (30mm)
    ============================================================ */
 
+./* REDUCE DOWNWARD SHIFT — CLOSE THE GAP */
 .home-cards {
-  margin-top: calc(18rem + 30mm) !important;
+  margin-top: calc(18rem + 10mm) !important;
 }
 
 .inspiration-ticker {
-  margin-top: calc(2rem + 30mm) !important;
+  margin-top: calc(1rem + 10mm) !important;
 }
 
 .site-footer {
-  margin-top: calc(3rem + 30mm) !important;
+  margin-top: calc(2rem + 10mm) !important;
+
 }
 /* ABOUT PAGE — FIXED, SMALLER, RESPONSIVE IMAGES */
 
@@ -677,4 +679,19 @@ section {
   margin: 0 auto 2rem auto;
   line-height: 1.6;
   font-size: clamp(1rem, 1.2vw, 1.15rem);
+}
+/* HOME CARDS — FORCE EVEN HEIGHT + ALIGNMENT */
+.home-cards {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+}
+
+.home-cards .card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 260px; /* ensures all cards sit level */
 }
