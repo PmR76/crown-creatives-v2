@@ -35,6 +35,28 @@
       <img src="{{ '/assets/images/gallery/img6.jpg' | relative_url }}" class="lane-img">
     </div>
 
+    <!-- ============================
+     MAGICAL CARDS
+     ============================ -->
+<section class="home-cards">
+
+  <article class="card">
+    <h2>Artistry</h2>
+    <p>Celebrating creative expression through design, craft, and storytelling.</p>
+  </article>
+
+  <article class="card">
+    <h2>Resilience</h2>
+    <p>Honouring strength, growth, and the courage to evolve through challenges.</p>
+  </article>
+
+  <article class="card">
+    <h2>Imagination</h2>
+    <p>Igniting wonder and innovation — where ideas transform into magical realities.</p>
+  </article>
+
+</section>
+
   </div>
 
 </section>
