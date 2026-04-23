@@ -6,10 +6,8 @@
 
   <title>{{ page.title }} | Crown Creatives</title>
 
-  <!-- SEO -->
   {% seo %}
 
-  <!-- MAIN CSS -->
   <link rel="stylesheet" href="{{ '/assets/css/style-v5.css' | relative_url }}">
 </head>
 
@@ -18,18 +16,14 @@
   <!-- GLOBAL MAGICAL BACKGROUND -->
   <div id="magic-background"></div>
 
-  <!-- HEADER -->
+  <!-- CORRECT HEADER INCLUDE -->
   {% include header.html %}
 
-  <!-- MAIN CONTENT -->
   <main class="site-main">
     {{ content }}
   </main>
 
-  <!-- FOOTER -->
   {% include footer.html %}
-
-  <!-- SCRIPTS -->
   {% include scripts.html %}
 
 </body>
