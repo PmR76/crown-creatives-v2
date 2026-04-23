@@ -1,43 +1,43 @@
 /* ============================================================
-   Crown Creatives — Gallery Engine (v3)
+   Crown Creatives — Hero Gallery Engine (v3)
    Handles:
-   - Staggered fade-in of gallery tiles
-   - Scroll-based reveal
-   - Performance-friendly intersection observer
+   - Left + right lane image fading
+   - Smooth crossfade timing
+   - Infinite looping
    ============================================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
-  const tiles = document.querySelectorAll(".magic-gallery-tile");
-  if (!tiles.length) return;
+  const leftLane = document.querySelectorAll(".gallery-left .lane-img");
+  const rightLane = document.querySelectorAll(".gallery-right .lane-img");
+
+  if (!leftLane.length || !rightLane.length) return;
+
+  let leftIndex = 0;
+  let rightIndex = 0;
 
   /* ------------------------------------------------------------
-     STAGGERED INITIAL FADE-IN
+     INITIAL STATE
      ------------------------------------------------------------ */
-  let delay = 150;
-
-  tiles.forEach(tile => {
-    setTimeout(() => {
-      tile.style.opacity = "1";
-    }, delay);
-    delay += 120;
-  });
+  leftLane[0].style.opacity = 1;
+  rightLane[0].style.opacity = 1;
 
   /* ------------------------------------------------------------
-     SCROLL REVEAL (Intersection Observer)
+     FADE FUNCTION
      ------------------------------------------------------------ */
-  const revealOptions = {
-    threshold: 0.15
-  };
+  function fadeNext(lane, index) {
+    lane.forEach(img => (img.style.opacity = 0));
+    lane[index].style.opacity = 1;
+  }
 
-  const revealTile = (entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("is-visible");
-    }
-  };
+  /* ------------------------------------------------------------
+     LOOP ENGINE
+     ------------------------------------------------------------ */
+  setInterval(() => {
+    leftIndex = (leftIndex + 1) % leftLane.length;
+    rightIndex = (rightIndex + 1) % rightLane.length;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(revealTile);
-  }, revealOptions);
+    fadeNext(leftLane, leftIndex);
+    fadeNext(rightLane, rightIndex);
 
-  tiles.forEach(tile => observer.observe(tile));
+  }, 4000); // 4s per image
 });
