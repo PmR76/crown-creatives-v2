@@ -1,5 +1,6 @@
 /* ============================================================
-   Crown Creatives — Theme Toggle Engine (v3)
+   Crown Creatives — Theme Toggle Engine (v4)
+   JS-driven theme system (Option A)
    Handles:
    - Day/Night theme switching
    - Icon swapping
@@ -20,12 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (savedTheme === "night" || savedTheme === "day") {
     body.setAttribute("data-theme", savedTheme);
-    updateIcon(savedTheme);
   } else {
-    // Default to day
     body.setAttribute("data-theme", "day");
-    updateIcon("day");
   }
+
+  updateIcon(body.getAttribute("data-theme"));
 
   /* ------------------------------------------------------------
      TOGGLE THEME
@@ -43,12 +43,9 @@ document.addEventListener("DOMContentLoaded", () => {
      ICON SWAP
      ------------------------------------------------------------ */
   function updateIcon(theme) {
-    if (theme === "night") {
-      toggleIcon.src = "/assets/icons/sun-moon-magic.svg";
-      toggleIcon.alt = "Switch to day mode";
-    } else {
-      toggleIcon.src = "/assets/icons/sun-moon-magic.svg";
-      toggleIcon.alt = "Switch to night mode";
-    }
+    toggleIcon.src = "/assets/icons/sun-moon-magic.svg";
+    toggleIcon.alt = theme === "night"
+      ? "Switch to day mode"
+      : "Switch to night mode";
   }
 });
