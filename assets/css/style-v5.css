@@ -512,3 +512,9 @@ body[data-theme="night"] .about-page {
   .home-cards { margin-top: calc(5rem + clamp(6rem, 12vw, 10rem)); }
   .card { width: 90%; }
 }
+.theme-icon {
+  width: 40px !important;
+  height: 40px !important;
+  outline: 2px solid red !important;
+  background: yellow !important;
+}
