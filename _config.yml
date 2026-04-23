@@ -1,6 +1,7 @@
 title: "Crown Creatives"
 description: "Artistry • Resilience • Imagination"
 
+# REQUIRED FOR GITHUB PAGES PROJECT SITES
 baseurl: "/crown-creatives-v2"
 url: "https://pmr76.github.io"
 
