@@ -24,7 +24,7 @@ bodyClass: home
 
   </div>
 
-  <!-- HERO GALLERY LANES (left + right) -->
+  <!-- HERO GALLERY LANES -->
   <div class="hero-gallery">
 
     <!-- LEFT LANE -->
@@ -44,6 +44,7 @@ bodyClass: home
   </div>
 
 </section>
+
 
 <!-- ============================
      MAGICAL CARDS
@@ -66,3 +67,17 @@ bodyClass: home
   </article>
 
 </section>
+
+
+<!-- ============================
+     INSPIRATIONAL TICKER
+     ============================ -->
+<div class="inspiration-ticker">
+  <div class="ticker-track">
+    <span>Rebuilding through creativity and imagination.</span>
+    <span>3D models, podcasts, and personal storytelling.</span>
+    <span>Artistry • Resilience • Transformation.</span>
+    <span>Every challenge is a chance to create something new.</span>
+    <span>Magic begins when imagination meets courage.</span>
+  </div>
+</div>
