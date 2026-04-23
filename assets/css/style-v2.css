@@ -635,4 +635,9 @@ body[data-theme="night"] .magic-gallery-tile {
     display: none;
   }
 }
+.header-crown-img {
+  width: 160px;
+  height: auto;
+  display: block;
+}
 
