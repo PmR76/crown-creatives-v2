@@ -2,120 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>{{ page.title }} | Crown Creatives</title>
 
-  <!-- Main Stylesheet -->
- <link rel="stylesheet" href="{{ '/assets/css/style-v5.css?v=1000' | relative_url }}">
+  <!-- SEO -->
+  {% seo %}
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="{{ '/assets/icons/favicon.ico' | relative_url }}">
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/style-v5.css' | relative_url }}">
 </head>
 
-<body class="{{ page.bodyClass }}">
+<body data-theme="day" class="{{ page.bodyClass }}">
 
-  <!-- ============================================================
-       HEADER
-       ============================================================ -->
-  <header class="site-header">
+  <!-- GLOBAL MAGICAL BACKGROUND -->
+  <div id="magic-background"></div>
 
-    <!-- THEME TOGGLE -->
-    <button class="theme-toggle" type="button" aria-label="Toggle theme">
-      <img class="theme-icon" 
-           src="{{ '/assets/icons/sun-moon-magic.svg' | relative_url }}" 
-           alt="Toggle Theme">
-    </button>
+  <!-- HEADER -->
+  {% include header.html %}
 
-    <div class="header-inner">
-
-      <!-- BRAND BLOCK -->
-      <div class="header-brand">
-        <a href="{{ '/' | relative_url }}">
-          <img src="{{ '/assets/img/head-crown.svg' | relative_url }}"
-               alt="Crown Creatives Logo"
-               class="header-logo">
-        </a>
-
-        <h1 class="header-title">CROWN CREATIVES</h1>
-        <p class="header-tagline">Artistry • Resilience • Imagination</p>
-      </div>
-
-      <!-- NAVIGATION -->
-      <nav class="site-nav" aria-label="Main navigation">
-        <ul class="nav-list">
-          <li><a href="{{ '/' | relative_url }}">Home</a></li>
-          <li><a href="{{ '/about/' | relative_url }}">About</a></li>
-          <li><a href="{{ '/gallery/' | relative_url }}">Gallery</a></li>
-          <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
-          <li><a href="{{ '/videos/' | relative_url }}">Videos</a></li>
-          <li><a href="{{ '/podcasts/' | relative_url }}">Podcasts</a></li>
-          <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
-          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
-        </ul>
-      </nav>
-
-    </div>
-  </header>
-
-
-  <!-- ============================================================
-       PAGE CONTENT
-       ============================================================ -->
-  <main class="site-content">
+  <!-- MAIN CONTENT -->
+  <main class="site-main">
     {{ content }}
   </main>
 
+  <!-- FOOTER -->
+  {% include footer.html %}
 
-  <!-- ============================================================
-       GLOBAL INSPIRATION TICKER (ALL PAGES)
-       ============================================================ -->
-  <div class="inspiration-ticker">
-    <div class="ticker-track">
-      <span>Creativity is the purest form of magic.</span>
-      <span>Every idea begins with imagination.</span>
-      <span>Resilience turns dreams into reality.</span>
-      <span>Artistry transforms the ordinary into the extraordinary.</span>
-    </div>
-  </div>
-
-
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
-  <footer class="site-footer">
-
-    <div class="footer-icons">
-
-      <a href="mailto:crowncreatives@outlook.com">
-        <img src="{{ '/assets/icons/email-magic.svg' | relative_url }}" alt="Email">
-      </a>
-
-      <!-- SOCIAL MEDIA TARGET ATTRIBUTES LEFT EXACTLY AS YOU HAD THEM -->
-      <a href="https://www.instagram.com/" target="crown_creatives_uk/">
-        <img src="{{ '/assets/icons/instagram-magic.svg' | relative_url }}" alt="Instagram">
-      </a>
-
-      <a href="https://www.facebook.com/" target="people/Crown-Creatives/61556386467490/">
-        <img src="{{ '/assets/icons/facebook-magic.svg' | relative_url }}" alt="Facebook">
-      </a>
-
-      <a href="https://copilot.microsoft.com" target="_blank">
-        <img src="{{ '/assets/icons/copilot-magic.svg' | relative_url }}" alt="Copilot">
-      </a>
-
-    </div>
-
-    <div class="footer-backtotop">
-      <a href="#">
-        <img src="{{ '/assets/icons/up-arrow-magic.svg' | relative_url }}" alt="Back to top">
-      </a>
-    </div>
-
-  </footer>
-
-  <!-- Scripts -->
-  <script src="{{ '/assets/js/magic.js' | relative_url }}"></script>
+  <!-- SCRIPTS -->
+  {% include scripts.html %}
 
 </body>
 </html>
