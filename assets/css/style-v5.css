@@ -1,7 +1,7 @@
 /* ============================================================
-   Crown Creatives — Master Stylesheet (v5)
-   Magical gradients • Hero crown • Gallery engine • About page
-   Fully merged, cleaned, corrected, production-ready
+   Crown Creatives — Master Stylesheet (v5, Unified)
+   JS-driven theme system • Hero crown • Gallery engine
+   Production-ready, cleaned, merged, conflict-free
    ============================================================ */
 
 
@@ -26,7 +26,7 @@ body {
 
 
 /* ------------------------------------------------------------
-   THEME ENGINE — DAY & NIGHT
+   THEME ENGINE — JS-DRIVEN (Option A)
    ------------------------------------------------------------ */
 :root {
   --bg-day: radial-gradient(circle at top, #ffe9b8 0%, #f7c6ff 40%, #2b2c5f 100%);
@@ -39,12 +39,12 @@ body {
   --glow-night: rgba(120, 200, 255, 0.55);
 }
 
-html:not(.dark-theme) {
+body[data-theme="day"] {
   background: var(--bg-day);
   color: var(--text-day);
 }
 
-html.dark-theme {
+body[data-theme="night"] {
   background: var(--bg-night);
   color: var(--text-night);
 }
@@ -57,11 +57,11 @@ html.dark-theme {
   position: relative;
   text-align: center;
   padding-top: 3rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1rem;
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-  padding-bottom: 1.5rem;
-  margin-bottom: 1rem;
 }
 
 .header-inner {
@@ -72,18 +72,24 @@ html.dark-theme {
   position: relative;
 }
 
+/* Unified toggle */
 .theme-toggle {
   position: absolute;
   top: 1rem;
   right: 1rem;
+  width: 32px;
+  height: 32px;
+  padding: 0;
   background: none;
   border: none;
   cursor: pointer;
+  z-index: 9999;
 }
 
 .theme-icon {
-  width: 48px;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   pointer-events: none;
   filter: drop-shadow(0 0 10px rgba(255,255,255,0.7));
   animation: themePulse 3.5s ease-in-out infinite;
@@ -149,7 +155,7 @@ html.dark-theme {
 
 
 /* ------------------------------------------------------------
-   HERO SECTION — DOUBLE CROWN + GALLERY LANES
+   HERO SECTION — CROWN + GALLERY
    ------------------------------------------------------------ */
 .home-hero {
   position: relative;
@@ -168,35 +174,45 @@ html.dark-theme {
   align-items: flex-start;
 }
 
+/* Unified crown visibility */
 .home-crown {
-  width: 300%;
-  max-width: 600px;
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+  width: clamp(180px, 40vw, 420px);
+  height: auto;
   pointer-events: none;
-  opacity: 0;
   transition: opacity 8s ease-in-out;
+  opacity: 0;
 }
 
+body[data-theme="day"] .home-crown.day {
+  opacity: 1;
+}
+
+body[data-theme="night"] .home-crown.night {
+  opacity: 1;
+}
+
+/* Unified gallery */
 .hero-gallery {
   position: absolute;
-  top: 180px;
+  top: clamp(140px, 22vw, 220px);
   left: 0;
   width: 100%;
   height: 320px;
   pointer-events: none;
-  z-index: 1;
   overflow: hidden;
+  z-index: 1;
 }
 
 .gallery-left,
 .gallery-right {
-  position: absolute;
-  top: 0;
   width: 25%;
   height: 100%;
+  position: absolute;
+  top: 0;
   overflow: hidden;
 }
 
@@ -209,12 +225,11 @@ html.dark-theme {
   left: 5%;
   opacity: 0;
   transition: opacity 2s ease-in-out;
-  pointer-events: none;
 }
 
 
 /* ------------------------------------------------------------
-   HOME CARDS — EVEN HEIGHT + ALIGNMENT
+   HOME CARDS
    ------------------------------------------------------------ */
 .home-cards {
   display: flex;
@@ -242,7 +257,7 @@ html.dark-theme {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-html.dark-theme .card {
+body[data-theme="night"] .card {
   border-color: rgba(255, 255, 255, 0.25);
 }
 
@@ -253,7 +268,7 @@ html.dark-theme .card {
 
 
 /* ------------------------------------------------------------
-   INSPIRATION TICKER — SHIFTED UP
+   INSPIRATION TICKER
    ------------------------------------------------------------ */
 .inspiration-ticker {
   width: 100%;
@@ -291,7 +306,7 @@ html.dark-theme .card {
 
 
 /* ------------------------------------------------------------
-   FOOTER — SHIFTED UP
+   FOOTER
    ------------------------------------------------------------ */
 .site-footer {
   padding: 2rem 0 2.5rem 0;
@@ -322,12 +337,12 @@ html.dark-theme .card {
   text-align: center;
 }
 
-html:not(.dark-theme) .gallery-page {
+body[data-theme="day"] .gallery-page {
   background: radial-gradient(circle at top, rgba(255,233,184,0.35), rgba(247,198,255,0.25), transparent 70%);
   border-radius: 24px;
 }
 
-html.dark-theme .gallery-page {
+body[data-theme="night"] .gallery-page {
   background: radial-gradient(circle at top, rgba(40,30,90,0.7), rgba(90,40,140,0.5), transparent 70%);
   border-radius: 24px;
 }
@@ -361,7 +376,7 @@ html.dark-theme .gallery-page {
   box-shadow: 0 0 18px var(--glow-day);
 }
 
-html.dark-theme .magic-gallery-tile {
+body[data-theme="night"] .magic-gallery-tile {
   box-shadow: 0 0 22px var(--glow-night);
 }
 
@@ -412,7 +427,7 @@ html.dark-theme .magic-gallery-tile {
 
 
 /* ------------------------------------------------------------
-   ABOUT PAGE — HERO CROWN + SUPPORTING IMAGES
+   ABOUT PAGE
    ------------------------------------------------------------ */
 .about-page {
   max-width: 1100px;
@@ -423,7 +438,7 @@ html.dark-theme .magic-gallery-tile {
   z-index: 2;
 }
 
-html:not(.dark-theme) .about-page {
+body[data-theme="day"] .about-page {
   background: radial-gradient(circle at top,
     rgba(255,233,184,0.35),
     rgba(247,198,255,0.25),
@@ -432,7 +447,7 @@ html:not(.dark-theme) .about-page {
   border-radius: 24px;
 }
 
-html.dark-theme .about-page {
+body[data-theme="night"] .about-page {
   background: radial-gradient(circle at top,
     rgba(40,30,90,0.7),
     rgba(90,40,140,0.5),
@@ -450,17 +465,8 @@ html.dark-theme .about-page {
   filter: drop-shadow(0 0 18px rgba(255, 215, 120, 0.55));
 }
 
-.about-img-small {
-  width: 120px;
-  max-width: 100%;
-  height: auto;
-  border-radius: 14px;
-  display: block;
-  margin: 2.5rem auto;
-}
-
+.about-img-small,
 .about-img-medium {
-  width: clamp(140px, 22vw, 200px);
   max-width: 100%;
   height: auto;
   border-radius: 14px;
@@ -468,9 +474,10 @@ html.dark-theme .about-page {
   margin: 2.5rem auto;
 }
 
-.about-visual {
-  margin: 2.5rem auto;
-}
+.about-img-small { width: 120px; }
+.about-img-medium { width: clamp(140px, 22vw, 200px); }
+
+.about-visual { margin: 2.5rem auto; }
 
 .about-intro p {
   max-width: 680px;
@@ -504,148 +511,4 @@ html.dark-theme .about-page {
   .lane-img { width: 65%; left: 17%; }
   .home-cards { margin-top: calc(5rem + clamp(6rem, 12vw, 10rem)); }
   .card { width: 90%; }
-}
-/* FIX HEADER CROWN SIZE */
-.header-logo,
-.header-brand img,
-.site-header img {
-  width: 150px !important;
-  max-width: 150px !important;
-  height: auto !important;
-  display: block;
-  margin: 0 auto;
-}
-.site-header svg,
-.site-header img {
-  width: 150px !important;
-  max-width: 150px !important;
-  height: auto !important;
-}
-.about-page section {
-  max-width: 900px;
-  margin: auto;
-  padding: 3rem 2rem;
-  line-height: 1.7;
-}
-/* LOCK HEADER CROWN SIZE */
-.site-header .header-logo,
-.site-header img.header-logo {
-  width: 150px !important;
-  max-width: 150px !important;
-  height: auto !important;
-  background: transparent !important;
-}
-.site-header {
-  background: transparent !important;
-}
-/* ============================================
-   FIX — HOME PAGE CROWN DAY/NIGHT TRANSITION
-   ============================================ */
-
-.home-crown {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: clamp(180px, 40vw, 420px);
-  height: auto;
-  pointer-events: none;
-  transition: opacity 8s ease-in-out;
-  opacity: 0;
-}
-
-/* Day crown visible in day mode */
-html:not(.dark-theme) .home-crown.day {
-  opacity: 1;
-}
-
-/* Night crown visible in night mode */
-html.dark-theme .home-crown.night {
-  opacity: 1;
-}
-/* ============================================
-   FIX — HERO GALLERY POSITIONING
-   ============================================ */
-
-.hero-gallery {
-  position: absolute;
-  top: clamp(140px, 22vw, 220px); /* responsive under crown */
-  left: 0;
-  width: 100%;
-  height: 320px;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.gallery-left,
-.gallery-right {
-  width: 25%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  overflow: hidden;
-}
-
-.gallery-left { left: 0; }
-.gallery-right { right: 0; }
-
-.lane-img {
-  position: absolute;
-  width: 90%;
-  left: 5%;
-  opacity: 0;
-  transition: opacity 2s ease-in-out;
-}
-/* FIX THEME TOGGLE SIZE + POSITION */
-.theme-toggle {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  width: 48px;
-  height: 48px;
-  padding: 0;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 9999;
-}
-
-.theme-icon {
-  width: 48px !important;
-  height: 48px !important;
-  object-fit: contain;
-  pointer-events: none;
-  filter: drop-shadow(0 0 10px rgba(255,255,255,0.7));
-}
-/* FIX HERO GALLERY POSITIONING */
-.hero-gallery {
-  position: absolute;
-  top: clamp(140px, 22vw, 220px);
-  left: 0;
-  width: 100%;
-  height: 320px;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.gallery-left,
-.gallery-right {
-  width: 25%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  overflow: hidden;
-}
-
-.gallery-left { left: 0; }
-.gallery-right { right: 0; }
-
-.lane-img {
-  position: absolute;
-  width: 90%;
-  left: 5%;
-  opacity: 0;
-  transition: opacity 2s ease-in-out;
 }
