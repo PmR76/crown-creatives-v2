@@ -13,15 +13,21 @@
 
 <body data-theme="day" class="{{ page.bodyClass }}">
 
+  <!-- GLOBAL BACKGROUND ENGINE -->
   <div id="magic-background"></div>
 
+  <!-- HEADER -->
   {% include header.html %}
 
+  <!-- MAIN CONTENT -->
   <main class="site-main">
     {{ content }}
   </main>
 
+  <!-- FOOTER -->
   {% include footer.html %}
+
+  <!-- SCRIPTS -->
   {% include scripts.html %}
 
 </body>
