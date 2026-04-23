@@ -28,4 +28,36 @@ Live site:  https://pmr76.github.io/crown-creatives-v2/
 
 https://pmr76.github.io/crown-creatives-v2/assets/img/head-crown.svg
 
- 
+ /
+├── index.md
+├── about/
+│   └── index.md
+├── gallery/
+│   └── index.md
+├── projects/
+│   └── index.md
+├── videos/
+│   └── index.md
+├── podcasts/
+│   └── index.md
+├── contact/
+│   └── index.md
+├── blog/
+│   └── index.md
+├── _includes/
+│   ├── header.html
+│   ├── footer.html
+│   └── scripts.html
+├── _layouts/
+│   └── default.html
+└── assets/
+    ├── css/style-v5.css
+    ├── js/theme-toggle.js
+    ├── js/gallery.js
+    ├── js/ticker.js
+    ├── js/magic-background.js
+    ├── images/
+    ├── icons/
+    ├── videos/
+    └── podcasts/
+
