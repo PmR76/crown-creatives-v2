@@ -5,24 +5,42 @@ bodyClass: home
 ---
 
 <!-- ============================
-     HERO SECTION (CROWN + LANES)
+     HERO SECTION (CROWN + GALLERY)
      ============================ -->
 <section class="home-hero">
 
   <!-- HERO CROWN (day/night swap) -->
   <div class="hero-crown-wrapper">
-    <img src="{{ '/assets/icons/day-crown.svg' | relative_url }}"
-         class="home-crown crown-day"
+
+    <!-- DAY CROWN -->
+    <img src="{{ '/assets/img/day-crown.svg' | relative_url }}"
+         class="home-crown day"
          alt="Day Crown">
-    <img src="{{ '/assets/icons/night-crown.svg' | relative_url }}"
-         class="home-crown crown-night"
+
+    <!-- NIGHT CROWN -->
+    <img src="{{ '/assets/img/night-crown.svg' | relative_url }}"
+         class="home-crown night"
          alt="Night Crown">
+
   </div>
 
   <!-- HERO GALLERY LANES (left + right) -->
   <div class="hero-gallery">
-    <div class="gallery-left"></div>
-    <div class="gallery-right"></div>
+
+    <!-- LEFT LANE -->
+    <div class="gallery-left">
+      <img src="{{ '/assets/images/gallery/img1.jpg' | relative_url }}" class="lane-img" alt="">
+      <img src="{{ '/assets/images/gallery/img2.jpg' | relative_url }}" class="lane-img" alt="">
+      <img src="{{ '/assets/images/gallery/img3.jpg' | relative_url }}" class="lane-img" alt="">
+    </div>
+
+    <!-- RIGHT LANE -->
+    <div class="gallery-right">
+      <img src="{{ '/assets/images/gallery/img4.jpg' | relative_url }}" class="lane-img" alt="">
+      <img src="{{ '/assets/images/gallery/img5.jpg' | relative_url }}" class="lane-img" alt="">
+      <img src="{{ '/assets/images/gallery/img6.jpg' | relative_url }}" class="lane-img" alt="">
+    </div>
+
   </div>
 
 </section>
